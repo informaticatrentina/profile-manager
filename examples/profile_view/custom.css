@@ -1,0 +1,90 @@
+/*!
+ * CivicLinks Profiles
+ *
+ * Copyright 2013 Fondazione <ahref
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+
+body {
+	font-family: 'Titillium Web', sans-serif;
+	padding-bottom: 0;
+	
+}
+
+.brand {
+	background-image: url('img/civiclinkslogo.png');
+	background-repeat: no-repeat;
+	background-position: left 22px top 10px; 
+	height: 20px;
+	text-indent: -9999px;
+	width: 100px;
+}
+
+.bio {
+	background-color: #00a4a7;
+	width: 100%;
+	margin-top: -20px;
+	padding: 30px 10px 0 10px;
+}
+
+.quotation
+{
+	font-size: 100px;
+	color: #FFF;
+	padding-top: 35px;
+	font-family: Times;
+}
+
+.profilebio {
+	color: #fff;
+	font-size: 150%;
+	line-height: 150%;;
+}
+
+.bioend {
+	background-color: #fff;
+	bottom: 0;
+	margin: 20px -10px 0 -10px;
+	background-image: url(img/greentriangle.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	height:20px;
+}
+
+.avatar {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.avatar img {
+}
+
+.name {
+	background-color: #f5f5f5;
+	margin: 0;
+	padding: 30px;
+}
+
+.userpanel {margin: 60px 0;}
+
+.details {
+	background-color: #f5f5f5;
+	margin: 30px 0 0 0;
+	padding: 30px;
+	font-size: 20px;
+}
+
+.details li {
+	margin-bottom: 10px;
+}
+
+.footer {
+	background-color: #000;
+	color: #fff;
+	font-size: 12px;
+}
+
+footer {
+	padding: 5px;
+}
