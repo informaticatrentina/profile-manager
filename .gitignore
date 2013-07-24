@@ -1,0 +1,6 @@
+*.pyc
+/.coverage
+/build/
+/dist/
+/docs/build/
+/ProfileManager.egg-info/
