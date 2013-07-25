@@ -1,0 +1,19 @@
+include *.rst
+include *.txt
+recursive-exclude docs *.pyc
+recursive-exclude docs *.pyo
+recursive-exclude examples *.pyc
+recursive-exclude examples *.pyo
+recursive-exclude tests *.pyc
+recursive-exclude tests *.pyo
+recursive-exclude ProfileManager *.pyc
+recursive-exclude ProfileManager *.pyo
+recursive-include ProfileManager/blueprints/user/templates *.html
+recursive-include ProfileManager/blueprints/user/static *.css
+recursive-include ProfileManager/blueprints/user/static *.js
+recursive-include docs *
+recursive-include requirements *.txt
+prune dist
+prune docs/_build
+prune docs/_themes/.git
+prune docs/build
