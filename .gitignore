@@ -1,6 +1,7 @@
 *.pyc
 /.coverage
+/.tox/
+/ProfileManager.egg-info/
 /build/
 /dist/
 /docs/build/
-/ProfileManager.egg-info/
