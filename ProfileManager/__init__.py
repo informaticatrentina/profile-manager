@@ -34,6 +34,7 @@ except ImportError:  # pragma: no cover
 
 
 from flask.ext.bootstrap import Bootstrap
+from ProfileManager.blueprints.user import user
 
 
 def config_app(app):
@@ -48,3 +49,5 @@ app = Flask(__name__)
 
 config_app(app)
 Bootstrap(app)
+
+app.register_blueprint(user, url_prefix='')
