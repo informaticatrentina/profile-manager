@@ -26,6 +26,8 @@ except ImportError:
     import unittest
 
 
+from nose.plugins.skip import SkipTest
+
 class ProfileManagerTest(unittest.TestCase):
     '''An ProfileManager test Class'''
     def setUp(self):
@@ -35,5 +37,5 @@ class ProfileManagerTest(unittest.TestCase):
         pass
 
     def first_test(self):
-        '''Human readable test name'''
-        raise ValueError('Please start writing real test!')
+        raise SkipTest('Please start writing real test!')
+
