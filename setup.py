@@ -24,7 +24,7 @@ setup(
     version=open('version.txt').read().strip(),
     author = 'Daniele Pizzolli',
     author_email='daniele@ahref.eu',
-    packages=['ProfileManager', 'ProfileManager.test'],
+    packages=['ProfileManager', 'ProfileManager.test', 'ProfileManager.blueprints'],
     # namespace_packages=['ProfileManager'],
     keywords = 'ProfileManager',
     url='http://gitlab.ahref.eu/aggregator/ProfileManager.git',
