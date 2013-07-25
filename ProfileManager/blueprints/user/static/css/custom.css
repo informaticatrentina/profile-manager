@@ -14,7 +14,7 @@ body
 
 .brand
 {
-	background-image: url('img/civiclinkslogo.png');
+	background-image: url('../img/civiclinkslogo.png');
 	background-repeat: no-repeat;
 	background-position: left 22px top 10px;
 	height: 20px;
@@ -42,7 +42,7 @@ body
 	background-color: #fff;
 	bottom: 0;
 	margin: 20px -10px 0 -10px;
-	background-image: url(img/greentriangle.png);
+	background-image: url('../img/greentriangle.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 20px;
