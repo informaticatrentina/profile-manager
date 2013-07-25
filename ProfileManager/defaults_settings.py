@@ -16,3 +16,8 @@ DEBUG = True
 
 # WARNNG: must be changed in production!
 SECRET_KEY = "e&+aq@nfo_%p@=9l#7=(-9675+*!+gt0-&8gt)^9=uws42a5oc"
+
+
+BOOTSTRAP_USE_CDN = False
+
+# TODO: with BOOTSTRAP serve the local jquery and do not rely on the google cdn
