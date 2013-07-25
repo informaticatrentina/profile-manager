@@ -25,6 +25,7 @@ except ImportError:
     # NOQA
     import unittest
 
+
 class ProfileManagerTest(unittest.TestCase):
     '''An ProfileManager test Class'''
     def setUp(self):
@@ -36,4 +37,3 @@ class ProfileManagerTest(unittest.TestCase):
     def first_test(self):
         '''Human readable test name'''
         raise ValueError('Please start writing real test!')
-
