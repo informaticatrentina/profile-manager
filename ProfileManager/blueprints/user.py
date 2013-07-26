@@ -35,7 +35,23 @@ def home():
 
 @user.route('/<userid>')
 def show(userid):
-    return render_template('user_show.html')
+    user = {
+        "full_name": "Nome Cognome",
+        "bio": """
+
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+        auctor. Aenean lacinia bibendum nulla sed consectetur. Cras
+        justo odio, dapibus ac facilisis in, egestas eget quam.
+        Praesent commodo cursus magna, vel scelerisque nisl
+        consectetur et.
+
+        """,
+        "location": "Trento, Italy",
+        "tags": ("Scuba diving", "stamp collecting",),
+        "website": "www.somesite.it",
+        }
+
+    return render_template('user_show.html', user=user)
 
 
 @user.route('/edit/<userid>')
