@@ -37,19 +37,19 @@ class UserTestCase(unittest.TestCase):
         pass
 
     def test_user_home(self):
-        '''Check the user show template'''
+        '''Check the home template'''
         request = self.app.get('/', method='GET')
         self.assertEqual(request.status_code, 200)
-        self.assertIn(u'Test User Home', request.data)
+        self.assertIn(u'Test User Home', request.get_data(as_text=True))
 
     def test_user_show(self):
         '''Check the user show template'''
         request = self.app.get('/uid', method='GET')
         self.assertEqual(request.status_code, 200)
-        self.assertIn(u'Nome Cognome', request.data)
+        self.assertIn(u'Nome Cognome', request.get_data(as_text=True))
 
     def test_user_edit(self):
         '''Check the user edit template'''
         request = self.app.get('/edit/uid', method='GET')
         self.assertEqual(request.status_code, 200)
-        self.assertIn(u'Test User Edit', request.data)
+        self.assertIn(u'Racconta', request.get_data(as_text=True))
