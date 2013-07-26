@@ -1,4 +1,103 @@
-<body>
-<h1>Test User Edit</h1>
-</body>
-</html>
+{% extends "ahref_base.html" %}
+
+{%- block ahref_body_content %}
+    <div class="title-bar">
+        <div class="container">
+            <h1>Aggiungi le tue caratteristiche</h1>
+
+            <h2>Carica una foto e descriviti</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row-fluid userform">
+            <div class="span4">
+                <h3>Informazioni</h3>
+
+                <div class="form-box form-box-1">
+                    <form>
+                        <input type="text" name="Name" value="Nome"> <input type="text" name="Name" value=
+                        "Cognome"> <input type="text" name="Name" value="Indirizzo email"> <select id="Sex">
+                            <option value="SelectSex" id="">
+                                Seleziona sesso
+                            </option>
+
+                            <option value="Maschio" id="male">
+                                Maschio
+                            </option>
+
+                            <option value="Femmina" id="female">
+                                Femmina
+                            </option>
+                        </select>
+                    </form>
+                </div>
+
+                <div class="form-box form-box-2">
+                    <form>
+                        <input type="text" name="Location" value="Posizione"> <label>Dove ti trovi?</label>
+                        <input type="text" name="Tags" value="Tag"> <label>Quali sono i tuoi
+                        interessi?</label> <input type="text" name="URL" value="Sito Web"> <label>Hai una
+                        home page o un blog?</label>
+                    </form>
+                </div>
+            </div>
+
+            <div class="span4">
+                <h3>La tua bio</h3>
+
+                <div class="form-box bio-form">
+                    <form>
+                        <label>Racconta qualcosa di te in 150 caratteri</label>
+
+                        <div class="bio-textarea-container">
+                            <div class="bio-textarea-1">
+                                “
+                            </div>
+
+                            <div class="bio-textarea-2">
+                                <textarea id="bio">
+</textarea>
+                            </div>
+
+                            <div class="bio-textarea-3">
+                                „
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="span4">
+                <h3>La tua foto</h3>
+
+                <div class="form-box form-box-1">
+                    <form>
+                        <div class="avatar-preview">
+                            <img src="img/foto_anonima.jpg"> <label>La tua foto può pesare al massimo
+                            <strong>1MB</strong> ed il formato dell’immagine deve essere <strong>jpg</strong>
+                            o <strong>png</strong></label>
+
+                            <div class="clearfix"></div><button name="avatar" type="button" value=
+                            "Scegli foto" id="avatarselect" class="btn btn-primary">Scegli foto</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="span4">
+                <h3>Cambia password</h3>
+
+                <div class="form-box form-box-5">
+                    <form>
+                        <input type="text" name="OldPwd" value="Vecchia password"> <input type="text" name=
+                        "NewPwd" value="Nuova password"> <input type="text" name="ConPwd" value=
+                        "Conferma password">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{%- endblock ahref_body_content %}
