@@ -1,0 +1,20 @@
+{% extends "bootstrap_responsive.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{%- block style %}
+    {{ super() }}
+    <link rel=stylesheet href="{{ url_for('user.static', filename='css/custom.css') }}">
+{%- endblock style %}
+
+{%- block body_content %}
+
+    {% include "user_header.html" %}
+
+    {%- block ahref_body_content %}
+    {%- endblock ahref_body_content %}
+
+    {% include "user_footer.html" %}
+
+{%- endblock body_content %}
+
+

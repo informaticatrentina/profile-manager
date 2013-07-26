@@ -1,6 +1,61 @@
-{% extends "bootstrap_responsive.html" %}
-{% import "bootstrap_wtf.html" as wtf %}
+{% extends "ahref_base.html" %}
 
-{% block body_content %}
-<h1>Test User Show</h1>
-{% endblock body_content %}
+{%- block ahref_body_content %}
+    <div class="bio">
+        <div class="container">
+            <div class="span1 quotation offset3">
+                <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+            </div>
+
+            <div class="span5 profilebio">
+                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia
+                bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+            </div>
+
+            <div class="span1 quotationleft">
+                <i class="icon-quote-right icon-4x pull-right icon-muted"></i>
+            </div>
+        </div>
+
+        <div class="bioend"></div>
+    </div>
+
+    <div class="container">
+        <div class="row-fluid alert_container">
+            <div class="alert">
+                <button type="button" class="close" data-dismiss="alert"><a href="#" class="close"
+                data-dismiss="alert">&#215;</a></button> <strong>Warning!</strong> Best check yo self, you're
+                not looking too good.
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row-fluid userpanel">
+            <div class="span4 avatar"><img src="{{ url_for('user.static', filename='img/foto_anonima.jpg') }}"></div>
+
+            <div class="span8">
+                <h1 class="name">Nome Cognome</h1>
+
+                <div class="details">
+		    <span class="icon-stack">
+			<i class="icon-check-empty icon-stack-base"></i>
+			<i class="icon-map-marker" style="top: -2px;"></i>
+		    </span>
+		    Trento, Italy<br> 
+		    <span class="icon-stack">
+			<i class="icon-check-empty icon-stack-base"></i>
+			<i class="icon-tags"></i>
+		    </span>
+		    Scuba diving, stamp collecting<br> 
+		    <span class="icon-stack">
+			<i class="icon-check-empty icon-stack-base"></i>
+			<i class="icon-chevron-sign-right" style="top: -1px;"></i>
+		    </span>
+		    www.somesite.it<br> 
+                </div>
+            </div>
+        </div>
+    </div>
+{%- endblock ahref_body_content %}

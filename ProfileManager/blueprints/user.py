@@ -23,7 +23,9 @@ from flask import Blueprint, render_template
 
 user = Blueprint('user', __name__,
                  template_folder='user/templates',
-                 static_folder='user/static')
+                 static_folder='user/static',
+                 static_url_path='/user_static'  # TODO: be more modular
+                 )
 
 
 @user.route('/')
