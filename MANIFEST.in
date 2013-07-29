@@ -12,6 +12,7 @@ recursive-include ProfileManager/blueprints/user/static/css *.css
 recursive-include ProfileManager/blueprints/user/static/img *.png
 recursive-include ProfileManager/blueprints/user/static/js *.js
 recursive-include ProfileManager/blueprints/user/templates *.html
+recursive-include ProfileManager/translations *.mo
 recursive-include docs *
 recursive-include requirements *.txt
 prune dist
