@@ -24,3 +24,6 @@ BOOTSTRAP_USE_CDN = False
 BOOTSTRAP_FONTAWESOME = True
 
 # TODO: with BOOTSTRAP serve the local jquery and do not rely on the google cdn
+
+# Force locale to italian
+BABEL_DEFAULT_LOCALE = 'it'
