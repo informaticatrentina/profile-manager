@@ -17,8 +17,11 @@ User Blueprint
 TODO: replace this line with proper project description.
 '''
 
+from flask import Blueprint, render_template, redirect, request, url_for
 
-from flask import Blueprint, render_template
+from flask.ext.babelex import lazy_gettext as _
+
+from ProfileManager.blueprints.form import UserProfileForm
 
 
 user = Blueprint('user', __name__,
@@ -35,25 +38,19 @@ def home():
 
 @user.route('/<userid>')
 def show(userid):
-    user = {
-        "full_name": "Nome Cognome",
-        "bio": """
-
-        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-        auctor. Aenean lacinia bibendum nulla sed consectetur. Cras
-        justo odio, dapibus ac facilisis in, egestas eget quam.
-        Praesent commodo cursus magna, vel scelerisque nisl
-        consectetur et.
-
-        """,
-        "location": "Trento, Italy",
-        "tags": ("Scuba diving", "stamp collecting",),
-        "website": "www.somesite.it",
-        }
-
+    user = {}
     return render_template('user_show.html', user=user)
 
 
-@user.route('/edit/<userid>')
+@user.route('/edit/<userid>', methods=['GET', 'POST'])
 def edit(userid):
-    return render_template('user_edit.html')
+    # TODO: add default user data
+    form = UserProfileForm(request.form, obj={})
+    if request.method == 'POST' and form.validate():
+        pass
+        # TODO: flash('Thanks for registering')
+        return redirect(url_for('/'))  # TODO view
+    return render_template(
+        'user_edit.html',
+        form=form,
+        title=_(u"Edit your profile"))

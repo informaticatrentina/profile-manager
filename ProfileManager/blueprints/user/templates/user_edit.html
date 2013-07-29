@@ -1,26 +1,40 @@
 {% extends "ahref_base.html" %}
 
+{% from "_formhelpers.html" import render_field, render_textarea, render_textarea_label, render_file %}
+
+{%- block bootstrap_js_bottom %}
+
+   {{ super() }}
+    <script type="text/javascript">// <![CDATA[
+        $(function($) {
+            // hook up placeholder text on any input with a title
+            $('input[title]').inputHints();
+        });
+    // ]]></script>
+
+{%- endblock bootstrap_js_bottom %}
+
 {%- block ahref_body_content %}
+
     <div class="title-bar">
         <div class="container">
-            <h1>Aggiungi le tue caratteristiche</h1>
+            <h1>{{ _("Add your characteristics") }}</h1>
 
-            <h2>Carica una foto e descriviti</h2>
+            <h2>{{ _("Upload a photo and describe yourself") }}</h2>
         </div>
     </div>
 
     <div class="container">
         <div class="row-fluid userform">
             <div class="span4">
-                <h3>Informazioni</h3>
+                <h3>{{ _("Information") }}</h3>
 
                 <div class="form-box form-box-1">
-                    <form>
-                        <input type="text" name="Name" value="Nome" />
-                        <input type="text" name="Name" value="Cognome" />
-                        <input type="text" name="Name" value="Indirizzo email" />
+                        {{ render_field(form.first_name) }}
+                        {{ render_field(form.last_name) }}
+                        {{ render_field(form.email) }}
                         <select id="Sex">
-                            <option value="SelectSex" id="">
+                            <option value="SelectSex" id="unkwnown">
                                 Seleziona sesso
                             </option>
 
@@ -37,20 +51,19 @@
 
                 <div class="form-box form-box-2">
                     <form>
-                        <input type="text" name="Location" value="Posizione"> <label>Dove ti trovi?</label>
-                        <input type="text" name="Tags" value="Tag"> <label>Quali sono i tuoi
-                        interessi?</label> <input type="text" name="URL" value="Sito Web"> <label>Hai una
-                        home page o un blog?</label>
+                        {{ render_field(form.location) }}
+                        {{ render_field(form.tags) }}
+                        {{ render_field(form.website) }}
                     </form>
                 </div>
             </div>
 
             <div class="span4">
-                <h3>La tua bio</h3>
+                <h3>{{ _("Your Bio") }}</h3>
 
                 <div class="form-box bio-form">
                     <form>
-                        <label>Racconta qualcosa di te in 150 caratteri</label>
+                        {{ render_textarea_label(form.bio) }}
 
                         <div class="bio-textarea-container">
                             <div class="bio-textarea-1">
@@ -58,8 +71,8 @@
                             </div>
 
                             <div class="bio-textarea-2">
-                                <textarea id="bio">
-</textarea>
+                                  {# <textarea id="bio"> #}
+                  {{ render_textarea(form.bio) }}
                             </div>
 
                             <div class="bio-textarea-3">
@@ -73,30 +86,28 @@
             </div>
 
             <div class="span4">
-                <h3>La tua foto</h3>
+                <h3>{{ _("Your Photo") }}</h3>
 
                 <div class="form-box form-box-1">
                     <form>
                         <div class="avatar-preview">
-                            <img src="{{ url_for('user.static', filename='img/foto_anonima.jpg') }}"> <label>La tua foto può pesare al massimo
-                            <strong>1MB</strong> ed il formato dell’immagine deve essere <strong>jpg</strong>
-                            o <strong>png</strong></label>
-
-                            <div class="clearfix"></div><button name="avatar" type="button" value=
-                            "Scegli foto" id="avatarselect" class="btn btn-primary">Scegli foto</button>
+                          <img src="{{ url_for('user.static',
+                                    filename='img/foto_anonima.jpg') }}"
+				    alt="{{ _("Your Photo") }}"/>
                         </div>
+                       {{ render_file(form.avatar) }}
                     </form>
                 </div>
             </div>
 
             <div class="span4">
-                <h3>Cambia password</h3>
+                <h3>{{ _("Change Password") }}</h3>
 
                 <div class="form-box form-box-5">
                     <form>
-                        <input type="text" name="OldPwd" value="Vecchia password"> <input type="text" name=
-                        "NewPwd" value="Nuova password"> <input type="text" name="ConPwd" value=
-                        "Conferma password">
+                        {{ render_field(form.old_password) }}
+                        {{ render_field(form.new_password) }}
+                        {{ render_field(form.con_password) }}
                     </form>
                 </div>
             </div>

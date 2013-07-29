@@ -1,0 +1,44 @@
+{% macro render_field(field) %}
+  {% if field.errors %}
+    <ul class=errors>
+    {% for error in field.errors %}
+      <li>{{ error }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  {{ field(title=field.description, **kwargs)|safe }}
+  {% if field.extra_description %}
+      <label for="{{ field.id }}">{{ field.extra_description }}</label>
+  {% endif %}
+{% endmacro %}
+
+{% macro render_textarea(field) %}
+  {% if field.errors %}
+    <ul class=errors>
+    {% for error in field.errors %}
+      <li>{{ error }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  {{ field(title=field.description, **kwargs)|safe }}
+{% endmacro %}
+
+{% macro render_textarea_label(field) %}
+  {% if field.extra_description %}
+      <label for="{{ field.id }}">{{ field.extra_description }}</label>
+  {% endif %}
+{% endmacro %}
+
+{% macro render_file(field) %}
+  {% if field.extra_description %}
+      <label for="{{ field.id }}">{{ field.extra_description }}</label>
+  {% endif %}
+  {% if field.errors %}
+    <ul class=errors>
+    {% for error in field.errors %}
+      <li>{{ error }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  {{ field(**kwargs)|safe }}
+{% endmacro %}

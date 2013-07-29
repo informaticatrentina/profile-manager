@@ -46,7 +46,7 @@ class UserTestCase(unittest.TestCase):
         '''Check the user show template'''
         request = self.app.get('/uid', method='GET')
         self.assertEqual(request.status_code, 200)
-        self.assertIn(u'Nome Cognome', request.get_data(as_text=True))
+        self.assertIn(u'foto_anonima', request.get_data(as_text=True))
 
     def test_user_edit(self):
         '''Check the user edit template'''
