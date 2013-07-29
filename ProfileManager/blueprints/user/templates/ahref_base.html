@@ -8,6 +8,14 @@
 
 {%- endblock style %}
 
+{%- block bootstrap_js_bottom %}
+    {{ super() }}
+    <script type="text/javascript" charset="utf-8"
+	    src="{{ url_for('user.static', filename="js/jquery.inputhints.js") }}"
+    ></script>
+
+{%- endblock bootstrap_js_bottom %}
+
 {%- block body_content %}
 
     {% include "user_header.html" %}
