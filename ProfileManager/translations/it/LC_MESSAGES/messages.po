@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  0.0.0.1\n"
 "Report-Msgid-Bugs-To: daniele@ahref.eu\n"
-"POT-Creation-Date: 2013-07-29 17:20+0200\n"
-"PO-Revision-Date: 2013-07-29 16:42+0200\n"
+"POT-Creation-Date: 2013-07-29 17:22+0200\n"
+"PO-Revision-Date: 2013-07-29 17:22+0200\n"
 "Last-Translator: Daniele Pizzolli <daniele@ahref.eu>\n"
 "Language-Team: it <daniele@ahref.eu>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -55,8 +55,7 @@ msgid "Website"
 msgstr "Sito Web"
 
 #: ProfileManager/blueprints/form.py:85
-#, fuzzy
-msgid "Do you have an homepage or a log?"
+msgid "Do you have an homepage or a blog?"
 msgstr "Hai una homepage o un blog?"
 
 #: ProfileManager/blueprints/form.py:87
@@ -78,7 +77,6 @@ msgid "Images only!"
 msgstr "Sono ammesse solo immagini"
 
 #: ProfileManager/blueprints/form.py:94
-#, fuzzy
 msgid "Maximum size allowed 1MB. Allowed formats: jpg and png"
 msgstr ""
 "La tua foto può pesare al massimo 1MB ed il formato dell’immagine deve "
