@@ -262,3 +262,7 @@ form {margin:0;}
 }
 
 footer { padding: 5px; }
+
+.form-box input[type="text"].hint {
+    color: #d3d3d3;
+}
