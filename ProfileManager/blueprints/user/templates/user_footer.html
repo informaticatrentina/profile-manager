@@ -2,8 +2,10 @@
     <div class="footer">
         <div class="container">
             <footer>
-                <p>Creative Commons 2012 Fondazione &lt;ahref | Sede legale: Vicolo Dallapiccola 12 - 38122
-                Trento - Italy | P.IVA 02178080228 |</p>
+                {# TODO: figure out why literal _("<")|e dose not work #}
+                <p>Creative Commons 2012 {{ _("&lt;ahref Foundation") }} |
+                {{ _("Head Office") }}: Vicolo Dallapiccola 12 - 38122
+                Trento - {{ _("Italy") }} | {{ _("VAT") }} 02178080228 |</p>
             </footer>
         </div>
     </div>
