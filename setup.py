@@ -14,7 +14,7 @@
 from setuptools import setup
 
 with open('requirements/base.txt') as f:
-     requirements_base = f.read().splitlines()
+    requirements_base = f.read().splitlines()
 
 with open('requirements/test.txt') as f:
     requirements_test = f.read().splitlines()
