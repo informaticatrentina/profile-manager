@@ -71,6 +71,18 @@ The ``ProfileManager project`` is developed as a python packages.  The
 You can start developing following the issues for your milestone.
 
 
+I18n
+----
+
+To add a new translation language use:
+
+.. code:: sh
+
+    pybabel init -i messages.pot -d ProfileManager/translations -l $LANG_CODE
+
+where ``$LANG_CODE`` is usually ``it`` for Italian, ``de`` for ...
+
+
 Testing
 -------
 
