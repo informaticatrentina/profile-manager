@@ -7,15 +7,22 @@
     $.fn.inputHints = function () {
         function showHints(el) {
             if ($(el).val() == '') {
-		console.log('changing' + $(el).prop('value'))
                 $(el).val($(el).attr('title')).addClass('hint');
+                if ($(el).attr('type') == 'password') {
+                    $(el).attr('old-type','password');
+                    $(el).attr('type','text');
+		}
             }
         };
 
         function hideHints(el) {
-            if ($(el).val() == $(el).attr('title'))
+            if ($(el).val() == $(el).attr('title')) {
+                if ($(el).attr('old-type') == 'password') {
+                    $(el).attr('type','password');
+		}
                 $(el).val('')
                     .removeClass('hint');
+	    }
         };
 
         // hides the input display text stored in the placeholder on focus
