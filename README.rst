@@ -82,6 +82,12 @@ To add a new translation language use:
 
 where ``$LANG_CODE`` is usually ``it`` for Italian, ``de`` for ...
 
+To extract, update and compile messages just run:
+
+.. code:: sh
+
+    make i18n
+
 
 Testing
 -------
