@@ -25,11 +25,14 @@
     </div>
 
     <div class="container">
-        <div class="row-fluid userform">
-            <div class="span4">
-                <h3>{{ _("Information") }}</h3>
+        <form action="{{ url_for('.edit', userid=user._id) }}"
+              enctype="multipart/form-data"
+              method="post">
+            <div class="row-fluid userform">
+                <div class="span4">
+                    <h3>{{ _("Information") }}</h3>
 
-                <div class="form-box form-box-1">
+                    <div class="form-box form-box-1">
                         {{ render_field(form.first_name) }}
                         {{ render_field(form.last_name) }}
                         {{ render_field(form.email) }}
@@ -46,23 +49,21 @@
                                 Femmina
                             </option>
                         </select>
-                    </form>
-                </div>
 
-                <div class="form-box form-box-2">
-                    <form>
+                    </div>
+
+                    <div class="form-box form-box-2">
                         {{ render_field(form.location) }}
                         {{ render_field(form.tags) }}
                         {{ render_field(form.website) }}
-                    </form>
+                    </div>
                 </div>
-            </div>
 
-            <div class="span4">
-                <h3>{{ _("Your Bio") }}</h3>
+                <div class="span4">
+                    <h3>{{ _("Your Bio") }}</h3>
 
-                <div class="form-box bio-form">
-                    <form>
+                    <div class="form-box bio-form">
+
                         {{ render_textarea_label(form.bio) }}
 
                         <div class="bio-textarea-container">
@@ -71,8 +72,8 @@
                             </div>
 
                             <div class="bio-textarea-2">
-                                  {# <textarea id="bio"> #}
-                  {{ render_textarea(form.bio) }}
+                                {# <textarea id="bio"> #}
+                                {{ render_textarea(form.bio) }}
                             </div>
 
                             <div class="bio-textarea-3">
@@ -81,36 +82,38 @@
 
                             <div class="clearfix"></div>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
 
-            <div class="span4">
-                <h3>{{ _("Your Photo") }}</h3>
+                <div class="span4">
+                    <h3>{{ _("Your Photo") }}</h3>
 
-                <div class="form-box form-box-1">
-                    <form>
+                    <div class="form-box form-box-1">
                         <div class="avatar-preview">
-                          <img src="{{ url_for('user.static',
-                                    filename='img/foto_anonima.jpg') }}"
-				    alt="{{ _("Your Photo") }}"/>
+                            <img src="{{ url_for('user.static',
+                                      filename='img/foto_anonima.jpg') }}"
+                                      alt="{{ _("Your Photo") }}"/>
                         </div>
-                       {{ render_file(form.avatar) }}
-                    </form>
+                        {{ render_file(form.avatar) }}
+
+                    </div>
                 </div>
-            </div>
 
-            <div class="span4">
-                <h3>{{ _("Change Password") }}</h3>
+                <div class="span4">
+                    <h3>{{ _("Change Password") }}</h3>
 
-                <div class="form-box form-box-5">
-                    <form>
+                    <div class="form-box form-box-5">
                         {{ render_field(form.old_password) }}
                         {{ render_field(form.new_password) }}
                         {{ render_field(form.con_password) }}
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="row-fluid userform">
+                <div class="span12">
+                    <button type="submit">{{ _("Save All") }}</button>
+                </div>
+            </div>
+        </form>
     </div>
 {%- endblock ahref_body_content %}

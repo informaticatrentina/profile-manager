@@ -1,5 +1,26 @@
-<html>
-<body>
-<h1>Test User Home</h1>
-</body>
-</html>
+{% extends "ahref_base.html" %}
+
+{%- block ahref_body_content %}
+
+<h1>Test User List</h1>
+
+{% if users %}
+
+    <ul id="navigation">
+	{% for user in users %}
+	    <li><a href="{{ url_for('.show', userid=user._id) }}">{{ user.fistname }} {{ user.lastname }}</a></li>
+	{% endfor %}
+    </ul>
+
+{% else %}
+
+    <p class="alert-heading">{{ _("There are not civiclinks users right now") }}</p>
+
+{% endif %}
+
+
+{% include "_render_time.html" %}
+
+{% include "_pagination.html" %}
+
+{%- endblock ahref_body_content %}

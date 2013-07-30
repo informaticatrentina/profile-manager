@@ -17,7 +17,13 @@ User Blueprint
 TODO: replace this line with proper project description.
 '''
 
-from flask import Blueprint, render_template, redirect, request, url_for
+import requests as requestclient
+
+from time import time
+
+from flask import (
+    Blueprint, current_app, render_template, redirect, request, url_for
+)
 
 from flask.ext.babelex import lazy_gettext as _
 
@@ -31,12 +37,68 @@ user = Blueprint('user', __name__,
                  )
 
 
+def parse_page(links):
+    """Parse links from eve for easy pagination"""
+
+    from urlparse import urlparse as up, parse_qs
+
+    for i in ('first', 'last', 'next', 'prev'):
+        links.setdefault(i, {'href': '='})
+
+    first = parse_qs(up(links['first']['href']).query).get('page', (0, ))[0]
+    last = parse_qs(up(links['last']['href']).query).get('page', (0, ))[0]
+    next = parse_qs(up(links['next']['href']).query).get('page', (0, ))[0]
+    prev = parse_qs(up(links['prev']['href']).query).get('page', (0, ))[0]
+
+    page = dict(
+        first=first,
+        last=last,
+        next=next,
+        prev=prev,
+    )
+
+    return page
+
+
 @user.route('/')
 def home():
-    return render_template('user_home.html')
+    return redirect(url_for('.index'))
 
 
-@user.route('/<userid>')
+@user.route('/index/', defaults={'page': 1})
+@user.route('/index/<int:page>')
+def index(page):
+
+    start = time()
+    users = list()
+    pages = list()
+
+    auth = (current_app.config['IM_USER'], current_app.config['IM_PASSWORD'])
+    endpoint = '%s%s%s' % (
+        current_app.config['IM_URL'],
+        '/users/?max_results=20&page=',
+        page)
+
+    rc = requestclient.get(endpoint, auth=auth)
+    data = rc.json()
+
+    if '_items' in data:
+        users = data['_items']
+
+    if '_links' in data:
+        pages = parse_page(data['_links'])
+        print pages
+
+    timetorender = (time() - start) * 1000
+
+    return render_template(
+        'user_home.html',
+        users=users,
+        timetorender=timetorender,
+        pages=pages)
+
+
+@user.route('/show/<userid>')
 def show(userid):
     user = {}
     return render_template('user_show.html', user=user)
@@ -45,7 +107,8 @@ def show(userid):
 @user.route('/edit/<userid>', methods=['GET', 'POST'])
 def edit(userid):
     # TODO: add default user data
-    form = UserProfileForm(request.form, obj={})
+    user = {'_id': userid}
+    form = UserProfileForm(request.form, obj=user)
     if request.method == 'POST' and form.validate():
         pass
         # TODO: flash('Thanks for registering')
@@ -53,4 +116,5 @@ def edit(userid):
     return render_template(
         'user_edit.html',
         form=form,
+        user=user,
         title=_(u"Edit your profile"))
