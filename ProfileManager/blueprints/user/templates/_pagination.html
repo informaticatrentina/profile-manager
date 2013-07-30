@@ -1,0 +1,17 @@
+|
+
+{% if pages.first %}
+    <a href="{{ url_for('.index', page = pages.first) }}">First</a> |
+{% endif %}
+
+{% if pages.prev %}
+    <a href="{{ url_for('.index', page = pages.prev) }}">Prev</a> |
+{% endif %}
+
+{% if pages.next %}
+    <a href="{{ url_for('.index', page = pages.next) }}">Next</a> |
+{% endif %}
+
+{% if pages.last %}
+    <a href="{{ url_for('.index', page = pages.last) }}">Last</a> |
+{% endif %}
