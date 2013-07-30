@@ -27,3 +27,8 @@ BOOTSTRAP_FONTAWESOME = True
 
 # Force locale to italian
 BABEL_DEFAULT_LOCALE = 'it'
+
+# IM_URL
+IM_URL = "http://localhost:8001/v1"
+IM_USER = "yaiT6eequi7faig7aeSh0phi9id3iu3B"
+IM_PASSWORD = ""
