@@ -17,7 +17,8 @@ Helper Forms
 TODO: replace this line with proper project description.
 '''
 
-from wtforms import (
+from flask.ext.wtf import (
+    file_allowed,
     FileField,
     Form,
     PasswordField,
@@ -25,8 +26,6 @@ from wtforms import (
     TextField,
     validators,
     )
-
-from flask.ext.wtf import file_allowed
 
 
 from flask.ext.uploads import UploadSet, IMAGES
