@@ -57,11 +57,11 @@ class FileFieldHelp(FileField):
 
 
 class UserProfileForm(Form):
-    first_name = TextField(
+    firstname = TextField(
         _(u"First Name"),
         [validators.Length(min=1, max=132)],
         description=_(u"First Name"))
-    last_name = TextField(
+    lastname = TextField(
         _(u"Last Name"),
         [validators.Length(min=1, max=132)],
         description=_(u"Last Name"))
@@ -74,7 +74,7 @@ class UserProfileForm(Form):
         [validators.Length(min=1, max=132)],
         description=_(u"Location"),
         extra_description=_(u"Where are you?"))
-    tags = TextFieldHelp(
+    user_tags = TextFieldHelp(
         _(u"Tags"),
         description=_(u"Tags"),
         extra_description=_(u"What are your personal interests?"))
@@ -82,11 +82,11 @@ class UserProfileForm(Form):
         _(u"Website"),
         description=_(u"Website"),
         extra_description=_(u"Do you have an homepage or a blog?"))
-    bio = TextAreaFieldHelp(
+    biography = TextAreaFieldHelp(
         _(u"Biography"),
         [validators.Length(min=0, max=150)],
         extra_description=_(u"Tell about you in 150 chars"))
-    avatar = FileFieldHelp(
+    photo = FileFieldHelp(
         _(u"Your Photo"),
         [file_allowed(images, _(u"Images only!"))],
         description=_(u"Your Photo"),
@@ -97,9 +97,8 @@ class UserProfileForm(Form):
     new_password = PasswordField(
         _(u"New Password"),
         [
-            validators.Required(),
             validators.EqualTo(
-                'confirm',
+                'old_password',
                 message=_(u"Passwords must match"))
         ],
         description=_(u"Password"))

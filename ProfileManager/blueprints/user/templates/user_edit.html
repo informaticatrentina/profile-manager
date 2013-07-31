@@ -46,8 +46,8 @@
                     <h3>{{ _("Information") }}</h3>
 
                     <div class="form-box form-box-1">
-                        {{ render_field(form.first_name) }}
-                        {{ render_field(form.last_name) }}
+                        {{ render_field(form.firstname) }}
+                        {{ render_field(form.lastname) }}
                         {{ render_field(form.email) }}
                         <select id="Sex">
                             <option value="SelectSex" id="unkwnown">
@@ -67,7 +67,7 @@
 
                     <div class="form-box form-box-2">
                         {{ render_field(form.location) }}
-                        {{ render_field(form.tags) }}
+                        {{ render_field(form.user_tags) }}
                         {{ render_field(form.website) }}
                     </div>
                 </div>
@@ -77,7 +77,7 @@
 
                     <div class="form-box bio-form">
 
-                        {{ render_textarea_label(form.bio) }}
+                        {{ render_textarea_label(form.biography) }}
 
                         <div class="bio-textarea-container">
                             <div class="bio-textarea-1">
@@ -86,7 +86,7 @@
 
                             <div class="bio-textarea-2">
                                 {# <textarea id="bio"> #}
-                                {{ render_textarea(form.bio) }}
+                                {{ render_textarea(form.biography) }}
                             </div>
 
                             <div class="bio-textarea-3">
@@ -127,7 +127,7 @@
                             <label>La tua foto può pesare al massimo 1MB ed il formato dell’immagine deve essere jpg o png</label>
                         </div>
 
-                        {# { render_file(form.avatar) } #}
+                        {# { render_file(form.photo) } #}
 
                     </div>
                 </div>
