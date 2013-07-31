@@ -17,6 +17,7 @@
     </style>
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="bootstrap/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="bootstrap/bootstrap-fileupload.css" type="text/css">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="bootstrap/js/html5shiv.js"></script>
@@ -114,17 +115,29 @@
                 <h3>La tua foto</h3>
 
                 <div class="form-box form-box-1">
-             
-                        <div class="avatar-preview">
-                            <img src="img/foto_anonima.jpg"> <label>La tua foto può pesare al massimo
-                            <strong>1MB</strong> ed il formato dell’immagine deve essere <strong>jpg</strong>
-                            o <strong>png</strong></label>
+                
 
-                            <div class="clearfix"></div><button name="avatar" type="button" value=
-                            "Scegli foto" id="avatarselect" class="btn btn-primary">Scegli foto</button>
-                        </div>
-                    
+
+                  <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="fileupload-new thumbnail" style="width: 150px; height: 150px;"><img src="img/foto_anonima.jpg" alt="avatar">
+                      </div>
+                      <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 150px; max-height: 150px; line-height: 20px;">
+                      </div>
+                      <div class="choose">
+                      <span class="btn btn-file"><span class="fileupload-new">Scegli foto</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                      <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                      </div>
+                  </div>
+
+                
+
+                <div class="span12 desc">
+                    <label>La tua foto può pesare al massimo 1MB ed il formato dell’immagine deve essere jpg o png
+                    </label>
                 </div>
+                   
+                </div>
+
             </div>
 
             <div class="span4">
@@ -161,19 +174,8 @@
 <!-- Le javascript ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 
-<script src="bootstrap/js/jquery.js" type="text/javascript"></script>
-<script src="bootstrap/js/bootstrap-transition.js" type="text/javascript"></script>
-<script src="bootstrap/js/bootstrap-alert.js" type="text/javascript"></script>
-<script src="bootstrap/js/bootstrap-modal.js" type="text/javascript"></script>
-<script src="bootstrap/js/bootstrap-dropdown.js" type="text/javascript"></script>
-<script src="bootstrap/js/bootstrap-scrollspy.js" type="text/javascript"></script>
-<script src="bootstrap/js/bootstrap-tab.js" type="text/javascript"></script>
-<script src="bootstrap/js/bootstrap-tooltip.js" type="text/javascript"></script>
-<script src="bootstrap/js/bootstrap-popover.js" type="text/javascript"></script>
-<script src="bootstrap/js/bootstrap-button.js" type="text/javascript"></script>
-<script src="bootstrap/js/bootstrap-collapse.js" type="text/javascript"></script>
-<script src="bootstrap/js/bootstrap-carousel.js" type="text/javascript"></script>
-<script src="bootstrap/js/bootstrap-typeahead.js" type="text/javascript"></script>
+
+<script src="bootstrap/bootstrap-fileupload.js" type="text/javascript"></script>
 
 </body>
 </html>
