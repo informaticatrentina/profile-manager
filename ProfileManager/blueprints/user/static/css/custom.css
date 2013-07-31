@@ -367,3 +367,6 @@ footer p {
 	padding-bottom: 10px;
 }
 
+.form-box input[type="text"].hint {
+        color: #d3d3d3;
+}
