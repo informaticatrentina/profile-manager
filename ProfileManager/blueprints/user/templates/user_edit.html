@@ -2,9 +2,22 @@
 
 {% from "_formhelpers.html" import render_field, render_textarea, render_textarea_label, render_file %}
 
+{%- block style %}
+    {{ super() }}
+    <link rel="stylesheet"
+	  href="{{ url_for('bootstrap.static', filename='css/bootstrap-fileupload.css') }}">
+
+{%- endblock style %}
+
 {%- block bootstrap_js_bottom %}
 
    {{ super() }}
+
+   <script type="text/javascript"
+	   src="{{ url_for('bootstrap.static', filename='js/bootstrap-fileupload.js') }}">
+
+   </script>
+
     <script type="text/javascript">// <![CDATA[
         $(function($) {
             // hook up placeholder text on any input with a title
@@ -89,12 +102,32 @@
                     <h3>{{ _("Your Photo") }}</h3>
 
                     <div class="form-box form-box-1">
-                        <div class="avatar-preview">
-                            <img src="{{ url_for('user.static',
-                                      filename='img/foto_anonima.jpg') }}"
+
+                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                            <div class="fileupload-new thumbnail" style="width:
+                                                                         150px;
+                                                                         height:
+                                                                         150px;">
+                                <img
+                                     src="{{ url_for('user.static', filename='img/foto_anonima.jpg') }}"
                                       alt="{{ _("Your Photo") }}"/>
+                            </div>
+                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 150px; max-height: 150px; line-height: 20px;">
+                            </div>
+                            <div class="choose">
+                                <span class="btn
+                                btn-file"><span class="fileupload-new">Scegli
+                                foto</span>
+                                    <span class="fileupload-exists">Change</span><input type="file" /></span>
+                                <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                            </div>
                         </div>
-                        {{ render_file(form.avatar) }}
+
+                        <div class="span12 desc">
+                            <label>La tua foto può pesare al massimo 1MB ed il formato dell’immagine deve essere jpg o png</label>
+                        </div>
+
+                        {# { render_file(form.avatar) } #}
 
                     </div>
                 </div>
