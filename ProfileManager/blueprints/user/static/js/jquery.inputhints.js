@@ -32,7 +32,6 @@
 
         // show the display text on empty elements
         el.each(function () {
-            console.log($(el).prop('value'))
             showHints(this);
         });
 
