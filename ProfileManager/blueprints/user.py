@@ -60,6 +60,20 @@ def parse_page(links):
     return page
 
 
+def _get_user(userid):
+    auth = (current_app.config['IM_USER'], current_app.config['IM_PASSWORD'])
+    endpoint = '%s%s%s' % (
+        current_app.config['IM_URL'],
+        '/users/',
+        userid
+        )
+
+    rc = requestclient.get(endpoint, auth=auth)
+    user = rc.json()
+
+    return user
+
+
 @user.route('/')
 def home():
     return redirect(url_for('.index'))
@@ -87,7 +101,6 @@ def index(page):
 
     if '_links' in data:
         pages = parse_page(data['_links'])
-        print pages
 
     timetorender = (time() - start) * 1000
 
@@ -100,19 +113,27 @@ def index(page):
 
 @user.route('/show/<userid>')
 def show(userid):
-    user = {}
+    user = _get_user(userid)
+
+    if '_links' in user:
+        del(user['_links'])
+
     return render_template('user_show.html', user=user)
 
 
 @user.route('/edit/<userid>', methods=['GET', 'POST'])
 def edit(userid):
-    # TODO: add default user data
-    user = {'_id': userid}
+    user = _get_user(userid)
+
     form = UserProfileForm(request.form, obj=user)
+
     if request.method == 'POST' and form.validate():
-        pass
-        # TODO: flash('Thanks for registering')
+        # TODO: put the data back to the im
         return redirect(url_for('/'))  # TODO view
+
+    if '_links' in user:
+        del(user['_links'])
+
     return render_template(
         'user_edit.html',
         form=form,
