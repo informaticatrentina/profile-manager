@@ -35,3 +35,7 @@ IM_PASSWORD = ""
 
 # Set the upload folder
 UPLOAD_FOLDER = '/tmp'
+
+# Enable wtf 18n
+
+WTF_I18N_ENABLED = True
