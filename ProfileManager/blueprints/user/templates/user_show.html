@@ -8,7 +8,7 @@
             </div>
 
             <div class="span5 profilebio">
-	      {{ user.bio|e }}
+              {{ user.biography|e }}
             </div>
 
             <div class="span1 quotationleft">
@@ -35,25 +35,38 @@
             <div class="span4 avatar"><img src="{{ url_for('user.static', filename='img/foto_anonima.jpg') }}"></div>
 
             <div class="span8">
-                <h1 class="name">{{ user.full_name|e }}</h1>
+                <h1 class="name">{{ user.firstname|e }} {{ user.lastname|e }}</h1>
 
-                <div class="details">
-		    <span class="icon-stack">
-			<i class="icon-check-empty icon-stack-base"></i>
-			<i class="icon-map-marker" style="top: -2px;"></i>
-		    </span>
-		    {{ user.location|e }}<br>
-		    <span class="icon-stack">
-			<i class="icon-check-empty icon-stack-base"></i>
-			<i class="icon-tags"></i>
-		    </span>
-		    {{ user.tags|join(', ')|e }}<br>
-		    <span class="icon-stack">
-			<i class="icon-check-empty icon-stack-base"></i>
-			<i class="icon-chevron-sign-right" style="top: -1px;"></i>
-		    </span>
-		    {{ user.website|e }}<br>
-                </div>
+                {% if user.location or user.tags or user.website %}
+                    <div class="details">
+
+                        {% if user.location %}
+                            <span class="icon-stack">
+                                <i class="icon-check-empty icon-stack-base"></i>
+                                <i class="icon-map-marker" style="top: -2px;"></i>
+                            </span>
+                            {{ user.location|e }}<br>
+                        {% endif %}
+
+                        {% if user.tags %}
+                            <span class="icon-stack">
+                                <i class="icon-check-empty icon-stack-base"></i>
+                                <i class="icon-tags"></i>
+                            </span>
+                            {{ user.tags|join(', ')|e }}<br>
+                        {% endif %}
+
+                        {% if user.website %}
+                            <span class="icon-stack">
+                                <i class="icon-check-empty icon-stack-base"></i>
+                                <i class="icon-chevron-sign-right" style="top: -1px;"></i>
+                            </span>
+                            {{ user.website|e }}<br>
+                        {% endif %}
+
+                    </div>
+                {% endif %}
+
             </div>
         </div>
     </div>
