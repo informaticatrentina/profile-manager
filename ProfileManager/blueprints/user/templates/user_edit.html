@@ -49,20 +49,7 @@
                         {{ render_field(form.firstname) }}
                         {{ render_field(form.lastname) }}
                         {{ render_field(form.email) }}
-                        <select id="Sex">
-                            <option value="SelectSex" id="unkwnown">
-                                Seleziona sesso
-                            </option>
-
-                            <option value="Maschio" id="male">
-                                Maschio
-                            </option>
-
-                            <option value="Femmina" id="female">
-                                Femmina
-                            </option>
-                        </select>
-
+                        {{ render_field(form.sex) }}
                     </div>
 
                     <div class="form-box form-box-2">

@@ -22,6 +22,7 @@ from flask.ext.wtf import (
     FileField,
     Form,
     PasswordField,
+    SelectField,
     TextAreaField,
     TextField,
     validators,
@@ -71,6 +72,16 @@ class UserProfileForm(Form):
         _(u"Email Address"),
         [validators.Email()],
         description=_(u"Your email Address"))
+
+    sex = SelectField(
+        _(u'Sex'),
+        [validators.AnyOf(("M", "F"), message=_(u"Please select you Sex"))],
+        choices=[
+            ("U", _(u"Select Sex")),
+            ("M", _(u"Male")),
+            ("F", _(u"Female")),
+        ],
+        description=_(u"Select you sex"))
 
     location = TextFieldHelp(
         _(u"Location"),
