@@ -75,13 +75,13 @@ class UserProfileForm(Form):
 
     sex = SelectField(
         _(u'Sex'),
-        [validators.AnyOf(("M", "F"), message=_(u"Please select you Sex"))],
+        [validators.AnyOf(("M", "F"), message=_(u"Please select your Sex"))],
         choices=[
             ("U", _(u"Select Sex")),
             ("M", _(u"Male")),
             ("F", _(u"Female")),
         ],
-        description=_(u"Select you sex"))
+        description=_(u"Select Sex"))
 
     location = TextFieldHelp(
         _(u"Location"),
