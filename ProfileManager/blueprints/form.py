@@ -69,7 +69,7 @@ class UserProfileForm(Form):
 
     email = TextField(
         _(u"Email Address"),
-        [validators.Length(min=4, max=132)],
+        [validators.Email()],
         description=_(u"Your email Address"))
 
     location = TextFieldHelp(
