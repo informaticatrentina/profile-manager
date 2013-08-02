@@ -61,39 +61,49 @@ class UserProfileForm(Form):
         _(u"First Name"),
         [validators.Length(min=1, max=132)],
         description=_(u"First Name"))
+
     lastname = TextField(
         _(u"Last Name"),
         [validators.Length(min=1, max=132)],
         description=_(u"Last Name"))
+
     email = TextField(
         _(u"Email Address"),
         [validators.Length(min=4, max=132)],
         description=_(u"Your email Address"))
+
     location = TextFieldHelp(
         _(u"Location"),
         [validators.Length(min=1, max=132)],
         description=_(u"Location"),
         extra_description=_(u"Where are you?"))
+
     user_tags = TextFieldHelp(
         _(u"Tags"),
         description=_(u"Tags"),
         extra_description=_(u"What are your personal interests?"))
+
     website = TextFieldHelp(
         _(u"Website"),
         description=_(u"Website"),
         extra_description=_(u"Do you have an homepage or a blog?"))
+
     biography = TextAreaFieldHelp(
         _(u"Biography"),
         [validators.Length(min=0, max=150)],
         extra_description=_(u"Tell about you in 150 chars"))
+
     photo = FileFieldHelp(
         _(u"Your Photo"),
         [file_allowed(images, _(u"Images only!"))],
         description=_(u"Your Photo"),
         extra_description=_(u"Maximum size allowed 1MB."
                             " Allowed formats: jpg and png"))
-    old_password = PasswordField(_(u"Old Password"),
-                                 description=_(u"Old Password"))
+
+    old_password = PasswordField(
+        _(u"Old Password"),
+        description=_(u"Old Password"))
+
     new_password = PasswordField(
         _(u"New Password"),
         [
@@ -102,6 +112,7 @@ class UserProfileForm(Form):
                 message=_(u"Passwords must match"))
         ],
         description=_(u"Password"))
+
     con_password = PasswordField(
         _(u"Repeat Password"),
         description=_(u"Repeat Password"))
