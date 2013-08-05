@@ -33,8 +33,14 @@ IM_URL = "http://localhost:8001/v1"
 IM_USER = "yaiT6eequi7faig7aeSh0phi9id3iu3B"
 IM_PASSWORD = ""
 
-# Set the upload folder
-UPLOAD_FOLDER = '/tmp'
+# Set the upload folder, change in production to a suitable storage dir!
+UPLOAD_FOLDER = '/vat/tmp'
+
+# Settings for flask-upload
+# Set the upload folder, change in production to a suitable storage dir!
+UPLOADS_DEFAULT_DEST = '/var/tmp'
+
+UPLOADS_DEFAULT_URL = 'files'
 
 # Enable wtf 18n
 
