@@ -31,8 +31,10 @@
 
     <div class="container">
         <div class="row-fluid userpanel">
-            {# TODO: replace with the user photo #}
-            <div class="span4 avatar"><img src="{{ url_for('user.static', filename='img/foto_anonima.jpg') }}"></div>
+
+            <div class="span4 avatar">
+		<img src="{{ url_for('.photo', userid=user._id, size=1) }}">
+	    </div>
 
             <div class="span8">
 

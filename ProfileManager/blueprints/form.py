@@ -29,8 +29,10 @@ from flask.ext.wtf import (
     )
 
 
-from flask.ext.uploads import UploadSet, IMAGES
 from flask.ext.babelex import lazy_gettext as _
+
+# TODO: how can we import the set from the current_app
+from flask.ext.uploads import UploadSet, IMAGES
 
 
 images = UploadSet("images", IMAGES)

@@ -36,6 +36,11 @@ user = Blueprint('user', __name__,
                  static_url_path='/user_static'  # TODO: be more modular
                  )
 
+# TODO: how can we import the set from the current_app
+from flask.ext.uploads import UploadSet, IMAGES
+
+images = UploadSet("images", IMAGES)
+
 
 def parse_page(links):
     """Parse links from eve for easy pagination"""
@@ -72,6 +77,13 @@ def _get_user(userid):
     user = rc.json()
 
     return user
+
+
+def _generate_and_save_thumbnail(origin, destination, h, w):
+    from PIL import Image
+    image = Image.open(origin)
+    image = image.resize((w, h), Image.ANTIALIAS)
+    image.save(destination)
 
 
 @user.route('/')
@@ -128,6 +140,19 @@ def edit(userid):
     form = UserProfileForm(request.form, obj=user)
 
     if request.method == 'POST' and form.validate():
+        # Handle the photo upload
+        name_upload = request.files.get('photo').filename
+        extension = os.path.splitext(name_upload)[1]
+        name_original = "{}_original{}".format(userid, extension)
+        name_resize = "{}.{}".format(userid, 'jpg')
+        filename = images.save(request.files.get('photo'), name=name_original)
+
+        _generate_and_save_thumbnail(
+            images.path(filename),
+            images.path(name_resize),
+            370,
+            370,
+        )
         # TODO: put the data back to the im
         return redirect(url_for('/'))  # TODO view
 
@@ -139,3 +164,27 @@ def edit(userid):
         form=form,
         user=user,
         title=_(u"Edit your profile"))
+
+
+@user.route('/photo/<userid>/<size>/', defaults={'size': 1})
+def photo(userid, size):
+    """Return the user photo or the default one"""
+    # TODO: implement resize!
+
+    from os.path import basename, dirname, exists
+
+    from flask import send_from_directory
+
+    name_resize = "{}.{}".format(userid, 'jpg')
+
+    file_path = images.path(name_resize)
+    if not exists(file_path):
+        # Return the default
+        from pkg_resources import resource_filename
+        resource_name = 'blueprints/user/static/img/foto_anonima.jpg'
+        file_path = resource_filename('ProfileManager', resource_name)
+
+    fp = basename(file_path)
+    dp = dirname(file_path)
+
+    return send_from_directory(dp, fp)

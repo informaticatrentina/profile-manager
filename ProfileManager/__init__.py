@@ -36,6 +36,10 @@ except ImportError:  # pragma: no cover
 from flask.ext.bootstrap import Bootstrap
 from flask.ext.babelex import Babel
 
+from flask.ext.uploads import configure_uploads, UploadSet, IMAGES
+
+images = UploadSet("images", IMAGES)
+
 from ProfileManager.blueprints.user import user
 
 
@@ -53,4 +57,5 @@ config_app(app)
 babel = Babel(app)
 Bootstrap(app)
 
+configure_uploads(app, (images, ))
 app.register_blueprint(user, url_prefix='')
