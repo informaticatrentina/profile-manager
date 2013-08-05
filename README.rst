@@ -20,6 +20,12 @@ This guide assumes that you develop the ``ProfileManager project`` on a
     sudo apt-get install python-virtualenv \
     libsqlite3-0 \
 
+For pillow with jpg support we need also:
+
+.. code:: sh
+
+    sudo apt-get build-dep python-imaging
+
 
 Virtualenv
 ----------

@@ -4,3 +4,4 @@ Flask-Script == 0.5.3
 Flask-WTF == 0.8.4
 flask-bootstrap == 2.3.2.1
 Flask-Uploads == 0.1.3
+Pillow == 2.1.0
