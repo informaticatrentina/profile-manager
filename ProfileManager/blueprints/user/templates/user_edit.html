@@ -54,7 +54,7 @@
 
                     <div class="form-box form-box-2">
                         {{ render_field(form.location) }}
-                        {{ render_field(form.user_tags) }}
+                        {{ render_field(form.tags) }}
                         {{ render_field(form.website) }}
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                                                                          height:
                                                                          150px;">
                                 <img
-                                     src="{{ url_for('user.static', filename='img/foto_anonima.jpg') }}"
+                                     src="{{ url_for('.photo', userid=user._id, size=1) }}"
                                       alt="{{ _("Your Photo") }}"/>
                             </div>
                             <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 150px; max-height: 150px; line-height: 20px;">

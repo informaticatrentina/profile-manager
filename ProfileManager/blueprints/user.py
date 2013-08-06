@@ -42,6 +42,30 @@ from flask.ext.uploads import UploadSet, IMAGES
 images = UploadSet("images", IMAGES)
 
 
+# Property list that can be edited currently
+prop_list = (
+    'firstname', 'lastname', 'email', 'sex', 'location',
+    'tags', 'website', 'biography',
+)
+
+
+def eve2wtf(data):
+    """Convert the data from eve to a suitable format for wtf"""
+
+    for i in prop_list:
+        data.setdefault(i, None)
+
+    if 'sex' in data:
+        data['sex'] = data['sex'][0]
+
+    if 'tags' in data:
+        data['tags'] = ', '.join(data['tags'])
+
+    x = type('new_dict', (object,), data)
+
+    return x
+
+
 def parse_page(links):
     """Parse links from eve for easy pagination"""
 
@@ -77,6 +101,39 @@ def _get_user(userid):
     user = rc.json()
 
     return user
+
+
+def _patch_user(userid, data, headers={}):
+    auth = (current_app.config['IM_USER'], current_app.config['IM_PASSWORD'])
+    endpoint = '%s%s%s/' % (
+        current_app.config['IM_URL'],
+        '/users/',
+        userid
+        )
+    rc = requestclient.patch(endpoint, data, auth=auth, headers=headers)
+    return rc
+
+
+def _post_tag(tag):
+    auth = (current_app.config['IM_USER'], current_app.config['IM_PASSWORD'])
+    endpoint = '%s%s' % (
+        current_app.config['IM_URL'],
+        '/tags/',
+        )
+    data = tag
+    rc = requestclient.post(endpoint, data, auth=auth)
+    return rc
+
+
+def _post_schemes(scheme):
+    auth = (current_app.config['IM_USER'], current_app.config['IM_PASSWORD'])
+    endpoint = '%s%s' % (
+        current_app.config['IM_URL'],
+        '/schemes/',
+        )
+    data = scheme
+    rc = requestclient.post(endpoint, data, auth=auth)
+    return rc
 
 
 def _generate_and_save_thumbnail(origin, destination, h, w):
@@ -125,44 +182,87 @@ def index(page):
 
 @user.route('/show/<userid>')
 def show(userid):
-    user = _get_user(userid)
+    userdata = _get_user(userid)
 
-    if '_links' in user:
-        del(user['_links'])
+    if '_links' in userdata:
+        del(userdata['_links'])
 
-    return render_template('user_show.html', user=user)
+    return render_template('user_show.html', user=userdata)
 
 
 @user.route('/edit/<userid>', methods=['GET', 'POST'])
 def edit(userid):
-    user = _get_user(userid)
+    import os.path
+    userdata = _get_user(userid)
 
-    form = UserProfileForm(request.form, obj=user)
+    userobj = eve2wtf(userdata)
+
+    form = UserProfileForm(request.form, obj=userobj)
 
     if request.method == 'POST' and form.validate():
         # Handle the photo upload
-        name_upload = request.files.get('photo').filename
-        extension = os.path.splitext(name_upload)[1]
-        name_original = "{}_original{}".format(userid, extension)
-        name_resize = "{}.{}".format(userid, 'jpg')
-        filename = images.save(request.files.get('photo'), name=name_original)
+        if request.files.get('photo'):
+            name_upload = request.files.get('photo').filename
+            extension = os.path.splitext(name_upload)[1]
+            name_original = "{}_original{}".format(userid, extension)
+            name_resize = "{}.{}".format(userid, 'jpg')
+            filename = images.save(
+                request.files.get('photo'),
+                name=name_original)
 
-        _generate_and_save_thumbnail(
-            images.path(filename),
-            images.path(name_resize),
-            370,
-            370,
+            _generate_and_save_thumbnail(
+                images.path(filename),
+                images.path(name_resize),
+                370,
+                370,
+            )
+
+        form.populate_obj(userobj)
+
+        from json import dumps
+
+        patch = {}
+        for i in prop_list:
+            patch[i] = userobj.__dict__[i]
+
+        tags = [x.strip() for x in patch['tags'].split(',')]
+
+        # Insert brutally the tags
+        for tag in tags:
+            rc = _post_tag({'item1': dumps({'name': tag, 'slug': tag})})
+
+        # As list!
+        patch['sex'] = [patch['sex']]
+
+        # Fix the tags
+        patch['tags'] = tags
+
+        patchdict = {'key1': dumps(patch)}
+
+        rc = _patch_user(
+            userid,
+            patchdict,
+            headers={
+                'If-Match': userobj.etag,
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }
         )
-        # TODO: put the data back to the im
-        return redirect(url_for('/'))  # TODO view
 
-    if '_links' in user:
-        del(user['_links'])
+        if rc.json()['key1']['status'] == 'OK':
+            return redirect(url_for('.show', userid=userid))
+        else:
+            from flask import flash
+            for message in rc.json()['key1']['issues']:
+                flash(message)
+            return redirect(url_for('.edit', userid=userid))
+
+    if '_links' in userdata:
+        del(userdata['_links'])
 
     return render_template(
         'user_edit.html',
         form=form,
-        user=user,
+        user=userobj,
         title=_(u"Edit your profile"))
 
 
@@ -187,4 +287,4 @@ def photo(userid, size):
     fp = basename(file_path)
     dp = dirname(file_path)
 
-    return send_from_directory(dp, fp)
+    return send_from_directory(dp, fp, cache_timeout=10)

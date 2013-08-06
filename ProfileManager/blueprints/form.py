@@ -91,7 +91,7 @@ class UserProfileForm(Form):
         description=_(u"Location"),
         extra_description=_(u"Where are you?"))
 
-    user_tags = TextFieldHelp(
+    tags = TextFieldHelp(
         _(u"Tags"),
         description=_(u"Tags"),
         extra_description=_(u"What are your personal interests?"))
