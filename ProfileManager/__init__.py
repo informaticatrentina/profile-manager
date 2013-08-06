@@ -38,9 +38,14 @@ from flask.ext.babelex import Babel
 
 from flask.ext.uploads import configure_uploads, UploadSet, IMAGES
 
+from flask.ext.principal import Principal
+
 images = UploadSet("images", IMAGES)
 
 from ProfileManager.blueprints.user import user
+
+from ProfileManager.blueprints.auth.auth import auth
+from ProfileManager.blueprints.auth.auth import login_manager
 
 
 def config_app(app):
@@ -59,3 +64,8 @@ Bootstrap(app)
 
 configure_uploads(app, (images, ))
 app.register_blueprint(user, url_prefix='')
+app.register_blueprint(auth, url_prefix='/auth')
+
+Principal(app)
+
+login_manager.init_app(app)

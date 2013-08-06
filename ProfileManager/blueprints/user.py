@@ -29,6 +29,8 @@ from flask.ext.babelex import lazy_gettext as _
 
 from ProfileManager.blueprints.form import UserProfileForm
 
+from flask.ext.login import current_user, login_required
+
 
 user = Blueprint('user', __name__,
                  template_folder='user/templates',
@@ -55,10 +57,10 @@ def eve2wtf(data):
     for i in prop_list:
         data.setdefault(i, None)
 
-    if 'sex' in data:
+    if 'sex' in data and isinstance(data['sex'], list):
         data['sex'] = data['sex'][0]
 
-    if 'tags' in data:
+    if 'tags' in data and isinstance(data['tags'], list):
         data['tags'] = ', '.join(data['tags'])
 
     x = type('new_dict', (object,), data)
@@ -191,7 +193,11 @@ def show(userid):
 
 
 @user.route('/edit/<userid>', methods=['GET', 'POST'])
+@login_required
 def edit(userid):
+    if current_user.id != userid:
+        return current_app.login_manager.unauthorized()
+
     import os.path
     userdata = _get_user(userid)
 
@@ -228,14 +234,19 @@ def edit(userid):
         tags = [x.strip() for x in patch['tags'].split(',')]
 
         # Insert brutally the tags
-        for tag in tags:
-            rc = _post_tag({'item1': dumps({'name': tag, 'slug': tag})})
+        # TODO: handle the ,, zero lenght tag
+        if tags[0]:
+            for tag in tags:
+                rc = _post_tag({'item1': dumps({'name': tag, 'slug': tag})})
 
         # As list!
         patch['sex'] = [patch['sex']]
 
         # Fix the tags
-        patch['tags'] = tags
+        if tags[0]:
+            patch['tags'] = tags
+        else:
+            del patch['tags']
 
         patchdict = {'key1': dumps(patch)}
 
