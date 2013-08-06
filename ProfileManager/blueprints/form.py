@@ -87,7 +87,7 @@ class UserProfileForm(Form):
 
     location = TextFieldHelp(
         _(u"Location"),
-        [validators.Length(min=1, max=132)],
+        [validators.Length(min=0, max=132)],
         description=_(u"Location"),
         extra_description=_(u"Where are you?"))
 
