@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  0.0.0.1\n"
 "Report-Msgid-Bugs-To: daniele@ahref.eu\n"
-"POT-Creation-Date: 2013-08-02 16:00+0200\n"
-"PO-Revision-Date: 2013-08-02 16:02+0200\n"
+"POT-Creation-Date: 2013-08-07 11:44+0200\n"
+"PO-Revision-Date: 2013-08-07 11:44+0200\n"
 "Last-Translator: Daniele Pizzolli <daniele@ahref.eu>\n"
 "Language-Team: it <daniele@ahref.eu>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -18,113 +18,118 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: ProfileManager/blueprints/form.py:62 ProfileManager/blueprints/form.py:64
+#: ProfileManager/blueprints/form.py:64 ProfileManager/blueprints/form.py:66
 msgid "First Name"
 msgstr "Nome"
 
-#: ProfileManager/blueprints/form.py:67 ProfileManager/blueprints/form.py:69
+#: ProfileManager/blueprints/form.py:69 ProfileManager/blueprints/form.py:71
 msgid "Last Name"
 msgstr "Cognome"
 
-#: ProfileManager/blueprints/form.py:72
+#: ProfileManager/blueprints/form.py:74
 msgid "Email Address"
 msgstr "Indirizzo Email"
 
-#: ProfileManager/blueprints/form.py:74
+#: ProfileManager/blueprints/form.py:76
 msgid "Your email Address"
 msgstr "Il tuo indirizzo email"
 
-#: ProfileManager/blueprints/form.py:77
+#: ProfileManager/blueprints/form.py:79
 msgid "Sex"
 msgstr "Sesso"
 
-#: ProfileManager/blueprints/form.py:78
+#: ProfileManager/blueprints/form.py:80
 msgid "Please select your Sex"
 msgstr "Seleziona il tuo sesso"
 
-#: ProfileManager/blueprints/form.py:80 ProfileManager/blueprints/form.py:84
+#: ProfileManager/blueprints/form.py:82 ProfileManager/blueprints/form.py:86
 msgid "Select Sex"
 msgstr "Seleziona sesso"
 
-#: ProfileManager/blueprints/form.py:81
+#: ProfileManager/blueprints/form.py:83
 msgid "Male"
 msgstr "Maschile"
 
-#: ProfileManager/blueprints/form.py:82
+#: ProfileManager/blueprints/form.py:84
 msgid "Female"
 msgstr "Femminile"
 
-#: ProfileManager/blueprints/form.py:87 ProfileManager/blueprints/form.py:89
+#: ProfileManager/blueprints/form.py:89 ProfileManager/blueprints/form.py:91
 msgid "Location"
 msgstr "Pozizione"
 
-#: ProfileManager/blueprints/form.py:90
+#: ProfileManager/blueprints/form.py:92
 msgid "Where are you?"
 msgstr "Dove ti trovi?"
 
-#: ProfileManager/blueprints/form.py:93 ProfileManager/blueprints/form.py:94
+#: ProfileManager/blueprints/form.py:95 ProfileManager/blueprints/form.py:96
 msgid "Tags"
 msgstr "Tag"
 
-#: ProfileManager/blueprints/form.py:95
+#: ProfileManager/blueprints/form.py:97
 msgid "What are your personal interests?"
 msgstr "Quali sono i tuoi interessi?"
 
-#: ProfileManager/blueprints/form.py:98 ProfileManager/blueprints/form.py:99
+#: ProfileManager/blueprints/form.py:100 ProfileManager/blueprints/form.py:101
 msgid "Website"
 msgstr "Sito Web"
 
-#: ProfileManager/blueprints/form.py:100
+#: ProfileManager/blueprints/form.py:102
 msgid "Do you have an homepage or a blog?"
 msgstr "Hai una homepage o un blog?"
 
-#: ProfileManager/blueprints/form.py:103
+#: ProfileManager/blueprints/form.py:105
 msgid "Biography"
 msgstr "Biografia"
 
-#: ProfileManager/blueprints/form.py:105
+#: ProfileManager/blueprints/form.py:107
 msgid "Tell about you in 150 chars"
 msgstr "Racconta qualcosa di te in 150 caratteri"
 
-#: ProfileManager/blueprints/form.py:108 ProfileManager/blueprints/form.py:110
+#: ProfileManager/blueprints/form.py:110 ProfileManager/blueprints/form.py:112
 #: ProfileManager/blueprints/user/templates/user_edit.html:89
 #: ProfileManager/blueprints/user/templates/user_edit.html:100
 msgid "Your Photo"
 msgstr "La tua foto"
 
-#: ProfileManager/blueprints/form.py:109
+#: ProfileManager/blueprints/form.py:111
 msgid "Images only!"
 msgstr "Sono ammesse solo immagini"
 
-#: ProfileManager/blueprints/form.py:111
+#: ProfileManager/blueprints/form.py:113
 msgid "Maximum size allowed 1MB. Allowed formats: jpg and png"
 msgstr ""
 "La tua foto può pesare al massimo 1MB ed il formato dell’immagine deve "
 "essere jpg o png"
 
-#: ProfileManager/blueprints/form.py:115 ProfileManager/blueprints/form.py:116
+#: ProfileManager/blueprints/form.py:117 ProfileManager/blueprints/form.py:118
 msgid "Old Password"
 msgstr "Vecchia Password"
 
-#: ProfileManager/blueprints/form.py:119
+#: ProfileManager/blueprints/form.py:121
 msgid "New Password"
 msgstr "Nuova password"
 
-#: ProfileManager/blueprints/form.py:123
+#: ProfileManager/blueprints/form.py:125
 msgid "Passwords must match"
 msgstr "Le password devono corrispondere"
 
-#: ProfileManager/blueprints/form.py:125
+#: ProfileManager/blueprints/form.py:127
 msgid "Password"
 msgstr "Password"
 
-#: ProfileManager/blueprints/form.py:128 ProfileManager/blueprints/form.py:129
+#: ProfileManager/blueprints/form.py:130 ProfileManager/blueprints/form.py:131
 msgid "Repeat Password"
 msgstr "Ripeti password"
 
-#: ProfileManager/blueprints/user.py:161
+#: ProfileManager/blueprints/user.py:277
+#: ProfileManager/blueprints/user/templates/user_show.html:46
 msgid "Edit your profile"
 msgstr "Modifica il tuo profilo"
+
+#: ProfileManager/blueprints/auth/templates/login.html:20
+msgid "Login"
+msgstr "Login"
 
 #: ProfileManager/blueprints/user/templates/user_edit.html:34
 msgid "Add your characteristics"
@@ -142,11 +147,11 @@ msgstr "Informazioni"
 msgid "Your Bio"
 msgstr "La tua bio"
 
-#: ProfileManager/blueprints/user/templates/user_edit.html:123
+#: ProfileManager/blueprints/user/templates/user_edit.html:124
 msgid "Change Password"
 msgstr "Cambia password"
 
-#: ProfileManager/blueprints/user/templates/user_edit.html:137
+#: ProfileManager/blueprints/user/templates/user_edit.html:138
 msgid "Save All"
 msgstr "Salva modifiche"
 
@@ -166,8 +171,8 @@ msgstr "Italia"
 msgid "VAT"
 msgstr "P. IVA"
 
-#: ProfileManager/blueprints/user/templates/user_home.html:17
-msgid "There are not civiclinks users right now"
+#: ProfileManager/blueprints/user/templates/user_home.html:18
+msgid "There are no civiclinks users right now"
 msgstr "Attualmente non ci sono utenti di civiclinks"
 
 #: ProfileManager/blueprints/user/templates/user_show.html:27
@@ -177,7 +182,4 @@ msgstr "Attenzione!"
 #: ProfileManager/blueprints/user/templates/user_show.html:27
 msgid "Best check yo self, you're not looking too good."
 msgstr "Riguardati, non ti presenti troppo bene."
-
-#~ msgid "Select you sex"
-#~ msgstr "Seleziona sesso"
 
