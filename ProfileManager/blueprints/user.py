@@ -189,14 +189,17 @@ def show(userid):
     if '_links' in userdata:
         del(userdata['_links'])
 
-    return render_template('user_show.html', user=userdata)
+    return render_template(
+        'user_show.html',
+        user=userdata,
+        logged_user=current_user)
 
 
 @user.route('/edit/<userid>', methods=['GET', 'POST'])
 @login_required
 def edit(userid):
     if current_user.id != userid:
-        return current_app.login_manager.unauthorized()
+        return redirect(url_for('auth.login'))
 
     import os.path
     userdata = _get_user(userid)

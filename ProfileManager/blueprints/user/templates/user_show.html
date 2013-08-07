@@ -41,7 +41,7 @@
                    <div class="generality">
 		       {# TODO: only logged in user can edit their, and only
                        their profile #}
-                       {% if user._id %}
+                       {% if user._id == logged_user.id %}
                            <a href="{{ url_for(".edit", userid=user._id) }}"
                               title="{{ _("Edit your profile") }}">
                               <i class="icon-edit icon-2x"></i>
