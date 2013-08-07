@@ -19,6 +19,9 @@ with open('requirements/base.txt') as f:
 with open('requirements/test.txt') as f:
     requirements_test = f.read().splitlines()
 
+with open('requirements/dependencies.txt') as f:
+    dependencies = f.read().splitlines()
+
 setup(
     name='ProfileManager',
     version=open('version.txt').read().strip(),
@@ -38,6 +41,7 @@ setup(
     # To skip problems of local eggs we make fat requirements:
     # http://stackoverflow.com/questions/1843424/setup-py-test-egg-install-location
     install_requires=requirements_base + requirements_test,
+    dependency_links=dependencies,
     include_package_data=True,
     test_suite='nose.collector',
     classifiers=[
