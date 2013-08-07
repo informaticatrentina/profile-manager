@@ -90,10 +90,13 @@ def _check_login(useremail, password):
         )
     rc = requestclient.get(endpoint, auth=auth)
     user = rc.json()
-    appuser = User()
-    appuser.id = user['_items'][0]['_id']
-    appuser.email = user['_items'][0]['email']
-    return appuser
+    if len(user['_items']) == 1:
+        appuser = User()
+        appuser.id = user['_items'][0]['_id']
+        appuser.email = user['_items'][0]['email']
+        return appuser
+    else:
+        return None
 
 
 @login_manager.user_loader
