@@ -9,11 +9,11 @@ recursive-exclude tests *.pyo
 recursive-exclude ProfileManager *.pyc
 recursive-exclude ProfileManager *.pyo
 recursive-include ProfileManager/blueprints/user/static/css *.css
-recursive-include ProfileManager/blueprints/user/static/img *.png
+recursive-include ProfileManager/blueprints/user/static/img *.png *.jpg
 recursive-include ProfileManager/blueprints/user/static/js *.js
 recursive-include ProfileManager/blueprints/user/templates *.html
 recursive-include ProfileManager/blueprints/auth/static/css *.css
-recursive-include ProfileManager/blueprints/auth/static/img *.png
+recursive-include ProfileManager/blueprints/auth/static/img *.png *.jpg
 recursive-include ProfileManager/blueprints/auth/static/js *.js
 recursive-include ProfileManager/blueprints/auth/templates *.html
 recursive-include ProfileManager/translations *.mo
