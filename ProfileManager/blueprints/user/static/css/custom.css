@@ -333,10 +333,14 @@ input[type="color"]:focus,
 
 .footer
 {
-	background-color: #000;
+    background-color: #000;
 	color: #fff;
 	font-size: 12px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
+
 
 footer { padding: 5px; }
 
