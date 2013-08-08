@@ -139,9 +139,10 @@ def _post_schemes(scheme):
 
 
 def _generate_and_save_thumbnail(origin, destination, h, w):
-    from PIL import Image
+    from PIL import Image,  ImageOps
     image = Image.open(origin)
-    image = image.resize((w, h), Image.ANTIALIAS)
+    size = (w, h)
+    image = ImageOps.fit(image, size, Image.ANTIALIAS)
     image.save(destination)
 
 
