@@ -1,5 +1,7 @@
 {% extends "ahref_base.html" %}
 
+{% block title %}{{ user.firstname|e }} {{ user.lastname|e }} | CivicLinks{% endblock %}
+
 {%- block ahref_body_content %}
     <div class="bio">
         <div class="container">
