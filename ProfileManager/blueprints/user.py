@@ -148,12 +148,25 @@ def _generate_and_save_thumbnail(origin, destination, h, w):
 
 @user.route('/')
 def home():
+    """
+    The home page redirects to the fist page of user listing:
+    :http:get:`/index/`
+    """
     return redirect(url_for('.index'))
 
 
 @user.route('/index/', defaults={'page': 1})
 @user.route('/index/<int:page>')
 def index(page):
+    """
+    Show a page listing the users paginated by 20 users
+
+    :param page: the page number (optional, default 1)
+
+    .. note::
+
+        The sphinxcontrib.autohttp.flask do not group the routes
+    """
 
     start = time()
     users = list()
@@ -185,6 +198,12 @@ def index(page):
 
 @user.route('/show/<userid>')
 def show(userid):
+    """
+    Show a page with the user profile
+
+    :param userid: the `user id`
+    """
+
     userdata = _get_user(userid)
 
     if '_links' in userdata:
@@ -199,6 +218,13 @@ def show(userid):
 @user.route('/edit/<userid>', methods=['GET', 'POST'])
 @login_required
 def edit(userid):
+    """Show a page for editing the user profile
+
+    :param userid: the `user id`
+
+    An user can edit only its own profile
+    """
+
     if current_user.id != userid:
         return redirect(url_for('auth.login'))
 
@@ -281,9 +307,16 @@ def edit(userid):
         title=_(u"Edit your profile"))
 
 
-@user.route('/photo/<userid>/<size>/', defaults={'size': 1})
+@user.route('/photo/<userid>/<int:width>/', defaults={'size': 1})
 def photo(userid, size):
-    """Return the user photo or the default one"""
+    """
+    Return a square user photo or the default one with the requested
+    width
+
+    :param userid: user id
+    :param width: width of the requested image
+
+    """
     # TODO: implement resize!
 
     from os.path import basename, dirname, exists
