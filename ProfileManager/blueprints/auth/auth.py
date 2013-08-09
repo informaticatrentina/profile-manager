@@ -113,6 +113,15 @@ class LoginForm(Form):
 def login():
     """
     Show a page with a form for user login
+
+    :query string next: the url to redirect after logout (optional)
+
+    If there is no `next` param the user will be redirected to:
+    :http:get:`/edit/<userid>` page.
+
+    .. note::
+
+        The link to the edit page does not work to sphinx limitgation.
     """
 
     if current_user.is_authenticated():
