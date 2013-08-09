@@ -111,6 +111,10 @@ class LoginForm(Form):
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
+    """
+    Show a page with a form for user login
+    """
+
     if current_user.is_authenticated():
         return redirect(request.args.get('next') or '/')
     # A hypothetical login form that uses Flask-WTF
@@ -140,6 +144,12 @@ def login():
 @auth.route('/logout')
 @login_required
 def logout():
+    """
+    Logout the user and redirect to the home or to the
+
+    :query string next: the url to redirect after logout (optional)
+    """
+
     # Remove the user information from the session
     logout_user()
 
