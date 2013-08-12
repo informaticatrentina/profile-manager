@@ -313,7 +313,7 @@ def photo(userid, size):
     Return a square user photo or the default one with the requested
     width
 
-    :param userid: user id
+    :param userid: ``user id``
     :param width: width of the requested image
 
     """
