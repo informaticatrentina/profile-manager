@@ -307,8 +307,9 @@ def edit(userid):
         title=_(u"Edit your profile"))
 
 
-@user.route('/photo/<userid>/<int:width>/', defaults={'size': 1})
-def photo(userid, size):
+@user.route('/photo/<userid>/', defaults={'width': 80})
+@user.route('/photo/<userid>/<int:width>')
+def photo(userid, width):
     """
     Return a square user photo or the default one with the requested
     width
