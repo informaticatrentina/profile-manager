@@ -1,3 +1,13 @@
+# This file map the custom dependencies in base.txt to a source code repository
+# that permit the download and the build of the required version.
+#  
+# Usually this requires to put in the package a version that is not released on
+# pypi.
+#
+# The reason of the fork is usually specified in the latest commits in the
+# source repository.
+
+
 # We need the fileupload js also
 https://github.com/ahref/flask-bootstrap/tarball/55d9a1a#egg=flask-bootstrap-2.3.2.2.dev1
 
