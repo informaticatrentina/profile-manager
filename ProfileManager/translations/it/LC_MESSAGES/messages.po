@@ -56,7 +56,7 @@ msgstr "Femminile"
 
 #: ProfileManager/blueprints/form.py:89 ProfileManager/blueprints/form.py:91
 msgid "Location"
-msgstr "Pozizione"
+msgstr "Posizione"
 
 #: ProfileManager/blueprints/form.py:92
 msgid "Where are you?"
