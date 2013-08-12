@@ -315,7 +315,7 @@ def photo(userid, width):
     width
 
     :param userid: ``user id``
-    :param width: width of the requested image
+    :param width: optional width of the requested image (default 80)
 
     """
     # TODO: implement resize!
