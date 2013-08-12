@@ -238,20 +238,31 @@ def edit(userid):
     if request.method == 'POST' and form.validate():
         # Handle the photo upload
         if request.files.get('photo'):
-            name_upload = request.files.get('photo').filename
-            extension = os.path.splitext(name_upload)[1]
-            name_original = "{}_original{}".format(userid, extension)
-            name_resize = "{}.{}".format(userid, 'jpg')
-            filename = images.save(
+            # TODO: respect original extension
+            #
+            # Not it is not not a big problem, PIL handles different
+            # format even if saved as .jpg
+            name_original = "{}_original.{}".format(userid, 'jpg')
+
+            # Remove old photo
+            from os.path import exists
+            from os import unlink
+
+            if exists(images.path(name_original)):
+                unlink(images.path(name_original))
+
+                # Remove the old cached resized images
+                base_name = "{}_".format(userid)
+                base_path = images.path(base_name)
+                from glob import glob
+                files = glob('%s*[0-9].jpg' % (base_path))
+                for file in files:
+                    os.unlink(file)
+
+            # Save the upload
+            images.save(
                 request.files.get('photo'),
                 name=name_original)
-
-            _generate_and_save_thumbnail(
-                images.path(filename),
-                images.path(name_resize),
-                370,
-                370,
-            )
 
         form.populate_obj(userobj)
 
@@ -324,14 +335,26 @@ def photo(userid, width):
 
     from flask import send_from_directory
 
-    name_resize = "{}.{}".format(userid, 'jpg')
+    name_original = "{}_original.{}".format(userid, 'jpg')
+    name_resize = "{}_{}.{}".format(userid, width, 'jpg')
 
     file_path = images.path(name_resize)
+    default_path = images.path(name_original)
+
+    # Check for a cached image
     if not exists(file_path):
-        # Return the default
-        from pkg_resources import resource_filename
-        resource_name = 'blueprints/user/static/img/foto_anonima.jpg'
-        file_path = resource_filename('ProfileManager', resource_name)
+        if exists(default_path):
+            # Generate cache
+            _generate_and_save_thumbnail(
+                images.path(default_path),
+                images.path(file_path),
+                width,
+                width)
+        else:
+            # Return the default (with no resize)
+            from pkg_resources import resource_filename
+            resource_name = 'blueprints/user/static/img/foto_anonima.jpg'
+            file_path = resource_filename('ProfileManager', resource_name)
 
     fp = basename(file_path)
     dp = dirname(file_path)
