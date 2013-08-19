@@ -14,6 +14,8 @@
 
 {% macro render_textarea(field) %}
   {{ field(title=field.description, **kwargs)|safe }}
+  <input type="hidden" name="maxlength" value="{{ field.extra_maxlength }}">
+  <p>{{ _("Characters left") }}: <span class="charsLeft"></span></p>
 {% endmacro %}
 
 {% macro render_textarea_label(field) %}
