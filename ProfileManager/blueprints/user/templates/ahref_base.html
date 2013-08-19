@@ -5,6 +5,7 @@
 
     {{ super() }}
     <link rel=stylesheet href="{{ url_for('user.static', filename='css/custom.css') }}">
+    <link rel=stylesheet href="{{ url_for('user.static', filename='css/jquery.pageslide.css') }}">
 
 {%- endblock style %}
 
@@ -12,6 +13,9 @@
     {{ super() }}
     <script type="text/javascript" charset="utf-8"
 	    src="{{ url_for('user.static', filename="js/jquery.inputhints.js") }}"
+    ></script>
+    <script type="text/javascript" charset="utf-8"
+        src="{{ url_for('user.static', filename="js/jquery.pageslide.min.js") }}"
     ></script>
 
 {%- endblock bootstrap_js_bottom %}
