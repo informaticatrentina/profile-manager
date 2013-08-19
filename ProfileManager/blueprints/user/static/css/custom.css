@@ -12,16 +12,6 @@ body
 	padding-bottom: 0;
 }
 
-.brand
-{
-	background-image: url('../img/civiclinkslogo.png');
-	background-repeat: no-repeat;
-	background-position: left 22px top 10px;
-	height: 20px;
-	text-indent: -9999px;
-	width: 100px;
-}
-
 .bio
 {
 	background-color: #00a4a7;
@@ -402,3 +392,77 @@ footer p {
 .form-box input[type="text"].hint {
         color: #d3d3d3;
 }
+
+.navbar-inner {
+	min-height: 31px;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+.civiclinks-logo {
+	vertical-align: middle;
+}
+
+.navbar .brand {
+	padding-bottom: 0px;
+	padding-top: 4px;
+}
+
+#nav-main-menu .nav > li > a {
+	padding: 9px 10px 9px;
+	line-height: 10px;
+}
+
+#nav-main-menu .active a {
+	padding-bottom: 9px !important;
+	border-bottom: 4px solid rgb(9,146,140);
+}
+
+#nav-login #registration a {
+	margin-top: 3px;
+	padding: 6px 11px;
+	color: rgb(254,254,254);
+	margin-right: 5px;
+}
+
+.btn-small {
+	color: white;
+	font-size: 12px;
+	background-color: rgb(9,146,140);
+	-webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+    -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+    background-image: none;
+  	background-image: none;
+  	background-image: none;
+  	background-image: none;
+  	background-image: none;
+  	border: 1px solid rgb(9,146,140);
+}
+
+#registration .btn {
+	text-shadow: none;
+	font-weight: normal;
+}
+
+#nav-login #registration .btn-small:hover {
+	color: rgb(60,60,60);
+	background-color: rgb(230,230,230);
+}
+
+.navbar-inverse .nav-collapse .nav > li > a:hover,
+  .navbar-inverse .nav-collapse .nav > li > a:focus,
+  .navbar-inverse .nav-collapse .dropdown-menu a:hover,
+  .navbar-inverse .nav-collapse .dropdown-menu a:focus {
+    color: white;
+  }
+
+.nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {
+	font-weight: normal;
+	text-shadow: none;
+}
+
+
