@@ -106,7 +106,7 @@ class UserProfileForm(Form):
         _(u"Biography"),
         [validators.Length(min=0, max=150)],
         extra_description=_(u"Tell about you in 150 chars"),
-        extra_maxlength = 150)
+        extra_maxlength=150)
 
     photo = FileFieldHelp(
         _(u"Your Photo"),
