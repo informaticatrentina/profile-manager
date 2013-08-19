@@ -16,5 +16,11 @@ $(function($) {
 	    $("#website").val(fixURL($("#website").val()));
 	}
     });
+    // check for max chars in textarea
+
+    $('textarea').maxlength({
+	'feedback' : '.charsLeft',
+	'useInput' : true
+    });
 
 });
