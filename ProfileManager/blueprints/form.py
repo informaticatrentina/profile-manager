@@ -49,6 +49,7 @@ class TextAreaFieldHelp(TextAreaField):
 
     def __init__(self, *args, **kwargs):
         self.extra_description = kwargs.pop('extra_description', "")
+        self.extra_maxlength = kwargs.pop('extra_maxlength', 100)
         return super(TextAreaFieldHelp, self).__init__(*args, **kwargs)
 
 
@@ -104,7 +105,8 @@ class UserProfileForm(Form):
     biography = TextAreaFieldHelp(
         _(u"Biography"),
         [validators.Length(min=0, max=150)],
-        extra_description=_(u"Tell about you in 150 chars"))
+        extra_description=_(u"Tell about you in 150 chars"),
+        extra_maxlength=150)
 
     photo = FileFieldHelp(
         _(u"Your Photo"),
