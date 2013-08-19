@@ -131,6 +131,10 @@ msgstr "Modifica il tuo profilo"
 msgid "Login"
 msgstr "Login"
 
+#: ProfileManager/blueprints/user/templates/_formhelpers.html:18
+msgid "Characters left"
+msgstr "Caratteri rimanenti"
+
 #: ProfileManager/blueprints/user/templates/user_edit.html:34
 msgid "Add your characteristics"
 msgstr "Aggiungi le tue caratteristiche"
