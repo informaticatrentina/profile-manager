@@ -159,11 +159,11 @@ msgstr "Salva modifiche"
 msgid "&lt;ahref Foundation"
 msgstr "Fondazione &lt;ahref"
 
-#: ProfileManager/blueprints/user/templates/user_footer.html:7
+#: ProfileManager/blueprints/user/templates/user_footer.html:6
 msgid "Head Office"
 msgstr "Sede legale"
 
-#: ProfileManager/blueprints/user/templates/user_footer.html:8
+#: ProfileManager/blueprints/user/templates/user_footer.html:7
 msgid "Italy"
 msgstr "Italia"
 
@@ -175,11 +175,11 @@ msgstr "P. IVA"
 msgid "There are no civiclinks users right now"
 msgstr "Attualmente non ci sono utenti di civiclinks"
 
-#: ProfileManager/blueprints/user/templates/user_show.html:27
+#: ProfileManager/blueprints/user/templates/user_show.html:30
 msgid "Warning!"
 msgstr "Attenzione!"
 
-#: ProfileManager/blueprints/user/templates/user_show.html:27
+#: ProfileManager/blueprints/user/templates/user_show.html:30
 msgid "Best check yo self, you're not looking too good."
 msgstr "Riguardati, non ti presenti troppo bene."
 
