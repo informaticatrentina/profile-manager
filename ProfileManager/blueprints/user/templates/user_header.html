@@ -42,5 +42,24 @@
           </div>
         </div>
 
-        <div id="login-form" style="display: none;">TODO: insert login-form box</div>
+
+    <div id="login-form" style="display: none;">
+        <!-- TODO: attenzione! l'html non scorre su smartphone -->
+        <div class="container" id="application">
+            <a class="brand" href="http://www.civiclinks.it/it/" target="blank">
+                  <img src="{{ url_for('.static', filename='img/civiclinkslogo.png') }}" width="116" height="24" alt="civiclinks logo" class="civiclinks-logo-2">
+              </a>
+            <form class="form-signin" method="post">
+                <h2 class="form-signin-heading">
+                    Per favore accedi con il tuo account Civiclinks
+                </h2>
+                <div class="alert-error" id="error">
+                </div>
+                <input type="text" class="input-block-level" id="email" name="email" placeholder="E-mail">
+                <input type="password" class="input-block-level" id="password" name="password" placeholder="Password">
+                <button class="btn btn-small" type="submit" id="submit">Accedi
+                </button>
+            </form>
+        </div>
+    </div>
 {%- endblock ahref_navbar %}
