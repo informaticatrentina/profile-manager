@@ -31,6 +31,8 @@ from ProfileManager.blueprints.form import UserProfileForm
 
 from flask.ext.login import current_user, login_required
 
+from flask.ext.principal import identity_changed, Identity
+
 
 user = Blueprint('user', __name__,
                  template_folder='user/templates',
@@ -303,6 +305,10 @@ def edit(userid):
         )
 
         if rc.json()['key1']['status'] == 'OK':
+            identity_changed.send(
+                current_app._get_current_object(),
+                identity=Identity(userid))
+
             return redirect(url_for('.show', userid=userid))
         else:
             from flask import flash
