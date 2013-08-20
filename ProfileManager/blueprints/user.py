@@ -193,7 +193,9 @@ def index(page):
         'user_home.html',
         users=users,
         timetorender=timetorender,
-        pages=pages)
+        pages=pages,
+        logged_user=current_user
+        )
 
 
 @user.route('/show/<userid>')
@@ -315,6 +317,7 @@ def edit(userid):
         'user_edit.html',
         form=form,
         user=userobj,
+        logged_user=current_user,
         title=_(u"Edit your profile"))
 
 
