@@ -175,6 +175,22 @@ msgstr "Italia"
 msgid "VAT"
 msgstr "P. IVA"
 
+#: ProfileManager/blueprints/user/templates/user_header.html:5
+msgid "Register"
+msgstr "Registrati"
+
+#: ProfileManager/blueprints/user/templates/user_header.html:18
+msgid "Welcome"
+msgstr "Benvenuto"
+
+#: ProfileManager/blueprints/user/templates/user_header.html:22
+msgid "|FEMALE|Welcome"
+msgstr "Benvenuta"
+
+#: ProfileManager/blueprints/user/templates/user_header.html:28
+msgid "Logout"
+msgstr "Logout"
+
 #: ProfileManager/blueprints/user/templates/user_home.html:18
 msgid "There are no civiclinks users right now"
 msgstr "Attualmente non ci sono utenti di civiclinks"
