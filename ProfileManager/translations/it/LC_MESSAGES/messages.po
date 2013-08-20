@@ -16,118 +16,119 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: Babel 1.3\n"
 
-#: ProfileManager/blueprints/form.py:64 ProfileManager/blueprints/form.py:66
+#: ProfileManager/blueprints/form.py:65 ProfileManager/blueprints/form.py:67
 msgid "First Name"
 msgstr "Nome"
 
-#: ProfileManager/blueprints/form.py:69 ProfileManager/blueprints/form.py:71
+#: ProfileManager/blueprints/form.py:70 ProfileManager/blueprints/form.py:72
 msgid "Last Name"
 msgstr "Cognome"
 
-#: ProfileManager/blueprints/form.py:74
+#: ProfileManager/blueprints/form.py:75
 msgid "Email Address"
 msgstr "Indirizzo Email"
 
-#: ProfileManager/blueprints/form.py:76
+#: ProfileManager/blueprints/form.py:77
 msgid "Your email Address"
 msgstr "Il tuo indirizzo email"
 
-#: ProfileManager/blueprints/form.py:79
+#: ProfileManager/blueprints/form.py:80
 msgid "Sex"
 msgstr "Sesso"
 
-#: ProfileManager/blueprints/form.py:80
+#: ProfileManager/blueprints/form.py:81
 msgid "Please select your Sex"
 msgstr "Seleziona il tuo sesso"
 
-#: ProfileManager/blueprints/form.py:82 ProfileManager/blueprints/form.py:86
+#: ProfileManager/blueprints/form.py:83 ProfileManager/blueprints/form.py:87
 msgid "Select Sex"
 msgstr "Seleziona sesso"
 
-#: ProfileManager/blueprints/form.py:83
+#: ProfileManager/blueprints/form.py:84
 msgid "Male"
 msgstr "Maschile"
 
-#: ProfileManager/blueprints/form.py:84
+#: ProfileManager/blueprints/form.py:85
 msgid "Female"
 msgstr "Femminile"
 
-#: ProfileManager/blueprints/form.py:89 ProfileManager/blueprints/form.py:91
+#: ProfileManager/blueprints/form.py:90 ProfileManager/blueprints/form.py:92
 msgid "Location"
 msgstr "Posizione"
 
-#: ProfileManager/blueprints/form.py:92
+#: ProfileManager/blueprints/form.py:93
 msgid "Where are you?"
 msgstr "Dove ti trovi?"
 
-#: ProfileManager/blueprints/form.py:95 ProfileManager/blueprints/form.py:96
+#: ProfileManager/blueprints/form.py:96 ProfileManager/blueprints/form.py:97
 msgid "Tags"
 msgstr "Tag"
 
-#: ProfileManager/blueprints/form.py:97
+#: ProfileManager/blueprints/form.py:98
 msgid "What are your personal interests?"
 msgstr "Quali sono i tuoi interessi?"
 
-#: ProfileManager/blueprints/form.py:100 ProfileManager/blueprints/form.py:101
+#: ProfileManager/blueprints/form.py:101 ProfileManager/blueprints/form.py:102
 msgid "Website"
 msgstr "Sito Web"
 
-#: ProfileManager/blueprints/form.py:102
+#: ProfileManager/blueprints/form.py:103
 msgid "Do you have an homepage or a blog?"
 msgstr "Hai una homepage o un blog?"
 
-#: ProfileManager/blueprints/form.py:105
+#: ProfileManager/blueprints/form.py:106
 msgid "Biography"
 msgstr "Biografia"
 
-#: ProfileManager/blueprints/form.py:107
+#: ProfileManager/blueprints/form.py:108
 msgid "Tell about you in 150 chars"
 msgstr "Racconta qualcosa di te in 150 caratteri"
 
-#: ProfileManager/blueprints/form.py:110 ProfileManager/blueprints/form.py:112
+#: ProfileManager/blueprints/form.py:112 ProfileManager/blueprints/form.py:114
 #: ProfileManager/blueprints/user/templates/user_edit.html:89
 #: ProfileManager/blueprints/user/templates/user_edit.html:100
 msgid "Your Photo"
 msgstr "La tua foto"
 
-#: ProfileManager/blueprints/form.py:111
+#: ProfileManager/blueprints/form.py:113
 msgid "Images only!"
 msgstr "Sono ammesse solo immagini"
 
-#: ProfileManager/blueprints/form.py:113
+#: ProfileManager/blueprints/form.py:115
 msgid "Maximum size allowed 1MB. Allowed formats: jpg and png"
 msgstr ""
 "La tua foto può pesare al massimo 1MB ed il formato dell’immagine deve "
 "essere jpg o png"
 
-#: ProfileManager/blueprints/form.py:117 ProfileManager/blueprints/form.py:118
+#: ProfileManager/blueprints/form.py:119 ProfileManager/blueprints/form.py:120
 msgid "Old Password"
 msgstr "Vecchia Password"
 
-#: ProfileManager/blueprints/form.py:121
+#: ProfileManager/blueprints/form.py:123
 msgid "New Password"
 msgstr "Nuova password"
 
-#: ProfileManager/blueprints/form.py:125
+#: ProfileManager/blueprints/form.py:127
 msgid "Passwords must match"
 msgstr "Le password devono corrispondere"
 
-#: ProfileManager/blueprints/form.py:127
+#: ProfileManager/blueprints/form.py:129
 msgid "Password"
 msgstr "Password"
 
-#: ProfileManager/blueprints/form.py:130 ProfileManager/blueprints/form.py:131
+#: ProfileManager/blueprints/form.py:132 ProfileManager/blueprints/form.py:133
 msgid "Repeat Password"
 msgstr "Ripeti password"
 
-#: ProfileManager/blueprints/user.py:277
-#: ProfileManager/blueprints/user/templates/user_show.html:46
+#: ProfileManager/blueprints/user.py:327
+#: ProfileManager/blueprints/user/templates/user_show.html:50
 msgid "Edit your profile"
 msgstr "Modifica il tuo profilo"
 
 #: ProfileManager/blueprints/auth/templates/login.html:20
+#: ProfileManager/blueprints/user/templates/user_header.html:10
 msgid "Login"
 msgstr "Login"
 
