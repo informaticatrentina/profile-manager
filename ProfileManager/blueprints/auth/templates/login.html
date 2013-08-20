@@ -1,21 +1,49 @@
-<h1>Login Template</h1>
+{% extends "bootstrap_responsive.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
 
-{% macro render_field(field) %}
-  <dt>{{ field.label }}
-  <dd>{{ field(**kwargs)|safe }}
-  {% if field.errors %}
-    <ul class=errors>
-    {% for error in field.errors %}
-      <li>{{ error }}</li>
-    {% endfor %}
-    </ul>
-  {% endif %}
-  </dd>
-{% endmacro %}
+{%- block style %}
 
-<form method=post action="{{ url_for('auth.login') }}">
-    {{ render_field(form.email) }}
-    {{ render_field(form.password) }}
-    {{ render_field(form.csrf_token) }}
-  <p><input type="submit" value="{{ _("Login") }}">
-</form>
+    {{ super() }}
+    <link rel=stylesheet href="{{ url_for('user.static', filename='css/custom.css') }}">
+
+{%- endblock style %}
+
+{%- block bootstrap_js_bottom %}
+    {{ super() }}
+    <script type="text/javascript" charset="utf-8"
+        src="{{ url_for('user.static', filename="js/custom.js") }}"
+    ></script>
+
+{%- endblock bootstrap_js_bottom %}
+
+{%- block body_content %}
+
+    {% include "google_analytics.html" %}
+
+    {% include "_flash.html" %}
+
+
+<body class="profiles-login-page">
+    <div id="wrapper">
+        <form name="login-form" class="login-form form-horizontal" action="" method="post">
+            <div class="header">
+                <h2>Accedi con il tuo account Civiclinks</h2>
+             </div>
+             <div class="content">
+                 <input name="email" type="text" class="input email" placeholder="Email" />
+                 <div class="user-icon"></div>
+                 <input name="password" type="password" class="input password" placeholder="Password" />
+                 <div class="pass-icon"></div>
+                 <button type="submit" class="btn">Accedi</button>
+             </div>
+
+             <div class="end">
+                 <h4>Non ancora registrato?</h4>
+                 <p><a href="http://www.civiclinks.it/it/a/register/" target="blank" class="click">Clicca qui</a> per un nuovo account</p>
+             </div>
+        </form>
+        <p class="ahref-link"><a href="http://www.ahref.eu/it" target="blank">Fondazione &lt;ahref</a>
+        </p>
+    </div>
+</body>
+{%- endblock body_content %}
