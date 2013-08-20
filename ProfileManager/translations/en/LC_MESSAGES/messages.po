@@ -1,4 +1,4 @@
-# Italian translations for profilemanager.
+# English translations for profilemanager.
 # Copyright (C) 2013 <ahref Foundation -- All rights reserved.
 # This file is distributed under the same license as the profilemanager
 # project.
@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  0.0.0.1\n"
 "Report-Msgid-Bugs-To: daniele@ahref.eu\n"
-"POT-Creation-Date: 2013-08-07 11:44+0200\n"
-"PO-Revision-Date: 2013-08-07 11:44+0200\n"
+"POT-Creation-Date: 2013-08-20 11:52+0200\n"
+"PO-Revision-Date: 2013-08-20 11:07+0200\n"
 "Last-Translator: Daniele Pizzolli <daniele@ahref.eu>\n"
 "Language-Team: it <daniele@ahref.eu>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,187 +20,185 @@ msgstr ""
 
 #: ProfileManager/blueprints/form.py:65 ProfileManager/blueprints/form.py:67
 msgid "First Name"
-msgstr "Nome"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:70 ProfileManager/blueprints/form.py:72
 msgid "Last Name"
-msgstr "Cognome"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:75
 msgid "Email Address"
-msgstr "Indirizzo Email"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:77
 msgid "Your email Address"
-msgstr "Il tuo indirizzo email"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:80
 msgid "Sex"
-msgstr "Sesso"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:81
 msgid "Please select your Sex"
-msgstr "Seleziona il tuo sesso"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:83 ProfileManager/blueprints/form.py:87
 msgid "Select Sex"
-msgstr "Seleziona sesso"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:84
 msgid "Male"
-msgstr "Maschile"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:85
 msgid "Female"
-msgstr "Femminile"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:90 ProfileManager/blueprints/form.py:92
 msgid "Location"
-msgstr "Posizione"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:93
 msgid "Where are you?"
-msgstr "Dove ti trovi?"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:96 ProfileManager/blueprints/form.py:97
 msgid "Tags"
-msgstr "Tag"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:98
 msgid "What are your personal interests?"
-msgstr "Quali sono i tuoi interessi?"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:101 ProfileManager/blueprints/form.py:102
 msgid "Website"
-msgstr "Sito Web"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:103
 msgid "Do you have an homepage or a blog?"
-msgstr "Hai una homepage o un blog?"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:106
 msgid "Biography"
-msgstr "Biografia"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:108
 msgid "Tell about you in 150 chars"
-msgstr "Racconta qualcosa di te in 150 caratteri"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:112 ProfileManager/blueprints/form.py:114
 #: ProfileManager/blueprints/user/templates/user_edit.html:89
 #: ProfileManager/blueprints/user/templates/user_edit.html:100
 msgid "Your Photo"
-msgstr "La tua foto"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:113
 msgid "Images only!"
-msgstr "Sono ammesse solo immagini"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:115
 msgid "Maximum size allowed 1MB. Allowed formats: jpg and png"
 msgstr ""
-"La tua foto può pesare al massimo 1MB ed il formato dell’immagine deve "
-"essere jpg o png"
 
 #: ProfileManager/blueprints/form.py:119 ProfileManager/blueprints/form.py:120
 msgid "Old Password"
-msgstr "Vecchia Password"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:123
 msgid "New Password"
-msgstr "Nuova password"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:127
 msgid "Passwords must match"
-msgstr "Le password devono corrispondere"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:129
 msgid "Password"
-msgstr "Password"
+msgstr ""
 
 #: ProfileManager/blueprints/form.py:132 ProfileManager/blueprints/form.py:133
 msgid "Repeat Password"
-msgstr "Ripeti password"
+msgstr ""
 
 #: ProfileManager/blueprints/user.py:327
 #: ProfileManager/blueprints/user/templates/user_show.html:50
 msgid "Edit your profile"
-msgstr "Modifica il tuo profilo"
+msgstr ""
 
 #: ProfileManager/blueprints/auth/templates/login.html:20
 #: ProfileManager/blueprints/user/templates/user_header.html:10
 msgid "Login"
-msgstr "Login"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/_formhelpers.html:18
 msgid "Characters left"
-msgstr "Caratteri rimanenti"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_edit.html:34
 msgid "Add your characteristics"
-msgstr "Aggiungi le tue caratteristiche"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_edit.html:36
 msgid "Upload a photo and describe yourself"
-msgstr "Carica una foto e descriviti"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_edit.html:46
 msgid "Information"
-msgstr "Informazioni"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_edit.html:63
 msgid "Your Bio"
-msgstr "La tua bio"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_edit.html:124
 msgid "Change Password"
-msgstr "Cambia password"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_edit.html:138
 msgid "Save All"
-msgstr "Salva modifiche"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_footer.html:6
 msgid "&lt;ahref Foundation"
-msgstr "Fondazione &lt;ahref"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_footer.html:6
 msgid "Head Office"
-msgstr "Sede legale"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_footer.html:7
 msgid "Italy"
-msgstr "Italia"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_footer.html:8
 msgid "VAT"
-msgstr "P. IVA"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_header.html:5
 msgid "Register"
-msgstr "Registrati"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_header.html:18
 msgid "Welcome"
-msgstr "Benvenuto"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_header.html:22
 msgid "|FEMALE|Welcome"
-msgstr "Benvenuta"
+msgstr "Welcome"
 
 #: ProfileManager/blueprints/user/templates/user_header.html:28
 msgid "Logout"
-msgstr "Logout"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_home.html:18
 msgid "There are no civiclinks users right now"
-msgstr "Attualmente non ci sono utenti di civiclinks"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_show.html:30
 msgid "Warning!"
-msgstr "Attenzione!"
+msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_show.html:30
 msgid "Best check yo self, you're not looking too good."
-msgstr "Riguardati, non ti presenti troppo bene."
+msgstr ""
 

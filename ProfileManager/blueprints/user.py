@@ -31,6 +31,8 @@ from ProfileManager.blueprints.form import UserProfileForm
 
 from flask.ext.login import current_user, login_required
 
+from flask.ext.principal import identity_changed, Identity
+
 
 user = Blueprint('user', __name__,
                  template_folder='user/templates',
@@ -193,7 +195,9 @@ def index(page):
         'user_home.html',
         users=users,
         timetorender=timetorender,
-        pages=pages)
+        pages=pages,
+        logged_user=current_user
+        )
 
 
 @user.route('/show/<userid>')
@@ -240,7 +244,7 @@ def edit(userid):
         if request.files.get('photo'):
             # TODO: respect original extension
             #
-            # Not it is not not a big problem, PIL handles different
+            # Note: it is not not a big problem, PIL handles different
             # format even if saved as .jpg
             name_original = "{}_original.{}".format(userid, 'jpg')
 
@@ -301,6 +305,10 @@ def edit(userid):
         )
 
         if rc.json()['key1']['status'] == 'OK':
+            identity_changed.send(
+                current_app._get_current_object(),
+                identity=Identity(userid))
+
             return redirect(url_for('.show', userid=userid))
         else:
             from flask import flash
@@ -315,6 +323,7 @@ def edit(userid):
         'user_edit.html',
         form=form,
         user=userobj,
+        logged_user=current_user,
         title=_(u"Edit your profile"))
 
 
