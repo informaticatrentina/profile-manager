@@ -2,7 +2,7 @@
 # Copyright (C) 2013 <ahref Foundation -- All rights reserved.
 # This file is distributed under the same license as the profilemanager
 # project.
-# Author: Daniele Pizzolli <daniele@ahref.eu, 2013.
+# Author: Daniele Pizzolli <daniele@ahref.eu>, 2013.
 #
 msgid ""
 msgstr ""
