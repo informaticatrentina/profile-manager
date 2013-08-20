@@ -61,6 +61,9 @@ class User(UserMixin):
     id = None
     email = None
     password = None
+    first_name = None
+    last_name = None
+    sex = None
 
 
 # TODO: this is the same of user.py!
@@ -77,6 +80,10 @@ def _get_user(userid):
     appuser = User()
     appuser.id = user['_id']
     appuser.email = user['email']
+    appuser.first_name = user['firstname']
+    appuser.last_name = user['lastname']
+    if 'sex' in user.keys():
+        appuser.sex = user['sex'][0]
     return appuser
 
 
