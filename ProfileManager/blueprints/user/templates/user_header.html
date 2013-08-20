@@ -1,3 +1,35 @@
+{% macro login_header(visible='') %}
+    {% if logged_user.is_anonymous() %}
+        <li class="{{ visible }}">
+	    <a href="http://www.civiclinks.it/it/a/login/?next=/it/l/redirect_on/profiles">
+		{{ _("Register") }}
+	    </a>
+	</li>
+        <li class="{{ visible }}">
+	    <a href="#" class="login">
+		{{ _("Login") }}
+	    </a>
+	</li>
+    {% else %}
+        <li class="{{ visible }}">
+	    <a href="{{ url_for('.show', userid=logged_user.id) }}"
+	       target="blank">
+	       {% if logged_user.sex == 'M' %}
+		   {{ _("Welcome") }},
+	       {% else %}
+		   {# TODO: i18n TRANSLATORS: comments seems to not work! #}
+		   {# translate for female gender or remove |FEMALE| #}
+		   {{ gettext("|FEMALE|Welcome") }},
+	       {% endif %}
+	       <strong>{{ logged_user.first_name|e }}</strong>
+	    </a>
+	</li>
+        <li class="{{ visible }}">
+	    <a href="{{ url_for('auth.logout' ) }}">{{ _("Logout") }}</a>
+	</li>
+    {% endif %}
+{% endmacro %}
+
 {%- block ahref_navbar %}
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner" id="nav-main-menu">
@@ -12,30 +44,16 @@
               </a>
               <div class="nav-collapse collapse">
                 <ul class="nav" id="nav-menu">
-
-                  <!-- da inserire se l'utente NON è loggato -->
-                  <li class="hidden-desktop"><a href="http://www.civiclinks.it/it/a/login/?next=/it/l/redirect_on/profiles">Registrati</a></li>
-                  <li class="hidden-desktop"><a href="#" class="login">Accedi</a></li>
-
-                  <!-- da inserire se l'utente è loggato -->
-                  <!-- <li class="hidden-desktop"><a href="http://profiles.civiclinks.it/" target="blank">Benvenuto, <strong>Monica</strong></a></li>
-                  <li class="hidden-desktop"><a href="">Logout</a></li> -->
-
-                  <li><a href="http://factchecking.civiclinks.it/it/" target="blank">Factchecking</a></li>
-                  <li><a href="http://timu.civiclinks.it/it/" target="blank">Timu</a></li>
-                  <li><a href="http://storygrant.civiclinks.it/" target="blank">Storygrant</a></li>
-                  <li class="active"><a href="http://profiles.civiclinks.it/" target="blank">Profiles</a></li>
-                  <li><a href="#" target="blank">Civico</a></li>
+		    {{ login_header('hidden-desktop') }}
+                    <li><a href="http://factchecking.civiclinks.it/it/" target="blank">Factchecking</a></li>
+                    <li><a href="http://timu.civiclinks.it/it/" target="blank">Timu</a></li>
+                    <li><a href="http://storygrant.civiclinks.it/" target="blank">Storygrant</a></li>
+                    <li class="active"><a href="http://profiles.civiclinks.it/" target="blank">Profiles</a></li>
+                    <li><a href="#" target="blank">Civico</a></li>
                 </ul>
+		
                 <ul id="nav-login" class="nav pull-right visible-desktop">
-
-                  <!-- da inserire se l'utente NON è loggato -->
-                  <li id="registration"><a class="btn btn-small visible-desktop" href="http://www.civiclinks.it/it/a/login/?next=/it/l/redirect_on/profiles">Registrati</a></li>
-                  <li><a href="#" class="login">Accedi</a></li>
-
-                  <!-- da inserire se l'utente è loggato -->
-                  <!-- <li><a href="http://profiles.civiclinks.it/" target="blank">Benvenuto, <strong>Monica</strong></a></li>
-                  <li id="registration"><a class="btn btn-small visible-desktop" href="">Logout</a></li> -->
+		    {{ login_header('visible-desktop') }}
                 </ul>
               </div><!--/.nav-collapse -->
             </div>
