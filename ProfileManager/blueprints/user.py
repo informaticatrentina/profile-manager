@@ -240,7 +240,7 @@ def edit(userid):
         if request.files.get('photo'):
             # TODO: respect original extension
             #
-            # Not it is not not a big problem, PIL handles different
+            # Note: it is not not a big problem, PIL handles different
             # format even if saved as .jpg
             name_original = "{}_original.{}".format(userid, 'jpg')
 
