@@ -1,15 +1,15 @@
-{% macro login_header(visible='') %}
+{% macro login_header(visible='', buttons='') %}
     {% if logged_user.is_anonymous() %}
         <li class="{{ visible }}">
-	    <a href="http://www.civiclinks.it/it/a/login/?next=/it/l/redirect_on/profiles">
+	    <a class="{{ buttons }} {{ visible }}" href="http://www.civiclinks.it/it/a/login/?next=/it/l/redirect_on/profiles">
 		{{ _("Register") }}
 	    </a>
-	</li>
+	    </li>
         <li class="{{ visible }}">
 	    <a href="#" class="login">
 		{{ _("Login") }}
 	    </a>
-	</li>
+	    </li>
     {% else %}
         <li class="{{ visible }}">
 	    <a href="{{ url_for('.show', userid=logged_user.id) }}"
@@ -23,10 +23,10 @@
 	       {% endif %}
 	       <strong>{{ logged_user.first_name|e }}</strong>
 	    </a>
-	</li>
+	    </li>
         <li class="{{ visible }}">
-	    <a href="{{ url_for('auth.logout' ) }}">{{ _("Logout") }}</a>
-	</li>
+	    <a class="{{ buttons }} {{ visible }}" href="{{ url_for('auth.logout' ) }}">{{ _("Logout") }}</a>
+	    </li>
     {% endif %}
 {% endmacro %}
 
@@ -53,7 +53,7 @@
                 </ul>
 		
                 <ul id="nav-login" class="nav pull-right visible-desktop">
-		    {{ login_header('visible-desktop') }}
+		    {{ login_header('visible-desktop', 'btn btn-small') }}
                 </ul>
               </div><!--/.nav-collapse -->
             </div>
