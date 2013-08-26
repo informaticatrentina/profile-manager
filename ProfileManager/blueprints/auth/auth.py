@@ -43,6 +43,8 @@ from flask.ext.principal import (
     identity_changed,
     )
 
+from flask.ext.babelex import lazy_gettext as _
+
 import requests as requestclient
 
 
@@ -112,8 +114,8 @@ def load_user(userid):
 
 
 class LoginForm(Form):
-    email = TextField()
-    password = PasswordField()
+    email = TextField(description=_("Email"))
+    password = PasswordField(description=_("Password"))
 
 
 @auth.route('/login', methods=['GET', 'POST'])
