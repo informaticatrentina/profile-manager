@@ -552,7 +552,7 @@ PROFILES-LOGIN-PAGE
 
 .profiles-login-page #wrapper {
 	width: 300px;
-	padding-top: 50px;
+	padding-top: 110px;
 	margin: 0px auto;
 }
 
@@ -628,12 +628,12 @@ PROFILES-LOGIN-PAGE
 }
 
 .profiles-login-page .user-icon {
-	top:167px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
+	top: 210px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
 	background: rgba(65,72,72,0.9) url('../img/mail.png') no-repeat center;
 }
 
 .profiles-login-page .pass-icon {
-	top:210px;
+	top :250px;
 	background: rgba(65,72,72,0.9) url('../img/lock.png') no-repeat center;
 }
 
