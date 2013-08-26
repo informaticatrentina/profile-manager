@@ -127,7 +127,8 @@ msgstr "Ripeti password"
 msgid "Edit your profile"
 msgstr "Modifica il tuo profilo"
 
-#: ProfileManager/blueprints/auth/templates/login.html:20
+#: ProfileManager/blueprints/auth/templates/login.html:54
+#: ProfileManager/blueprints/auth/templates/login.html:79
 #: ProfileManager/blueprints/user/templates/user_header.html:10
 msgid "Login"
 msgstr "Login"
