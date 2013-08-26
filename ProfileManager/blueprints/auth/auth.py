@@ -136,7 +136,7 @@ def login():
     if current_user.is_authenticated():
         return redirect(request.args.get('next') or '/')
     # A hypothetical login form that uses Flask-WTF
-    form = LoginForm()
+    form = LoginForm(request.form)
 
     # Validate form input
     if form.validate_on_submit():
