@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  0.0.0.1\n"
 "Report-Msgid-Bugs-To: daniele@ahref.eu\n"
-"POT-Creation-Date: 2013-08-07 11:44+0200\n"
-"PO-Revision-Date: 2013-08-07 11:44+0200\n"
+"POT-Creation-Date: 2013-08-26 17:43+0200\n"
+"PO-Revision-Date: 2013-08-26 17:43+0200\n"
 "Last-Translator: Daniele Pizzolli <daniele@ahref.eu>\n"
 "Language-Team: it <daniele@ahref.eu>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -115,6 +115,7 @@ msgid "Passwords must match"
 msgstr "Le password devono corrispondere"
 
 #: ProfileManager/blueprints/form.py:129
+#: ProfileManager/blueprints/auth/auth.py:118
 msgid "Password"
 msgstr "Password"
 
@@ -127,11 +128,40 @@ msgstr "Ripeti password"
 msgid "Edit your profile"
 msgstr "Modifica il tuo profilo"
 
+#: ProfileManager/blueprints/auth/auth.py:117
+msgid "Email"
+msgstr "Email"
+
 #: ProfileManager/blueprints/auth/templates/login.html:54
 #: ProfileManager/blueprints/auth/templates/login.html:79
 #: ProfileManager/blueprints/user/templates/user_header.html:10
 msgid "Login"
 msgstr "Login"
+
+#: ProfileManager/blueprints/auth/templates/login.html:71
+msgid "Login with your Civiclinks account"
+msgstr "Accedi con il tuo account Civiclinks"
+
+#: ProfileManager/blueprints/auth/templates/login.html:83
+msgid "Not yet registered?"
+msgstr "Non ancora registrato?"
+
+#: ProfileManager/blueprints/auth/templates/login.html:85
+msgid "Click here"
+msgstr "Clicca qui"
+
+#: ProfileManager/blueprints/auth/templates/login.html:86
+msgid "for a new account"
+msgstr "per un nuovo account"
+
+#: ProfileManager/blueprints/auth/templates/login.html:89
+msgid "http://www.ahref.eu/en"
+msgstr "http://www.ahref.eu/it"
+
+#: ProfileManager/blueprints/auth/templates/login.html:90
+#: ProfileManager/blueprints/user/templates/user_footer.html:6
+msgid "&lt;ahref Foundation"
+msgstr "Fondazione &lt;ahref"
 
 #: ProfileManager/blueprints/user/templates/_formhelpers.html:18
 msgid "Characters left"
@@ -160,10 +190,6 @@ msgstr "Cambia password"
 #: ProfileManager/blueprints/user/templates/user_edit.html:138
 msgid "Save All"
 msgstr "Salva modifiche"
-
-#: ProfileManager/blueprints/user/templates/user_footer.html:6
-msgid "&lt;ahref Foundation"
-msgstr "Fondazione &lt;ahref"
 
 #: ProfileManager/blueprints/user/templates/user_footer.html:6
 msgid "Head Office"
