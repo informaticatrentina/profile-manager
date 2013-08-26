@@ -552,7 +552,8 @@ PROFILES-LOGIN-PAGE
 
 .profiles-login-page #wrapper {
 	width: 300px;
-	margin: 50px auto;
+	padding-top: 50px;
+	margin: 0px auto;
 }
 
 .profiles-login-page .login-form {

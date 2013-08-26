@@ -10,11 +10,35 @@
 
 {%- block bootstrap_js_bottom %}
     {{ super() }}
+
+    <script type="text/javascript" charset="utf-8"
+        src="{{ url_for('user.static', filename="js/jquery.pageslide.min.js") }}"
+    ></script>
+
+    <script type="text/javascript" charset="utf-8"
+        src="{{ url_for('user.static', filename="js/jquery.maxlength.js") }}"
+    ></script>
+
     <script type="text/javascript" charset="utf-8"
         src="{{ url_for('user.static', filename="js/custom.js") }}"
     ></script>
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            if ( $(".profiles-login-page").height() <= $(window).height() ) {
+                $(".profiles-login-page").height( $(window).height());
+            }
+        });
+    </script>
+
 {%- endblock bootstrap_js_bottom %}
+
+{%- block style_navbar_padding %}
+{%- endblock style_navbar_padding %}
+
+{%- block title %}
+{{ _("Login") }}
+{%- endblock title %}
 
 {%- block body_content %}
 
@@ -23,9 +47,9 @@
     {% include "_flash.html" %}
 
 
-<body class="profiles-login-page">
+<div class="profiles-login-page">
     <div id="wrapper">
-        <form name="login-form" class="login-form form-horizontal" action="" method="post">
+        <form name="login-form" class="login-form form-horizontal" action="{{ url_for('auth.login') }}" method="post">
             <div class="header">
                 <h2>Accedi con il tuo account Civiclinks</h2>
              </div>
@@ -42,8 +66,9 @@
                  <p><a href="http://www.civiclinks.it/it/a/register/" target="blank" class="click">Clicca qui</a> per un nuovo account</p>
              </div>
         </form>
-        <p class="ahref-link"><a href="http://www.ahref.eu/it" target="blank">Fondazione &lt;ahref</a>
-        </p>
+        <p class="ahref-link"><a href="http://www.ahref.eu/it"
+        target="blank">Fondazione &lt;ahref</a></p>
+	<div style="clear: both"></div>
     </div>
-</body>
+</div>
 {%- endblock body_content %}
