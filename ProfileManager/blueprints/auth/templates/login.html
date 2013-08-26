@@ -1,6 +1,8 @@
 {% extends "bootstrap_responsive.html" %}
 {% import "bootstrap_wtf.html" as wtf %}
 
+{% from "_formhelpers.html" import render_field %}
+
 {%- block style %}
 
     {{ super() }}
@@ -20,15 +22,27 @@
     ></script>
 
     <script type="text/javascript" charset="utf-8"
+	src="{{ url_for('user.static', filename="js/jquery.inputhints.js") }}"
+    ></script>
+
+    <script type="text/javascript" charset="utf-8"
         src="{{ url_for('user.static', filename="js/custom.js") }}"
     ></script>
 
-    <script type="text/javascript">
+    <script type="text/javascript">// <![CDATA[
+        /* Always put the background to the full window*/
         $(document).ready(function(){
             if ( $(".profiles-login-page").height() <= $(window).height() ) {
                 $(".profiles-login-page").height( $(window).height());
             }
         });
+
+        /* Show input Hints */
+        $(function($) {
+            // hook up placeholder text on any input with a title
+            $('input[title]').inputHints();
+        });
+    // ]]>
     </script>
 
 {%- endblock bootstrap_js_bottom %}
@@ -49,25 +63,31 @@
 
 <div class="profiles-login-page">
     <div id="wrapper">
-        <form name="login-form" class="login-form form-horizontal" action="{{ url_for('auth.login') }}" method="post">
+        <form name="login-form" class="login-form form-horizonal"
+	      action="{{ url_for('auth.login') }}"
+	      method="post">
+
             <div class="header">
-                <h2>Accedi con il tuo account Civiclinks</h2>
+                <h2>{{ _("Login with your Civiclinks account") }}</h2>
              </div>
              <div class="content">
-                 <input name="email" type="text" class="input email" placeholder="Email" />
+		 {{ render_field(form.email, class_="input email hint") }}
                  <div class="user-icon"></div>
-                 <input name="password" type="password" class="input password" placeholder="Password" />
+		 {{ render_field(form.password, class_="input password hint") }}
                  <div class="pass-icon"></div>
-                 <button type="submit" class="btn">Accedi</button>
+		 {{ render_field(form.csrf_token) }}
+                 <button type="submit" class="btn">{{ _("Login") }}</button>
              </div>
 
              <div class="end">
-                 <h4>Non ancora registrato?</h4>
-                 <p><a href="http://www.civiclinks.it/it/a/register/" target="blank" class="click">Clicca qui</a> per un nuovo account</p>
+                 <h4>{{ _("Not yet registered?") }}</h4>
+                 <p><a href="https://www.civiclinks.it/it/a/register/?network=profiles"
+		       target="blank" class="click">{{ _("Click here") }}</a>
+		     {{ _("for a new account") }}</p>
              </div>
         </form>
-        <p class="ahref-link"><a href="http://www.ahref.eu/it"
-        target="blank">Fondazione &lt;ahref</a></p>
+        <p class="ahref-link"><a href="{{ _("http://www.ahref.eu/en") }}"
+        target="blank">{{ _("&lt;ahref Foundation") }}</a></p>
 	<div style="clear: both"></div>
     </div>
 </div>
