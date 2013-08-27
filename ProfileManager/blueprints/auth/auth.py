@@ -134,7 +134,8 @@ def login():
     """
 
     if current_user.is_authenticated():
-        return redirect(request.args.get('next') or '/')
+        return redirect(request.args.get('next') or url_for('user.edit', userid=current_user.id))
+
     # A hypothetical login form that uses Flask-WTF
     form = LoginForm(request.form)
 
