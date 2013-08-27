@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  0.0.0.1\n"
 "Report-Msgid-Bugs-To: daniele@ahref.eu\n"
-"POT-Creation-Date: 2013-08-26 17:45+0200\n"
+"POT-Creation-Date: 2013-08-27 09:21+0200\n"
 "PO-Revision-Date: 2013-08-26 17:45+0200\n"
 "Last-Translator: Daniele Pizzolli <daniele@ahref.eu>\n"
 "Language-Team: it <daniele@ahref.eu>\n"
@@ -132,7 +132,7 @@ msgstr ""
 
 #: ProfileManager/blueprints/auth/templates/login.html:54
 #: ProfileManager/blueprints/auth/templates/login.html:79
-#: ProfileManager/blueprints/user/templates/user_header.html:10
+#: ProfileManager/blueprints/user/templates/user_header.html:11
 msgid "Login"
 msgstr ""
 
@@ -145,18 +145,23 @@ msgid "Not yet registered?"
 msgstr ""
 
 #: ProfileManager/blueprints/auth/templates/login.html:85
+#: ProfileManager/blueprints/user/templates/user_header.html:5
+msgid "https://www.civiclinks.it/en/a/register/?network=profiles"
+msgstr ""
+
+#: ProfileManager/blueprints/auth/templates/login.html:87
 msgid "Click here"
 msgstr ""
 
-#: ProfileManager/blueprints/auth/templates/login.html:86
+#: ProfileManager/blueprints/auth/templates/login.html:88
 msgid "for a new account"
 msgstr ""
 
-#: ProfileManager/blueprints/auth/templates/login.html:89
+#: ProfileManager/blueprints/auth/templates/login.html:91
 msgid "http://www.ahref.eu/en"
 msgstr ""
 
-#: ProfileManager/blueprints/auth/templates/login.html:90
+#: ProfileManager/blueprints/auth/templates/login.html:92
 #: ProfileManager/blueprints/user/templates/user_footer.html:6
 msgid "&lt;ahref Foundation"
 msgstr ""
@@ -201,20 +206,40 @@ msgstr ""
 msgid "VAT"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_header.html:5
+#: ProfileManager/blueprints/user/templates/user_header.html:6
 msgid "Register"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_header.html:18
+#: ProfileManager/blueprints/user/templates/user_header.html:19
 msgid "Welcome"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_header.html:22
+#: ProfileManager/blueprints/user/templates/user_header.html:23
 msgid "|FEMALE|Welcome"
 msgstr "Welcome"
 
-#: ProfileManager/blueprints/user/templates/user_header.html:28
+#: ProfileManager/blueprints/user/templates/user_header.html:29
 msgid "Logout"
+msgstr ""
+
+#: ProfileManager/blueprints/user/templates/user_header.html:43
+msgid "http://www.civiclinks.it/en/"
+msgstr ""
+
+#: ProfileManager/blueprints/user/templates/user_header.html:49
+msgid "http://factchecking.civiclinks.it/en/"
+msgstr ""
+
+#: ProfileManager/blueprints/user/templates/user_header.html:50
+msgid "http://timu.civiclinks.it/en/"
+msgstr ""
+
+#: ProfileManager/blueprints/user/templates/user_header.html:51
+msgid "http://storygrant.civiclinks.it/"
+msgstr ""
+
+#: ProfileManager/blueprints/user/templates/user_header.html:53
+msgid "http://profiles.civiclinks.it/"
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_home.html:18
