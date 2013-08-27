@@ -571,6 +571,7 @@ PROFILES-LOGIN-PAGE
 
 .profiles-login-page .login-form .content {
     padding: 0 30px 25px 30px;
+    position: relative;
 }
 
 .profiles-login-page .login-form .content .input {
@@ -619,12 +620,12 @@ PROFILES-LOGIN-PAGE
 }
 
 .profiles-login-page .user-icon {
-    top: 210px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
+    top: 0px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
     background: rgba(65,72,72,0.9) url('../img/mail.png') no-repeat center;
 }
 
 .profiles-login-page .pass-icon {
-    top :263px;
+    top: 50px;
     background: rgba(65,72,72,0.9) url('../img/lock.png') no-repeat center;
 }
 
