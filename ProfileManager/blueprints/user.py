@@ -154,7 +154,7 @@ def home():
     The home page redirects to the fist page of user listing:
     :http:get:`/index/`
     """
-    return redirect(url_for('.index'))
+    return redirect(url_for('auth.login'))
 
 
 @user.route('/index/', defaults={'page': 1})
