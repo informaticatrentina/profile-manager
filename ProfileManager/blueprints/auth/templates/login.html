@@ -32,17 +32,26 @@
 
     <script type="text/javascript">// <![CDATA[
         /* Always put the background to the full window*/
-        $(document).ready(function(){
-            if ( $(".profiles-login-page").height() <= $(window).height() ) {
-                $(".profiles-login-page").height( $(window).height());
-            }
-        });
+        $(function($){
 
-        /* Show input Hints */
-        $(function($) {
+            adaptbackground = function() {
+                if ( $(".profiles-login-page").height() <= $(window).height() ) {
+                    $(".profiles-login-page").height( $(window).height());
+                }
+            }
+
+            $(window).resize(function() {
+                adaptbackground();
+            });
+
+            adaptbackground();
+
+            /* Show input Hints */
             // hook up placeholder text on any input with a title
             $('input[title]').inputHints();
+
         });
+
     // ]]>
     </script>
 
