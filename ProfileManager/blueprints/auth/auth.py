@@ -35,7 +35,8 @@ from flask.ext.login import (
     logout_user,
     )
 
-from flask.ext.wtf import Form, TextField, PasswordField
+from flask.ext.wtf import Form
+from wtforms import  TextField, PasswordField
 
 from flask.ext.principal import (
     AnonymousIdentity,

@@ -18,15 +18,19 @@ TODO: replace this line with proper project description.
 '''
 
 from flask.ext.wtf import (
-    file_allowed,
-    FileField,
     Form,
+)
+
+from wtforms import (
+    TextField,
     PasswordField,
     SelectField,
     TextAreaField,
     TextField,
     validators,
-    )
+)
+
+from flask.ext.wtf.file import FileAllowed, FileField
 
 
 from flask.ext.babelex import lazy_gettext as _
@@ -110,7 +114,7 @@ class UserProfileForm(Form):
 
     photo = FileFieldHelp(
         _(u"Your Photo"),
-        [file_allowed(images, _(u"Images only!"))],
+        [FileAllowed(images, _(u"Images only!"))],
         description=_(u"Your Photo"),
         extra_description=_(u"Maximum size allowed 1MB."
                             " Allowed formats: jpg and png"))
