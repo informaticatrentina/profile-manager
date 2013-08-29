@@ -338,7 +338,6 @@ def photo(userid, width):
     :param width: optional width of the requested image (default 80)
 
     """
-    # TODO: implement resize!
 
     from os.path import basename, dirname, exists
 
@@ -360,10 +359,21 @@ def photo(userid, width):
                 width,
                 width)
         else:
-            # Return the default (with no resize)
+            # Return a copy the default image
+
+            # Should we use redirect instead?  How browser cope with
+            # redirect on images?  Yes we can also do that according
+            # to:
+            # http://stackoverflow.com/questions/3778347/is-it-ok-to-http-redirect-images
             from pkg_resources import resource_filename
             resource_name = 'blueprints/user/static/img/foto_anonima.jpg'
-            file_path = resource_filename('ProfileManager', resource_name)
+            default_path = resource_filename('ProfileManager', resource_name)
+            _generate_and_save_thumbnail(
+                images.path(default_path),
+                images.path(file_path),
+                width,
+                width)
+
 
     fp = basename(file_path)
     dp = dirname(file_path)
