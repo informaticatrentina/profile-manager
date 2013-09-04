@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  0.0.0.1\n"
 "Report-Msgid-Bugs-To: daniele@ahref.eu\n"
-"POT-Creation-Date: 2013-09-04 16:35+0200\n"
-"PO-Revision-Date: 2013-09-04 16:35+0200\n"
+"POT-Creation-Date: 2013-09-04 17:17+0200\n"
+"PO-Revision-Date: 2013-09-04 17:17+0200\n"
 "Last-Translator: Daniele Pizzolli <daniele@ahref.eu>\n"
 "Language-Team: it <daniele@ahref.eu>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -323,29 +323,15 @@ msgstr "Condivido il metodo proposto da &lt;ahref"
 msgid "Do you have a web page?"
 msgstr "Hai una pagina web?"
 
-#: ProfileManager/blueprints/user/templates/user_method.html:32
-#, python-format
-msgid ""
-"I\n"
-"                              agree with the %(m_link)s "
-"methodology%(endlink)s\n"
-"                              proposed by <a "
-"href=\"http://ahref.eu/en\">&lt;ahref\n"
-"                              Foundation</a>"
-msgstr ""
-"Condivido il %(m_link)s metodo %(endlink)s proposto da <a "
-"href=\"http://www.ahref.eu/it\" target=\"_blank\">Fondazione "
-"&lt;ahref</a>"
-
-#: ProfileManager/blueprints/user/templates/user_method.html:36
+#: ProfileManager/blueprints/user/templates/user_method.html:31
 msgid "Cut and paste the following code in your site:"
 msgstr "Copia e incolla questo codice nel tuo sito!"
 
-#: ProfileManager/blueprints/user/templates/user_method.html:46
+#: ProfileManager/blueprints/user/templates/user_method.html:41
 msgid "The methodology for quality information"
 msgstr "Metodo per la qualità nell'informazione"
 
-#: ProfileManager/blueprints/user/templates/user_method.html:48
+#: ProfileManager/blueprints/user/templates/user_method.html:43
 msgid ""
 "<a href=\"http://www.ahref.eu/en\"\n"
 "                  target=\"blank\" class=\"ahrefwebsite\">&lt;ahref\n"
@@ -363,15 +349,15 @@ msgstr ""
 "qualità basato su quattro principi che costituiscono una sintesi\n"
 "essenziale di quanto propongono i principali manuali di giornalismo.\n"
 
-#: ProfileManager/blueprints/user/templates/user_method.html:58
+#: ProfileManager/blueprints/user/templates/user_method.html:53
 msgid "Accuracy"
 msgstr "Accuratezza"
 
-#: ProfileManager/blueprints/user/templates/user_method.html:64
+#: ProfileManager/blueprints/user/templates/user_method.html:59
 msgid "A true story with factual errors loses its credibility"
 msgstr "Una storia vera con errori perde la sua credibilità"
 
-#: ProfileManager/blueprints/user/templates/user_method.html:67
+#: ProfileManager/blueprints/user/templates/user_method.html:62
 msgid ""
 "Accuracy always comes first and covers data,\n"
 "                  people, places and events. A story must provide proper "
@@ -382,15 +368,15 @@ msgstr ""
 "fatti.  Fa parte dell'accuratezza l'attribuire propriamente frasi,\n"
 "dati, identità e fatti."
 
-#: ProfileManager/blueprints/user/templates/user_method.html:72
+#: ProfileManager/blueprints/user/templates/user_method.html:67
 msgid "Independence"
 msgstr "Indipendenza"
 
-#: ProfileManager/blueprints/user/templates/user_method.html:78
+#: ProfileManager/blueprints/user/templates/user_method.html:73
 msgid "Avoid biases and make a well rounded story"
 msgstr "Evitare partigianerie, rendere la storia il più completa possibile"
 
-#: ProfileManager/blueprints/user/templates/user_method.html:81
+#: ProfileManager/blueprints/user/templates/user_method.html:76
 msgid ""
 "You must always avoid taking side and\n"
 "                  partisanship. Each story should be told as fully as "
@@ -401,15 +387,15 @@ msgstr ""
 "modo più completo possibile: la realtà è spesso fatta più di grigi che\n"
 "di bianchi e neri."
 
-#: ProfileManager/blueprints/user/templates/user_method.html:85
+#: ProfileManager/blueprints/user/templates/user_method.html:80
 msgid "Impartiality"
 msgstr "Imparzialità"
 
-#: ProfileManager/blueprints/user/templates/user_method.html:91
+#: ProfileManager/blueprints/user/templates/user_method.html:86
 msgid " Disclose any potential conflicts of interest"
 msgstr "Bisogna sempre rivelare possibili conflitti di interesse"
 
-#: ProfileManager/blueprints/user/templates/user_method.html:94
+#: ProfileManager/blueprints/user/templates/user_method.html:89
 msgid ""
 "Reality is often more nuanced than just black and white. In\n"
 "                  a criminal trial, we should always keep in mind that "
@@ -424,15 +410,15 @@ msgstr ""
 "conflitti di interesse e astenersi del tutto dallo scrivere quando la\n"
 "portata del conflitto è troppo grande"
 
-#: ProfileManager/blueprints/user/templates/user_method.html:100
+#: ProfileManager/blueprints/user/templates/user_method.html:95
 msgid "Legality"
 msgstr "Legalità"
 
-#: ProfileManager/blueprints/user/templates/user_method.html:106
+#: ProfileManager/blueprints/user/templates/user_method.html:101
 msgid " Respect the right to personal privacy and fundamental liberties"
 msgstr "Rispetto dei diritti personali e delle libertà fondamentali"
 
-#: ProfileManager/blueprints/user/templates/user_method.html:109
+#: ProfileManager/blueprints/user/templates/user_method.html:104
 msgid ""
 "You must respect the right to personal privacy\n"
 "                  and the rules for the protection of minors. Always "
@@ -442,14 +428,14 @@ msgstr ""
 "Rispettare il diritto alla privacy e le norme a tutela dei minori.\n"
 "Proteggere sempre le fonti finchè la legge lo permette."
 
-#: ProfileManager/blueprints/user/templates/user_method_embed.html:15
+#: ProfileManager/blueprints/user/templates/user_method_embed.html:18
 #, python-format
 msgid ""
 "I agree\n"
-"            with the %(m_link)s methodology%(endlink)s proposed\n"
-"            by <a href=\"http://ahref.eu/en\">&lt;ahref Foundation</a>"
+"            with the&nbsp;%(m_link)smethodology%(endlink)s&nbsp;proposed "
+"by <a href=\"http://ahref.eu/en\">&lt;ahref Foundation</a>"
 msgstr ""
-"Condivido il %(m_link)s metodo %(endlink)s proposto da <a "
+"Condivido il&nbsp;%(m_link)smetodo%(endlink)s&nbsp;proposto da <a "
 "href=\"http://www.ahref.eu/it\" target=\"_blank\">Fondazione "
 "&lt;ahref</a>"
 
