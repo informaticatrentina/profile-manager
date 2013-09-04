@@ -20,6 +20,7 @@ SELECTION STYLING
  background: #c2cf00;  /* Firefox */
 }
 
+
 /*************************************/
 
 body {
@@ -103,7 +104,7 @@ body {
 
 .details {
     background-color: #f5f5f5;
-    margin: 30px 0 0 0;
+    margin: 30px 0 30px 0;
     padding: 30px;
     font-size: 20px;
 }
@@ -158,25 +159,26 @@ form {
 
 .form-box label {
     font-size: 16px;
-    font-style: italic;
-    font-family: 'helvetica neue', helvetica, arial, sans-serif;
+    font-family: 'Roboto Slab', serif;
     line-height: 24px;
+    font-weight: 300;
 }
 
 .form-box input {
     width: 95%;
-    font-size: 16px;
+    font-size: 15px;
     height: 30px;
     margin-top: 18px;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
     border: 1px solid #00a4a7;
+    font-family: 'Roboto Slab', serif;
 }
 
 .form-box select {
     width: 99%;
-    font-size: 16px;
+    font-size: 15px;
     height: 30px;
     margin-top: 20px;
     border: 1px solid #00a4a7;
@@ -186,6 +188,7 @@ form {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    font-family: 'Roboto Slab', serif;
 }
 
 textarea:focus,
@@ -250,12 +253,13 @@ input[type="color"]:focus,
     width: 100%;
     height: 80%;
     border: none;
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: 26px;
     resize: horizontal;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    font-family: 'Roboto Slab', serif;
 }
 
 .bio-textarea-3 {
@@ -705,6 +709,22 @@ PROFILES-LOGIN-PAGE
 .profiles-login-page .ahref-link a, .profiles-login-page .ahref-link a:hover {
     color: white;
     text-decoration: none;
+}
+
+
+
+/***************
+Landscape phones and down
+***************/
+
+/**********************************************************************************************/
+
+@media (max-width: 480px) {
+
+    .title-bar h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
 }
 
 
