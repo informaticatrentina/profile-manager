@@ -15,9 +15,9 @@ a {
             <img src="{{ url_for('.static', filename='img/method_icon.png') }}" alt="imagetoembed">
         </a>
 	{% set m_url = '<a href="' + url_for('user.show_method', userid=user._id) +'">' %}
-        <p>{% trans m_link=m_url|safe, endlink='</a>'|safe %}I agree
-            with the {{ m_link }}methodology{{ endlink }} proposed
-            by <a href="http://ahref.eu/en">&lt;ahref Foundation</a>{% endtrans %}</p>
+        <p>{%- trans m_link=m_url|safe, endlink='</a>'|safe -%}I agree
+            with the&nbsp;{{- m_link -}}methodology{{- endlink -}}
+            &nbsp;proposed by <a href="http://ahref.eu/en">&lt;ahref Foundation</a>{%- endtrans -%}</p>
 
     {%- endblock ahref_embed %}
 
