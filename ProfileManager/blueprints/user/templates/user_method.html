@@ -3,8 +3,104 @@
 {% block title %}{{ user.firstname|e }} {{ user.lastname|e }} | CivicLinks{% endblock %}
 
 {%- block ahref_body_content %}
-    {% if user._id == logged_user.id %}
-        <p>This part is shown only if you are visiting your method page and you are
-            logged in.</p>
-    {% endif %}
+
+
+
+  <div class="container" id="method-page">
+
+      <div class="row-fluid userpanel">
+
+          <div class="span4">
+              <div class="row-fluid">
+                  <div class="span12">
+
+                      <img src="{{ url_for('.photo', userid=user._id, width=370) }}">
+                      <div class="method">
+                          <h4 id="personal">Nome Cognome</h4>
+                          <i class="icon-check icon-3x pull-left"></i>
+                          <h4>Condivido il metodo proposto da &lt;ahref</h4>
+                      </div>
+
+                      {% if user._id == logged_user.id %}
+                          <div class="share">
+                              <i class="icon-external-link icon-3x pull-left"></i>
+                              <h4>Hai una pagina web?</h4>
+                              <a href=""><!--/.TODO:link -->
+                                  <img src="{{ url_for('.static', filename='img/method_icon.png') }}" alt="imagetoembed">
+                              </a>
+                              <h6 id="texttoembed">Condivido il <a href=""><!--/.TODO:link -->metodo</a> proposto da <a href="http://www.ahref.eu/it" target="blank">Fondazione &lt;ahref</a></h6>
+                              <p id="copy">Copia e incolla questo codice nel tuo sito!</p>
+                              <textarea rows="4" cols="50" class="embed">TODO Daniele: scrivere il codice per embeddare</textarea>
+                          </div> <!--/.share -->
+                      {% endif %}
+
+                  </div>
+              </div>
+          </div>
+
+          <div class="span8">
+              <h1 id="title">METODO PER LA QUALIT&Agrave; NELL&apos;INFORMAZIONE</h1>
+              <div class="blockquote">
+                <p><span><a href="http://www.ahref.eu/it" target="blank" class="ahrefwebsite">Fondazione &lt;ahref</a> propone una metodologia di lavoro (metodo)
+                  per la produzione dell&apos;informazione di qualit&agrave; basato su quattro principi
+                  che costituiscono una sintesi essenziale di quanto propongono i principali manuali di giornalismo.</span></p>
+              </div>
+
+              <div class="details">
+
+                  <span class="color">ACCURATEZZA</span>
+                  <div class="row-fluid" style="margin-top:20px;">
+                      <div class="span1">
+                          <i class="icon-quote-left icon-3x pull-left mark"></i>
+                      </div>
+                      <div class="span11">
+                          <h4>Una storia vera con errori perde la sua credibilit&agrave;</h4>
+                      </div>
+                  </div>
+                  <p>L&apos;accuratezza viene prima di tutto e riguarda dati, persone, luoghi e fatti.
+                    Fa parte dell&apos;accuratezza l&apos;attribuire propriamente frasi, dati, identit&agrave; e fatti.</p>
+
+                  <span class="color">IMPARZIALIT&Agrave;</span>
+                  <div class="row-fluid" style="margin-top:20px;">
+                      <div class="span1">
+                          <i class="icon-quote-left icon-3x pull-left mark"></i>
+                      </div>
+                      <div class="span11">
+                          <h4>Evitare partigianerie, rendere la storia il pi&ugrave; completa possibile</h4>
+                      </div>
+                  </div>
+                  <p>Bisogna evitare sempre le partigianerie. Ogni storia va raccontata nel modo pi&ugrave;
+                   completo possibile: la realt&agrave; &egrave; spesso fatta pi&ugrave; di grigi che di bianchi e neri.</p>
+
+                  <span class="color">INDIPENDENZA</span>
+                  <div class="row-fluid" style="margin-top:20px;">
+                      <div class="span1">
+                          <i class="icon-quote-left icon-3x pull-left mark"></i>
+                      </div>
+                      <div class="span11">
+                          <h4>Bisogna sempre rivelare possibili conflitti di interesse</h4>
+                      </div>
+                  </div>
+                  <p>La regola &egrave; la trasparenza: informare sempre il lettore di potenziali
+                   conflitti di interesse e astenersi del tutto dallo scrivere quando la portata del conflitto &egrave; troppo grande.</p>
+
+                  <span class="color">LEGALIT&Agrave;</span>
+                  <div class="row-fluid" style="margin-top:20px;">
+                      <div class="span1">
+                          <i class="icon-quote-left icon-3x pull-left mark"></i>
+                      </div>
+                      <div class="span11">
+                          <h4>Rispetto dei diritti personali e delle libert&agrave; fondamentali</h4>
+                      </div>
+                  </div>
+                  <p>Rispettare il diritto alla privacy e le norme a tutela dei minori.
+                    Proteggere sempre le fonti finch&egrave; la legge lo permette.</p>
+
+              </div> <!-- /details -->
+          </div> <!-- /span8 -->
+
+      </div> <!-- /row-fluid -->
+  </div> <!-- /container -->
+
+
 {%- endblock ahref_body_content %}
