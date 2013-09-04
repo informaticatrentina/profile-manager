@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<style type="text/css">
+a {
+    color: black;
+}
+</style>
+<body>
+
+{%- block body_content %}
+    {% include "google_analytics.html" %}
+
+    {%- block ahref_embed %}
+	<a href=""><!--/.TODO:link -->
+            <img src="{{ url_for('.static', filename='img/method_icon.png') }}" alt="imagetoembed">
+        </a>
+        <p>{% trans m_link='<a href="#">'|safe, endlink='</a>'|safe %}I agree
+            with the {{ m_link}} methodology{{ endlink }} proposed
+            by <a href="http://ahref.eu/en">&lt;ahref Foundation</a>{% endtrans %}</p>
+
+    {%- endblock ahref_embed %}
+
+{%- endblock body_content %}
+
+</body>
+</html>
