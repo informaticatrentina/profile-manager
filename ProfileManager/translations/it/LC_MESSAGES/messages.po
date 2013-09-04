@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  0.0.0.1\n"
 "Report-Msgid-Bugs-To: daniele@ahref.eu\n"
-"POT-Creation-Date: 2013-09-04 16:21+0200\n"
-"PO-Revision-Date: 2013-09-04 16:21+0200\n"
+"POT-Creation-Date: 2013-09-04 16:35+0200\n"
+"PO-Revision-Date: 2013-09-04 16:35+0200\n"
 "Last-Translator: Daniele Pizzolli <daniele@ahref.eu>\n"
 "Language-Team: it <daniele@ahref.eu>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -160,7 +160,7 @@ msgstr "Password"
 msgid "Repeat Password"
 msgstr "Ripeti password"
 
-#: ProfileManager/blueprints/user.py:346
+#: ProfileManager/blueprints/user.py:365
 #: ProfileManager/blueprints/user/templates/user_show.html:50
 #: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user.py:327
 #: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_show.html:50
@@ -348,11 +348,20 @@ msgstr "Metodo per la qualità nell'informazione"
 #: ProfileManager/blueprints/user/templates/user_method.html:48
 msgid ""
 "<a href=\"http://www.ahref.eu/en\"\n"
-"                  target=\"blank\" class=\"ahrefwebsite\">&lt;ahref "
-"Foundation</a>"
+"                  target=\"blank\" class=\"ahrefwebsite\">&lt;ahref\n"
+"                  Foundation</a> ask individuals, groups, and "
+"organizations to\n"
+"                  share a working methodology based on the four core "
+"standards\n"
+"                  featured in major news agencies and media outlets: "
+"Accuracy,\n"
+"                  Impartiality, Independence, Legality."
 msgstr ""
-"<a href=\"http://www.ahref.eu/it\" target=\"_blank\" "
-"class=\"ahrefwebsite\">Fondazione &lt;ahref</a>"
+"<a href=\"http://www.ahref.eu/it\" target=\"_blank\"\n"
+"class=\"ahrefwebsite\">Fondazione &lt;ahref Foundation</a> propone una\n"
+"metodologia di lavoro (metodo) per la produzione dell'informazione di\n"
+"qualità basato su quattro principi che costituiscono una sintesi\n"
+"essenziale di quanto propongono i principali manuali di giornalismo.\n"
 
 #: ProfileManager/blueprints/user/templates/user_method.html:58
 msgid "Accuracy"
@@ -433,6 +442,17 @@ msgstr ""
 "Rispettare il diritto alla privacy e le norme a tutela dei minori.\n"
 "Proteggere sempre le fonti finchè la legge lo permette."
 
+#: ProfileManager/blueprints/user/templates/user_method_embed.html:15
+#, python-format
+msgid ""
+"I agree\n"
+"            with the %(m_link)s methodology%(endlink)s proposed\n"
+"            by <a href=\"http://ahref.eu/en\">&lt;ahref Foundation</a>"
+msgstr ""
+"Condivido il %(m_link)s metodo %(endlink)s proposto da <a "
+"href=\"http://www.ahref.eu/it\" target=\"_blank\">Fondazione "
+"&lt;ahref</a>"
+
 #: ProfileManager/blueprints/user/templates/user_show.html:30
 #: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_show.html:30
 msgid "Warning!"
@@ -446,4 +466,7 @@ msgstr "Riguardati, non ti presenti troppo bene."
 #: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_header.html:53
 msgid "http://profiles.civiclinks.it/"
 msgstr "http://profiles.civiclinks.it/"
+
+#~ msgid ""
+#~ msgstr ""
 
