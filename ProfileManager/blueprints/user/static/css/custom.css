@@ -706,3 +706,221 @@ PROFILES-LOGIN-PAGE
     color: white;
     text-decoration: none;
 }
+
+
+/**********************************************************************************************/
+
+#method-page .userpanel {
+    font-family: 'Titillium Web', sans-serif;
+    margin: 60px 0;
+}
+
+#method-page .avatar {
+    margin-bottom: 30px;
+}
+
+#method-page .method {
+    background-color: #f5f5f5;
+    margin: 50px 0px 30px 0px;
+    padding: 0px 0px 15px 0px;
+}
+
+#method-page .share {
+    background-color: #f5f5f5;
+    margin: 0px 0px 30px 0px;
+    padding: 10px 20px 20px 20px;
+}
+
+#method-page .method h4, .share h4 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+#method-page .share h4 {
+    margin-bottom: 50px;
+    padding-top: 5px;
+}
+
+#method-page #personal {
+    text-transform: uppercase;
+    background-color: rgb(0,0,0);
+    color: white;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 200;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+}
+
+#method-page .icon-check {
+    padding-top: 5px;
+    padding-right: 5px;
+    color: rgb(150,150,150);
+    margin-left: 20px;
+}
+
+#method-page .icon-check, .icon-external-link {
+    padding-right: 5px;
+    color: rgb(150,150,150);
+}
+
+#method-page .icon-external-link {
+    padding-top: 15px;
+}
+
+#method-page .embed {
+    width: 95%;
+    border: 1px solid rgb(0,164,167);
+    -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+    resize: vertical;
+    color: rgb(100,100,100);
+    font-size: 13px;
+    font-family: 'Roboto Slab', serif;
+}
+
+#method-page .embed:focus {
+    border: 2px solid rgb(0,164,167);
+    -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+
+#method-page #title {
+    font-size: 32px;
+    font-weight: 200;
+    line-height: 40px;
+    color: white;
+    background-color: rgb(0,164,167);
+    padding: 30px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+#method-page .blockquote {
+    border:18px solid rgb(0,164,167);
+    background-color: #f5f5f5;
+    margin: 0px 0px 30px;
+    padding: 0px 40px;
+}
+
+#method-page .blockquote p {
+    padding: 40px 20px;
+    border-top: 18px solid #f5f5f5;
+    top: -18px;
+    position: relative;
+    border-bottom: 18px solid #f5f5f5;
+    margin: 0px 0px -36px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 26px;
+    color: black;
+    font-family: 'Roboto Slab', serif;
+}
+
+#method-page .details {
+    background-color: #f5f5f5;
+    margin: 30px 0 80px 0;
+    padding: 30px 30px 5px 0px;
+}
+
+#method-page .details p {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 300;
+    margin-left: 30px;
+    margin-bottom: 50px;
+    font-family: 'Roboto Slab', serif;
+}
+
+#method-page .details h4 {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 400;
+    color: rgb(150,150,150);
+    margin-left: 40px;
+}
+
+#method-page .span11 {
+    margin-bottom: 10px;
+}
+
+#method-page .mark {
+    color: rgb(180,180,180);
+    margin-left: 30px;
+    font-size: 42px;
+}
+
+#method-page .color {
+    background-color: rgb(0,164,167);
+    color: white;
+    font-size: 20px;
+    padding: 0px 30px;
+    font-weight: 200;
+}
+
+#method-page #copy {
+    margin-top: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#method-page #texttoembed {
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+#method-page .ahrefwebsite {
+    font-weight: 300;
+    color: black;
+}
+
+#method-page .ahrefwebsite:hover {
+    text-decoration: none;
+    color: rgb(0,164,167);
+}
+
+#method-page #texttoembed a {
+    text-decoration: none;
+    color: black;
+}
+
+#method-page #texttoembed a:hover {
+    color: rgb(0,164,167);
+}
+
+
+/***************
+Landscape phones and down
+***************/
+
+/**********************************************************************************************/
+
+@media (max-width: 480px) {
+
+    #method-page #title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    #method-page .blockquote p {
+        padding: 40px 10px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+/***************
+Portrait tablet to landscape and desktop
+***************/
+
+/**********************************************************************************************/
+
+@media (min-width: 768px) and (max-width: 979px) {
+    #method-page .method h4, .share h4 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
