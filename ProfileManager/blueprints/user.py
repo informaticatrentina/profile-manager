@@ -219,6 +219,25 @@ def show(userid):
         logged_user=current_user)
 
 
+@user.route('/show/<userid>/method')
+def show_method(userid):
+    """
+    Show a page with the user profile with the method stuff
+
+    :param userid: the `user id`
+    """
+
+    userdata = _get_user(userid)
+
+    if '_links' in userdata:
+        del(userdata['_links'])
+
+    return render_template(
+        'user_method.html',
+        user=userdata,
+        logged_user=current_user)
+
+
 @user.route('/edit/<userid>', methods=['GET', 'POST'])
 @login_required
 def edit(userid):

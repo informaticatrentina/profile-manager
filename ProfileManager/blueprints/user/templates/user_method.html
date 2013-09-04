@@ -1,0 +1,10 @@
+{% extends "ahref_base.html" %}
+
+{% block title %}{{ user.firstname|e }} {{ user.lastname|e }} | CivicLinks{% endblock %}
+
+{%- block ahref_body_content %}
+    {% if user._id == logged_user.id %}
+        <p>This part is shown only if you are visiting your method page and you are
+            logged in.</p>
+    {% endif %}
+{%- endblock ahref_body_content %}
