@@ -26,13 +26,8 @@
                           <div class="share">
                               <i class="icon-external-link icon-3x pull-left"></i>
                               <h4>{{ _("Do you have a web page?") }}</h4>
-                              <a href=""><!--/.TODO:link -->
-                                  <img src="{{ url_for('.static', filename='img/method_icon.png') }}" alt="imagetoembed">
-                              </a>
-                              <h6 id="texttoembed">{% trans m_link='<a href="#">'|safe, endlink='</a>'|safe %}I
-                              agree with the {{ m_link}} methodology{{ endlink }}
-                              proposed by <a href="http://ahref.eu/en">&lt;ahref
-                              Foundation</a>{% endtrans %}</h6>
+			      <iframe seamless frameborder="0" src="{{ url_for('user.show_method_embed', userid=user._id) }}"></iframe>
+
                               <p id="copy">{{ _("Cut and paste the following code in your site:") }}</p>
                               <textarea rows="4" cols="50" class="embed">TODO Daniele: scrivere il codice per embeddare</textarea>
                           </div> <!--/.share -->
