@@ -19,13 +19,13 @@ p {
     {% include "google_analytics.html" %}
 
     {%- block ahref_embed %}
-	<a href=""><!--/.TODO:link -->
+	{% set m_url = '<a href="' + url_for('user.show_method', userid=user._id) +'" target="_blank">' %}
+	<a href="{{ url_for('user.show_method', userid=user._id) }}" target="_blank">
             <img src="{{ url_for('.static', filename='img/method_icon.png') }}" alt="imagetoembed">
         </a>
-	{% set m_url = '<a href="' + url_for('user.show_method', userid=user._id) +'">' %}
         <p>{%- trans m_link=m_url|safe, endlink='</a>'|safe -%}I agree
-            with the&nbsp;{{- m_link -}}methodology{{- endlink -}}
-            &nbsp;proposed by <a href="http://ahref.eu/en">&lt;ahref Foundation</a>{%- endtrans -%}</p>
+            with the&ensp;{{- m_link -}}methodology{{- endlink -}}
+            &ensp;proposed by <a href="http://ahref.eu/en" target="_blank">&lt;ahref Foundation</a>{%- endtrans -%}</p>
 
     {%- endblock ahref_embed %}
 
