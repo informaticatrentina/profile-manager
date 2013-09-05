@@ -29,7 +29,7 @@
 			      <iframe seamless frameborder="0" src="{{ url_for('user.show_method_embed', userid=user._id) }}" width="150px" height="150px"></iframe>
 
                               <p id="copy">{{ _("Cut and paste the following code in your site:") }}</p>
-                              <textarea rows="4" cols="50" class="embed">&lt;iframe seamless frameborder="0" src="http://{{ host }}{{ url_for('user.show_method_embed', userid=user._id)|safe }}" width="150px" height="100px"&gt;&lt;/iframe&gt;</textarea>
+                              <textarea rows="4" cols="50" class="embed">&lt;iframe seamless frameborder="0" src="http://{{ host }}{{ url_for('user.show_method_embed', userid=user._id)|safe }}" width="150px" height="150px"&gt;&lt;/iframe&gt;</textarea>
                           </div> <!--/.share -->
                       {% endif %}
 
