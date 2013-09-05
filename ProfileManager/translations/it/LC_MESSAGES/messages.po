@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  0.0.0.1\n"
 "Report-Msgid-Bugs-To: daniele@ahref.eu\n"
-"POT-Creation-Date: 2013-09-04 17:17+0200\n"
-"PO-Revision-Date: 2013-09-04 17:17+0200\n"
+"POT-Creation-Date: 2013-09-05 17:13+0200\n"
+"PO-Revision-Date: 2013-09-05 17:13+0200\n"
 "Last-Translator: Daniele Pizzolli <daniele@ahref.eu>\n"
 "Language-Team: it <daniele@ahref.eu>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -160,7 +160,7 @@ msgstr "Password"
 msgid "Repeat Password"
 msgstr "Ripeti password"
 
-#: ProfileManager/blueprints/user.py:365
+#: ProfileManager/blueprints/user.py:368
 #: ProfileManager/blueprints/user/templates/user_show.html:50
 #: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user.py:327
 #: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_show.html:50
@@ -344,7 +344,7 @@ msgid ""
 "                  Impartiality, Independence, Legality."
 msgstr ""
 "<a href=\"http://www.ahref.eu/it\" target=\"_blank\"\n"
-"class=\"ahrefwebsite\">Fondazione &lt;ahref Foundation</a> propone una\n"
+"class=\"ahrefwebsite\">Fondazione &lt;ahref</a> propone una\n"
 "metodologia di lavoro (metodo) per la produzione dell'informazione di\n"
 "qualità basato su quattro principi che costituiscono una sintesi\n"
 "essenziale di quanto propongono i principali manuali di giornalismo.\n"
@@ -428,14 +428,15 @@ msgstr ""
 "Rispettare il diritto alla privacy e le norme a tutela dei minori.\n"
 "Proteggere sempre le fonti finchè la legge lo permette."
 
-#: ProfileManager/blueprints/user/templates/user_method_embed.html:18
+#: ProfileManager/blueprints/user/templates/user_method_embed.html:32
 #, python-format
 msgid ""
 "I agree\n"
-"            with the&nbsp;%(m_link)smethodology%(endlink)s&nbsp;proposed "
-"by <a href=\"http://ahref.eu/en\">&lt;ahref Foundation</a>"
+"            with the&ensp;%(m_link)smethodology%(endlink)s&ensp;proposed "
+"by <a href=\"http://ahref.eu/en\" target=\"_blank\">&lt;ahref "
+"Foundation</a>"
 msgstr ""
-"Condivido il&nbsp;%(m_link)smetodo%(endlink)s&nbsp;proposto da <a "
+"Condivido il&ensp;%(m_link)smetodo%(endlink)s&ensp;proposto da <a "
 "href=\"http://www.ahref.eu/it\" target=\"_blank\">Fondazione "
 "&lt;ahref</a>"
 

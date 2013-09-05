@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  0.0.0.1\n"
 "Report-Msgid-Bugs-To: daniele@ahref.eu\n"
-"POT-Creation-Date: 2013-09-04 17:17+0200\n"
+"POT-Creation-Date: 2013-09-05 17:13+0200\n"
 "PO-Revision-Date: 2013-08-26 17:45+0200\n"
 "Last-Translator: Daniele Pizzolli <daniele@ahref.eu>\n"
 "Language-Team: it <daniele@ahref.eu>\n"
@@ -158,7 +158,7 @@ msgstr ""
 msgid "Repeat Password"
 msgstr ""
 
-#: ProfileManager/blueprints/user.py:365
+#: ProfileManager/blueprints/user.py:368
 #: ProfileManager/blueprints/user/templates/user_show.html:50
 #: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user.py:327
 #: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_show.html:50
@@ -410,12 +410,13 @@ msgid ""
 "                  your sources according to the law."
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_method_embed.html:18
+#: ProfileManager/blueprints/user/templates/user_method_embed.html:32
 #, python-format
 msgid ""
 "I agree\n"
-"            with the&nbsp;%(m_link)smethodology%(endlink)s&nbsp;proposed "
-"by <a href=\"http://ahref.eu/en\">&lt;ahref Foundation</a>"
+"            with the&ensp;%(m_link)smethodology%(endlink)s&ensp;proposed "
+"by <a href=\"http://ahref.eu/en\" target=\"_blank\">&lt;ahref "
+"Foundation</a>"
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_show.html:30
