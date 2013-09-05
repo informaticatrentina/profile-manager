@@ -755,10 +755,11 @@ Landscape phones and down
     font-weight: 400;
     font-size: 20px;
     line-height: 26px;
+    padding-right: 10px;
 }
 
 #method-page .share h4 {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     padding-top: 5px;
 }
 
