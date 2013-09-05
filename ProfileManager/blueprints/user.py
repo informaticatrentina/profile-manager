@@ -232,10 +232,13 @@ def show_method(userid):
     if '_links' in userdata:
         del(userdata['_links'])
 
+    host = request.host
+
     return render_template(
         'user_method.html',
         user=userdata,
-        logged_user=current_user)
+        logged_user=current_user,
+        host=host)
 
 
 @user.route('/show/<userid>/method_embed')
