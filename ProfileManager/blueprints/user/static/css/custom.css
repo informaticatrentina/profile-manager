@@ -818,6 +818,7 @@ Landscape phones and down
     padding: 30px;
     margin-top: 0;
     margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
 #method-page .blockquote {
@@ -880,6 +881,7 @@ Landscape phones and down
     font-size: 20px;
     padding: 0px 30px;
     font-weight: 200;
+    text-transform: uppercase;
 }
 
 #method-page #copy {
