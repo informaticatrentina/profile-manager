@@ -78,5 +78,5 @@ def _deploy():
 
 def deploy():
     """Build and Deploy the package on the server"""
-    execute(pack)
+    execute(build)
     execute(_deploy)
