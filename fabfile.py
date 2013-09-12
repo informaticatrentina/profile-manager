@@ -23,22 +23,26 @@ This is used to deploy the application in testing and production
 '''
 
 
-from fabric.api import env, execute, local, put, run, sudo
+from fabric.api import env, execute, local, put, run, sudo, cd, settings
 from os.path import exists
 
 from fabric.utils import warn
 
-
-# the user to use for the remote commands
-# env.user = 'www-data'
-deploy_user = 'www-data'
-
 # the servers where the commands are executed
 env.hosts = ['hubx.ahref.eu', 'huby.ahref.eu']
 env.hosts = ['huby.ahref.eu', ]
+env.hosts = ['hubx.ahref.eu', ]
 
 # this path is hardcoded
+R_HOME = "/srv/www/profile_manager/"
 DEST_VE = "/srv/www/profile_manager/ve"
+
+# gid
+R_UID = "403"
+R_GID = "403"
+
+# remote use name
+R_USER = "profilemanager"
 
 
 DEST_PYTHON = "%s/bin/python" % DEST_VE
@@ -68,12 +72,61 @@ def _deploy():
     put('dist/%s.tar.gz' % dist, dist_remote)
     # now install the package with our virtual environment's python
     # interpreter
-    sudo('%s install %s' % (DEST_PIP, dist_remote), user=deploy_user)
+    sudo('%s install %s' % (DEST_PIP, dist_remote), user=R_USER)
     # now that all is set up, delete the folder again
     run('rm -f %s' % dist_remote)
     # brute force wsgi restart
     # TODO: use touch-reload
     sudo('/etc/init.d/uwsgi restart', user="root")
+
+
+def init_packages():
+    """Install required packages"""
+    # TODO
+    pass
+
+
+def init_user():
+    """Create the user"""
+    sudo("addgroup --system --gid {R_GID} {R_USER}".format(R_GID=R_GID,
+                                                           R_USER=R_USER))
+    sudo("adduser --system --home {R_HOME}"
+         " --uid {R_UID} --gid {R_GID}"
+         " --disabled-password {R_USER}".format(
+             R_HOME=R_HOME, R_UID=R_UID, R_GID=R_GID, R_USER=R_USER))
+
+
+def init_ve():
+    """Create the ve"""
+    with settings(sudo_user=R_USER):
+        with cd(R_HOME):  # what happens if we can not cd here?
+            sudo('virtualenv ve')
+
+
+def init_uwsgi():
+    """Create the uwsgi conf file"""
+    # TODO: the ini file is harcoded. Use jinia from contrib
+    put('provisioning/etc/uwsgi/apps-available/profile-manager.ini',
+        '/etc/uwsgi/apps-available/profile-manager.ini',
+        use_sudo=True)
+    with cd('/etc/uwsgi/apps-enabled'):
+        sudo('ln -s ../apps-available/profile-manager.ini .')
+
+
+def init_nginx():
+    """Create the nginx conf file"""
+    # TODO: the ini file is harcoded. Use jinia from contrib
+    put('provisioning/etc/nginx/sites-available/profile-manager',
+        '/etc/nginx/sites-available/profile-manager',
+        use_sudo=True)
+    with cd('/etc/nginx/sites-enabled'):
+        sudo('rm profile-manager')
+        sudo('ln -s ../sites-available/profile-manager .')
+    sudo('/etc/init.d/nginx restart', user="root")
+
+
+def init_settings():
+    pass
 
 
 def deploy():
