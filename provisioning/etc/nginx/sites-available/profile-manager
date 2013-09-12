@@ -1,0 +1,29 @@
+server {
+	server_name profiles.civiclinks.it profiles.test.hub.x.ahref.eu;
+
+	access_log /var/log/nginx/profile-manager.access.log;
+	error_log /var/log/nginx/profile-manager.error.log;
+
+
+	location /static/bootstrap/ {
+		alias /srv/www/profile_manager/ve/lib/python2.7/site-packages/flask_bootstrap/static/;
+	}
+
+	location /auth_static/ {
+		alias /srv/www/profile_manager/ve/lib/python2.7/site-packages/ProfileManager/blueprints/auth/static/;
+	}
+
+	location /user_static/ {
+		alias /srv/www/profile_manager/ve/lib/python2.7/site-packages/ProfileManager/blueprints/user/static/;
+	}
+
+
+	location / {
+		try_files $uri @profile-manager;
+	}
+
+	location @profile-manager {
+		include /etc/nginx/uwsgi_params;
+		uwsgi_pass unix:/run/uwsgi/app/profile-manager/socket;
+	}
+}
