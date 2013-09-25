@@ -28,10 +28,10 @@ from os.path import exists
 
 from fabric.utils import warn
 
-# the servers where the commands are executed
-env.hosts = ['hubx.ahref.eu', 'huby.ahref.eu']
-env.hosts = ['huby.ahref.eu', ]
-env.hosts = ['hubx.ahref.eu', ]
+env.roledefs = {
+    'dev': ['hubx.ahref.eu'],
+    'production': ['huby.ahref.eu']
+}
 
 # this path is hardcoded
 R_HOME = "/srv/www/profile_manager/"
