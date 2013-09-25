@@ -42,7 +42,8 @@ R_UID = "403"
 R_GID = "403"
 
 # remote use name
-R_USER = "profilemanager"
+# R_USER = "profilemanager"  # This is for dev
+R_USER = "www-data"  # TODO: create separate user user for production
 
 
 DEST_PYTHON = "%s/bin/python" % DEST_VE
