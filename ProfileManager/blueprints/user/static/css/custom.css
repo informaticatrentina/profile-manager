@@ -789,6 +789,10 @@ Landscape phones and down
     margin-bottom: 20px;
 }
 
+#method-page #personal a {
+    color: rgb(255,255,255);
+}
+
 #method-page .icon-check {
     padding-top: 5px;
     padding-right: 5px;
@@ -878,6 +882,7 @@ Landscape phones and down
     font-weight: 400;
     color: rgb(150,150,150);
     margin-left: 40px;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 #method-page .span11 {
@@ -897,6 +902,7 @@ Landscape phones and down
     padding: 0px 30px;
     font-weight: 200;
     text-transform: uppercase;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 #method-page #copy {
