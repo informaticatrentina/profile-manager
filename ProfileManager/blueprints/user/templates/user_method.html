@@ -16,7 +16,7 @@
 
                       <img src="{{ url_for('.photo', userid=user._id, width=370) }}">
                       <div class="method">
-                          <h4 id="personal">{{ user.firstname|e }} {{ user.lastname|e }}</h4>
+                          <h4 id="personal"><a href="{{ url_for('.show', userid=user._id) }}">{{ user.firstname|e }} {{ user.lastname|e }}</a></h4>
                           <i class="icon-check icon-3x pull-left"></i>
                           {# WARNING: why the escape does not work? #}
                           <h4>{{ _("I agree with the standard proposed by &lt;ahref")|escape }}</h4>
