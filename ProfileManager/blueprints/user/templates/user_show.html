@@ -89,8 +89,8 @@
                     </div>
                 {% endif %}
 
-                <div class="details"> <!--TODO: Add link to personal method page-->
-                    I agree with the <a href="" class="linktomethodpage">standard</a> proposed by &lt;ahref
+                <div class="details">
+                    I agree with the <a href="{{ url_for('.show_method', userid=user._id) }}" class="linktomethodpage">standard</a> proposed by &lt;ahref
                 </div>
 
             </div>
