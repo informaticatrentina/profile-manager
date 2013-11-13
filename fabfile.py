@@ -28,6 +28,10 @@ from os.path import exists
 
 from fabric.utils import warn
 
+
+# Use posix shell
+env.shell = "/bin/sh -c"
+
 env.roledefs = {
     'dev': ['hubx.ahref.eu'],
     'production': ['huby.ahref.eu']
