@@ -23,7 +23,7 @@ This is used to deploy the application in testing and production
 '''
 
 
-from fabric.api import env, execute, local, put, run, sudo, cd, settings
+from fabric.api import env, execute, local, prefix, put, run, sudo, cd, settings
 from os.path import exists
 
 from fabric.utils import warn
@@ -40,6 +40,8 @@ env.roledefs = {
 # this path is hardcoded
 R_HOME = "/srv/www/profile_manager/"
 DEST_VE = "/srv/www/profile_manager/ve"
+
+BIN_ACTIVATE = "{}/bin/activate".format(DEST_VE)
 
 # gid
 R_UID = "403"
@@ -138,3 +140,11 @@ def deploy():
     """Build and Deploy the package on the server"""
     execute(build)
     execute(_deploy)
+
+def get_remote_version():
+    """Print the remote version"""
+    # With a trick to enable the virtualenv with sudo...
+    # Hopefully one day fab will support with sudo(), virtualenv()
+    with cd(R_HOME), prefix('. {}'.format(BIN_ACTIVATE)):
+        sudo('pip freeze | grep ProfileManager', user=R_USER)
+
