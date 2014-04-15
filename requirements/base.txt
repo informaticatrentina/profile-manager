@@ -1,5 +1,5 @@
 Flask-BabelEx==0.9.1
-Flask-Bootstrap==2.3.2.2
+Flask-Bootstrap==2.3.2.2.dev1
 Flask-Login==0.2.10
 Flask-Principal==0.4.0
 Flask-Script==0.6.7

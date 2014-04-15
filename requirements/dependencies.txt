@@ -9,4 +9,4 @@
 
 
 # We need the fileupload js also
-https://github.com/ahref/flask-bootstrap/tarball/55d9a1a#egg=flask-bootstrap-2.3.2.2.dev1
+https://github.com/ahref/flask-bootstrap/tarball/ff009f5#egg=flask-bootstrap-2.3.2.2.dev1
