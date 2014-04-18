@@ -125,7 +125,8 @@ def _post_tag(tag):
         '/tags/',
         )
     data = tag
-    rc = requestclient.post(endpoint, data, auth=auth)
+    headers = {'Content-Type': 'application/json'}
+    rc = requestclient.post(endpoint, data, auth=auth, headers=headers)
     return rc
 
 
@@ -323,7 +324,7 @@ def edit(userid):
         # TODO: handle the ,, zero lenght tag
         if tags[0]:
             for tag in tags:
-                rc = _post_tag({'item1': dumps({'name': tag, 'slug': tag})})
+                rc = _post_tag(dumps({'name': tag, 'slug': tag}))
 
         # As list!
         patch['sex'] = [patch['sex']]
@@ -334,18 +335,18 @@ def edit(userid):
         else:
             del patch['tags']
 
-        patchdict = {'key1': dumps(patch)}
+        patchdict = dumps(patch)
 
         rc = _patch_user(
             userid,
             patchdict,
-            headers={
+            headers = {
                 'If-Match': userobj.etag,
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/json',
             }
         )
 
-        if rc.json()['key1']['status'] == 'OK':
+        if rc.json()['status'] == 'OK':
             identity_changed.send(
                 current_app._get_current_object(),
                 identity=Identity(userid))
@@ -353,7 +354,7 @@ def edit(userid):
             return redirect(url_for('.show', userid=userid))
         else:
             from flask import flash
-            for message in rc.json()['key1']['issues']:
+            for message in rc.json()['issues']:
                 flash(message)
             return redirect(url_for('.edit', userid=userid))
 
