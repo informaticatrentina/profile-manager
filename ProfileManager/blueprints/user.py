@@ -148,6 +148,14 @@ def _generate_and_save_thumbnail(origin, destination, h, w):
     image = ImageOps.fit(image, size, Image.ANTIALIAS)
     image.save(destination)
 
+def _get_tags(tagname):
+    auth = (current_app.config['IM_USER'], current_app.config['IM_PASSWORD'])
+    endpoint = '%s%s' % (
+        current_app.config['IM_URL'],
+        '/tags/?where=name=="%s"' % tagname,
+        )
+    rc = requestclient.get(endpoint, auth=auth)
+    return rc
 
 @user.route('/')
 def home():
