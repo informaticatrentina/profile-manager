@@ -343,6 +343,9 @@ def edit(userid):
         else:
             del patch['tags']
 
+        # Temporary fix to get the save function properly
+        del patch['tags']
+
         patchdict = dumps(patch)
 
         rc = _patch_user(
