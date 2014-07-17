@@ -343,8 +343,11 @@ def edit(userid):
         else:
             del patch['tags']
 
-        # Temporary fix to get the save function properly
-        del patch['tags']
+        # TODO: Temporary fix to get the save function properly into
+        # both production and development version of the identity
+        # manager
+        if 'tags' in patch:
+            del patch['tags']
 
         patchdict = dumps(patch)
 
