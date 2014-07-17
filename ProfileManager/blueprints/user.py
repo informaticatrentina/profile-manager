@@ -125,7 +125,11 @@ def _post_tag(tag):
         '/tags/',
         )
     data = tag
-    rc = requestclient.post(endpoint, data, auth=auth)
+    if current_app.config['REMOTE_EVE_VERSION'] == '0.0.6':
+       rc = requestclient.post(endpoint, data, auth=auth)
+    else:
+       headers = {'Content-Type': 'application/json'}
+       rc = requestclient.post(endpoint, data, auth=auth, headers=headers)
     return rc
 
 
@@ -331,7 +335,10 @@ def edit(userid):
         # TODO: handle the ,, zero lenght tag
         if tags[0]:
             for tag in tags:
-                rc = _post_tag({'item1': dumps({'name': tag, 'slug': tag})})
+                if current_app.config['REMOTE_EVE_VERSION'] == '0.0.6':
+                    rc = _post_tag({'item1': dumps({'name': tag, 'slug': tag})})
+                else:
+                    rc = _post_tag(dumps({'name': tag, 'slug': tag}))
 
         # As list!
         patch['sex'] = [patch['sex']]
@@ -348,18 +355,32 @@ def edit(userid):
         if 'tags' in patch:
             del patch['tags']
 
-        patchdict = {'key1': dumps(patch)}
+        if current_app.config['REMOTE_EVE_VERSION'] == '0.0.6':
+            patchdict = {'key1': dumps(patch)}
+        else:
+            patchdict = dumps(patch)
+
+        if current_app.config['REMOTE_EVE_VERSION'] == '0.0.6':
+            content_type = 'application/x-www-form-urlencoded'
+        else:
+            content_type = 'application/json'
 
         rc = _patch_user(
             userid,
             patchdict,
             headers={
                 'If-Match': userobj.etag,
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': content_type,
             }
         )
 
-        if rc.json()['key1']['status'] == 'OK':
+
+        if current_app.config['REMOTE_EVE_VERSION'] == '0.0.6':
+            status = rc.json()['key1']['status']
+        else:
+            status = rc.json()['status']
+
+        if  status == 'OK':
             identity_changed.send(
                 current_app._get_current_object(),
                 identity=Identity(userid))
@@ -367,8 +388,14 @@ def edit(userid):
             return redirect(url_for('.show', userid=userid))
         else:
             from flask import flash
-            for message in rc.json()['key1']['issues']:
-                flash(message)
+
+            if current_app.config['REMOTE_EVE_VERSION'] == '0.0.6':
+                for message in rc.json()['key1']['issues']:
+                    flash(message)
+            else:
+                for message in rc.json()['issues']:
+                    flash(message)
+
             return redirect(url_for('.edit', userid=userid))
 
     if '_links' in userdata:

@@ -45,3 +45,8 @@ UPLOADS_DEFAULT_URL = 'files'
 # Enable wtf 18n
 
 WTF_I18N_ENABLED = True
+
+# Remote Eve version
+# Use '0.0.6' for production until version 0.0.7 of the identity manager
+# Use '0.0.8' for development
+REMOTE_EVE_VERSION = '0.0.6'
