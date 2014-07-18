@@ -137,6 +137,27 @@ For convenience other flask related commands are available, just run
 ``pm`` to see the list.
 
 
+Packaging
+---------
+
+.. code: sh
+
+    python setup.py sdist
+
+Will create an archive named something like: `dist/ProfileManager-<version>.tar.gz`
 
 
+Installing in production
+------------------------
 
+After using the right user and entered in the right virtual environment, the
+following command will take care of all the install:
+
+.. code: sh
+
+    pip install /path/to/ProfileManager-<verision>.tar.gz
+
+
+If you experience some problem with the dependencies, just start with a brand
+new virtualenv.  Please note that if you use a new virtualenv, the uwsgi config
+file need to be updated!
