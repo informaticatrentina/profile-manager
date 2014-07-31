@@ -17,7 +17,7 @@ User Login Blueprint
 TODO: replace this line with proper project description.
 '''
 
-import urllib2
+import urllib
 
 from flask import (
     Blueprint,
@@ -94,8 +94,8 @@ def _get_user(userid):
 
 def _check_login(useremail, password):
     auth = (current_app.config['IM_USER'], current_app.config['IM_PASSWORD'])
-    encoded_useremail = urllib2.quote(useremail)
-    encoded_password = urllib2.quote(password)
+    encoded_useremail = urllib.quote_plus(useremail)
+    encoded_password = urllib.quote_plus(password)
     endpoint = '%s%s/?where={"email": "%s", "password": "%s"}' % (
         current_app.config['IM_URL'],
         '/users',
