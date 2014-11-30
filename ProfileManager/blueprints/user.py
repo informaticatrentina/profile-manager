@@ -369,16 +369,14 @@ def edit(userid):
             userid,
             patchdict,
             headers={
-                'If-Match': userobj.etag,
                 'Content-Type': content_type,
             }
         )
 
-
         if current_app.config['REMOTE_EVE_VERSION'] == '0.0.6':
             status = rc.json()['key1']['status']
         else:
-            status = rc.json()['status']
+            status = rc.json()['_status']
 
         if  status == 'OK':
             identity_changed.send(
@@ -393,7 +391,7 @@ def edit(userid):
                 for message in rc.json()['key1']['issues']:
                     flash(message)
             else:
-                for message in rc.json()['issues']:
+                for message in rc.json()['_issues']:
                     flash(message)
 
             return redirect(url_for('.edit', userid=userid))
