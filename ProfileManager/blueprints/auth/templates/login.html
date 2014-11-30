@@ -73,12 +73,12 @@
 
 <div class="profiles-login-page">
     <div id="wrapper">
-        <form name="login-form" class="login-form form-horizonal"
+        <form name="login-form" class="login-form form-horizontal"
 	      action="{{ url_for('auth.login') }}"
 	      method="post">
 
             <div class="header">
-                <h2>{{ _("Login with your Civiclinks account") }}</h2>
+                <h2>{{ _("Login with your IoPartecipo account") }}</h2>
              </div>
              <div class="content">
 		 {{ render_field(form.email, class_="input email hint") }}
@@ -91,11 +91,7 @@
 
              <div class="end">
                  <h4>{{ _("Not yet registered?") }}</h4>
-                 <p><a href="{{
-		       _("https://www.civiclinks.it/en/a/register/?network=profiles")
-		       }}"
-		       target="blank" class="click">{{ _("Click here") }}</a>
-		     {{ _("for a new account") }}</p>
+                 <p>{{ _("Go to one of IoPartecipo sites to register a new account") }}</p>
              </div>
         </form>
 	<div style="clear: both"></div>

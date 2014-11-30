@@ -19,7 +19,7 @@
                           <h4 id="personal"><a href="{{ url_for('.show', userid=user._id) }}">{{ user.firstname|e }} {{ user.lastname|e }}</a></h4>
                           <i class="icon-check icon-3x pull-left"></i>
                           {# WARNING: why the escape does not work? #}
-                          <h4>{{ _("I agree with the standard proposed by &lt;ahref")|escape }}</h4>
+                          <h4>{{ _("I agree with the standard proposed by IoPartecipo")|escape }}</h4>
                       </div>
 
                       {% if user._id == logged_user.id %}
@@ -40,9 +40,7 @@
           <div class="span8">
               <h1 id="title">{{ _("The methodology for quality information") }}</h1>
               <div class="blockquote">
-                <p><span>{% trans %}<a href="http://www.ahref.eu/en"
-                  target="blank" class="ahrefwebsite">&lt;ahref
-                  Foundation</a> ask individuals, groups, and organizations to
+                <p><span>{% trans %}<strong>IoPartecipo</strong> asks individuals, groups, and organizations to
                   share a working methodology based on the four core standards
                   featured in major news agencies and media outlets: Accuracy,
                   Impartiality, Independence, Legality.{% endtrans %}</span></p>
