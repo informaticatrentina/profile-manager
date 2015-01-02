@@ -125,13 +125,13 @@ class UserProfileForm(Form):
 
     new_password = PasswordField(
         _(u"New Password"),
-        [
-            validators.EqualTo(
-                'old_password',
-                message=_(u"Passwords must match"))
-        ],
         description=_(u"Password"))
 
     con_password = PasswordField(
         _(u"Repeat Password"),
+        [
+            validators.EqualTo(
+                'new_password',
+                message=_(u"Passwords must match"))
+        ],
         description=_(u"Repeat Password"))

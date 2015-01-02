@@ -324,7 +324,7 @@ def edit(userid):
         form.populate_obj(userobj)
 
         from json import dumps
-
+        
         patch = {}
         for i in prop_list:
             patch[i] = userobj.__dict__[i]
@@ -342,6 +342,9 @@ def edit(userid):
 
         # As list!
         patch['sex'] = [patch['sex']]
+        
+        if form.new_password.data != "" and form.new_password.data == form.con_password.data:
+            patch['password'] = form.new_password.data
 
         # Fix the tags
         if tags[0]:
@@ -364,7 +367,7 @@ def edit(userid):
             content_type = 'application/x-www-form-urlencoded'
         else:
             content_type = 'application/json'
-
+        
         rc = _patch_user(
             userid,
             patchdict,
