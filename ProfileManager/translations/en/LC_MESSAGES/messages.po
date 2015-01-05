@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  0.0.0.1\n"
 "Report-Msgid-Bugs-To: daniele@ahref.eu\n"
-"POT-Creation-Date: 2013-09-05 17:13+0200\n"
+"POT-Creation-Date: 2015-01-05 15:27+0530\n"
 "PO-Revision-Date: 2013-08-26 17:45+0200\n"
 "Last-Translator: Daniele Pizzolli <daniele@ahref.eu>\n"
 "Language-Team: it <daniele@ahref.eu>\n"
@@ -16,305 +16,194 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 1.3\n"
+"Generated-By: Babel 0.9.6\n"
 
+#: ProfileManager/__init__.py:69 ProfileManager/__init__.py:70
 #: ProfileManager/blueprints/form.py:69 ProfileManager/blueprints/form.py:71
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:65
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:67
+#: ProfileManager/blueprints/auth/auth.py:141
 msgid "First Name"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:74 ProfileManager/blueprints/form.py:76
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:70
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:72
 msgid "Last Name"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:79
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:75
 msgid "Email Address"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:81
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:77
 msgid "Your email Address"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:84
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:80
 msgid "Sex"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:85
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:81
 msgid "Please select your Sex"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:87 ProfileManager/blueprints/form.py:91
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:83
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:87
 msgid "Select Sex"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:88
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:84
 msgid "Male"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:89
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:85
 msgid "Female"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:94 ProfileManager/blueprints/form.py:96
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:90
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:92
 msgid "Location"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:97
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:93
 msgid "Where are you?"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:100 ProfileManager/blueprints/form.py:101
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:96
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:97
 msgid "Tags"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:102
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:98
 msgid "What are your personal interests?"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:105 ProfileManager/blueprints/form.py:106
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:101
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:102
 msgid "Website"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:107
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:103
 msgid "Do you have an homepage or a blog?"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:110
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:106
 msgid "Biography"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:112
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:108
 msgid "Tell about you in 150 chars"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:116 ProfileManager/blueprints/form.py:118
 #: ProfileManager/blueprints/user/templates/user_edit.html:89
 #: ProfileManager/blueprints/user/templates/user_edit.html:100
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:112
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:114
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_edit.html:89
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_edit.html:100
 msgid "Your Photo"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:117
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:113
 msgid "Images only!"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:119
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:115
 msgid "Maximum size allowed 1MB. Allowed formats: jpg and png"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:123 ProfileManager/blueprints/form.py:124
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:119
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:120
 msgid "Old Password"
 msgstr ""
 
 #: ProfileManager/blueprints/form.py:127
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:123
 msgid "New Password"
 msgstr ""
 
-#: ProfileManager/blueprints/form.py:131
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:127
-msgid "Passwords must match"
-msgstr ""
-
-#: ProfileManager/blueprints/form.py:133
-#: ProfileManager/blueprints/auth/auth.py:119
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:129
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/auth/auth.py:118
+#: ProfileManager/blueprints/form.py:128
+#: ProfileManager/blueprints/auth/auth.py:123
 msgid "Password"
 msgstr ""
 
-#: ProfileManager/blueprints/form.py:136 ProfileManager/blueprints/form.py:137
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:132
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/form.py:133
+#: ProfileManager/blueprints/form.py:131 ProfileManager/blueprints/form.py:137
 msgid "Repeat Password"
 msgstr ""
 
-#: ProfileManager/blueprints/user.py:368
-#: ProfileManager/blueprints/user/templates/user_show.html:50
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user.py:327
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_show.html:50
+#: ProfileManager/blueprints/form.py:135
+msgid "Passwords must match"
+msgstr ""
+
+#: ProfileManager/blueprints/user.py:410
+#: ProfileManager/blueprints/user/templates/user_show.html:54
 msgid "Edit your profile"
 msgstr ""
 
-#: ProfileManager/blueprints/auth/auth.py:118
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/auth/auth.py:117
+#: ProfileManager/blueprints/auth/auth.py:122
 msgid "Email"
 msgstr ""
 
 #: ProfileManager/blueprints/auth/templates/login.html:64
 #: ProfileManager/blueprints/auth/templates/login.html:89
 #: ProfileManager/blueprints/user/templates/user_header.html:11
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/auth/templates/login.html:64
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/auth/templates/login.html:89
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_header.html:11
 msgid "Login"
 msgstr ""
 
 #: ProfileManager/blueprints/auth/templates/login.html:81
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/auth/templates/login.html:81
-msgid "Login with your Civiclinks account"
+msgid "Login with your IoPartecipo account"
 msgstr ""
 
 #: ProfileManager/blueprints/auth/templates/login.html:93
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/auth/templates/login.html:93
 msgid "Not yet registered?"
 msgstr ""
 
-#: ProfileManager/blueprints/auth/templates/login.html:95
-#: ProfileManager/blueprints/user/templates/user_header.html:5
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/auth/templates/login.html:95
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_header.html:5
-msgid "https://www.civiclinks.it/en/a/register/?network=profiles"
-msgstr ""
-
-#: ProfileManager/blueprints/auth/templates/login.html:97
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/auth/templates/login.html:97
-msgid "Click here"
-msgstr ""
-
-#: ProfileManager/blueprints/auth/templates/login.html:98
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/auth/templates/login.html:98
-msgid "for a new account"
-msgstr ""
-
-#: ProfileManager/blueprints/auth/templates/login.html:101
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/auth/templates/login.html:101
-msgid "http://www.ahref.eu/en"
-msgstr ""
-
-#: ProfileManager/blueprints/auth/templates/login.html:102
-#: ProfileManager/blueprints/user/templates/user_footer.html:6
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/auth/templates/login.html:102
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_footer.html:6
-msgid "&lt;ahref Foundation"
+#: ProfileManager/blueprints/auth/templates/login.html:94
+msgid "Go to one of IoPartecipo sites to register a new account"
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/_formhelpers.html:18
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/_formhelpers.html:18
 msgid "Characters left"
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_edit.html:34
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_edit.html:34
 msgid "Add your characteristics"
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_edit.html:36
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_edit.html:36
 msgid "Upload a photo and describe yourself"
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_edit.html:46
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_edit.html:46
 msgid "Information"
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_edit.html:63
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_edit.html:63
 msgid "Your Bio"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_edit.html:124
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_edit.html:124
+#: ProfileManager/blueprints/user/templates/user_edit.html:128
 msgid "Change Password"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_edit.html:138
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_edit.html:138
+#: ProfileManager/blueprints/user/templates/user_edit.html:142
 msgid "Save All"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_footer.html:6
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_footer.html:6
-msgid "Head Office"
-msgstr ""
-
-#: ProfileManager/blueprints/user/templates/user_footer.html:7
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_footer.html:7
-msgid "Italy"
-msgstr ""
-
-#: ProfileManager/blueprints/user/templates/user_footer.html:8
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_footer.html:8
-msgid "VAT"
+#: ProfileManager/blueprints/user/templates/user_header.html:5
+msgid "http://profili.partecipa.tn.it"
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_header.html:6
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_header.html:6
 msgid "Register"
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_header.html:19
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_header.html:19
 msgid "Welcome"
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_header.html:23
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_header.html:23
 msgid "|FEMALE|Welcome"
 msgstr "Welcome"
 
 #: ProfileManager/blueprints/user/templates/user_header.html:29
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_header.html:29
 msgid "Logout"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_header.html:43
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_header.html:43
-msgid "http://www.civiclinks.it/en/"
-msgstr ""
-
-#: ProfileManager/blueprints/user/templates/user_header.html:49
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_header.html:49
-msgid "http://factchecking.civiclinks.it/en/"
-msgstr ""
-
-#: ProfileManager/blueprints/user/templates/user_header.html:50
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_header.html:50
-msgid "http://timu.civiclinks.it/en/"
-msgstr ""
-
-#: ProfileManager/blueprints/user/templates/user_header.html:51
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_header.html:51
-msgid "http://storygrant.civiclinks.it/"
-msgstr ""
-
 #: ProfileManager/blueprints/user/templates/user_home.html:18
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_home.html:18
-msgid "There are no civiclinks users right now"
+msgid "There are no IoPartecipo users right now"
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_method.html:22
-msgid "I agree with the standard proposed by &lt;ahref"
+msgid "I agree with the standard proposed by IoPartecipo"
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_method.html:28
@@ -331,10 +220,8 @@ msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_method.html:43
 msgid ""
-"<a href=\"http://www.ahref.eu/en\"\n"
-"                  target=\"blank\" class=\"ahrefwebsite\">&lt;ahref\n"
-"                  Foundation</a> ask individuals, groups, and "
-"organizations to\n"
+"<strong>IoPartecipo</strong> asks individuals, groups, and organizations "
+"to\n"
 "                  share a working methodology based on the four core "
 "standards\n"
 "                  featured in major news agencies and media outlets: "
@@ -342,15 +229,15 @@ msgid ""
 "                  Impartiality, Independence, Legality."
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_method.html:53
+#: ProfileManager/blueprints/user/templates/user_method.html:51
 msgid "Accuracy"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_method.html:59
+#: ProfileManager/blueprints/user/templates/user_method.html:57
 msgid "A true story with factual errors loses its credibility"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_method.html:62
+#: ProfileManager/blueprints/user/templates/user_method.html:60
 msgid ""
 "Accuracy always comes first and covers data,\n"
 "                  people, places and events. A story must provide proper "
@@ -358,15 +245,15 @@ msgid ""
 "                  accurate context, quoting, data, identities and facts."
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_method.html:67
+#: ProfileManager/blueprints/user/templates/user_method.html:65
 msgid "Independence"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_method.html:73
+#: ProfileManager/blueprints/user/templates/user_method.html:71
 msgid "Avoid biases and make a well rounded story"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_method.html:76
+#: ProfileManager/blueprints/user/templates/user_method.html:74
 msgid ""
 "You must always avoid taking side and\n"
 "                  partisanship. Each story should be told as fully as "
@@ -374,15 +261,15 @@ msgid ""
 "                  Reality is often more nuanced than just black and white."
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_method.html:80
+#: ProfileManager/blueprints/user/templates/user_method.html:78
 msgid "Impartiality"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_method.html:86
+#: ProfileManager/blueprints/user/templates/user_method.html:84
 msgid " Disclose any potential conflicts of interest"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_method.html:89
+#: ProfileManager/blueprints/user/templates/user_method.html:87
 msgid ""
 "Reality is often more nuanced than just black and white. In\n"
 "                  a criminal trial, we should always keep in mind that "
@@ -394,15 +281,15 @@ msgid ""
 "                  they differ from our own political belief."
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_method.html:95
+#: ProfileManager/blueprints/user/templates/user_method.html:93
 msgid "Legality"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_method.html:101
+#: ProfileManager/blueprints/user/templates/user_method.html:99
 msgid " Respect the right to personal privacy and fundamental liberties"
 msgstr ""
 
-#: ProfileManager/blueprints/user/templates/user_method.html:104
+#: ProfileManager/blueprints/user/templates/user_method.html:102
 msgid ""
 "You must respect the right to personal privacy\n"
 "                  and the rules for the protection of minors. Always "
@@ -420,19 +307,71 @@ msgid ""
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_show.html:30
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_show.html:30
 msgid "Warning!"
 msgstr ""
 
 #: ProfileManager/blueprints/user/templates/user_show.html:30
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_show.html:30
 msgid "Best check yo self, you're not looking too good."
 msgstr ""
 
-#: build/lib.linux-x86_64-2.7/ProfileManager/blueprints/user/templates/user_header.html:53
-msgid "http://profiles.civiclinks.it/"
-msgstr ""
+#~ msgid "Login with your Civiclinks account"
+#~ msgstr ""
+
+#~ msgid "https://www.civiclinks.it/en/a/register/?network=profiles"
+#~ msgstr ""
+
+#~ msgid "Click here"
+#~ msgstr ""
+
+#~ msgid "for a new account"
+#~ msgstr ""
+
+#~ msgid "http://www.ahref.eu/en"
+#~ msgstr ""
+
+#~ msgid "&lt;ahref Foundation"
+#~ msgstr ""
+
+#~ msgid "Head Office"
+#~ msgstr ""
+
+#~ msgid "Italy"
+#~ msgstr ""
+
+#~ msgid "VAT"
+#~ msgstr ""
+
+#~ msgid "http://www.civiclinks.it/en/"
+#~ msgstr ""
+
+#~ msgid "http://factchecking.civiclinks.it/en/"
+#~ msgstr ""
+
+#~ msgid "http://timu.civiclinks.it/en/"
+#~ msgstr ""
+
+#~ msgid "http://storygrant.civiclinks.it/"
+#~ msgstr ""
+
+#~ msgid "There are no civiclinks users right now"
+#~ msgstr ""
+
+#~ msgid "I agree with the standard proposed by &lt;ahref"
+#~ msgstr ""
 
 #~ msgid ""
+#~ "<a href=\"http://www.ahref.eu/en\"\n"
+#~ "                  target=\"blank\" class=\"ahrefwebsite\">&lt;ahref\n"
+#~ "                  Foundation</a> ask individuals,"
+#~ " groups, and organizations to\n"
+#~ "                  share a working methodology"
+#~ " based on the four core standards"
+#~ "\n"
+#~ "                  featured in major news "
+#~ "agencies and media outlets: Accuracy,\n"
+#~ "                  Impartiality, Independence, Legality."
+#~ msgstr ""
+
+#~ msgid "http://profiles.civiclinks.it/"
 #~ msgstr ""
 
