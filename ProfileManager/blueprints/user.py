@@ -345,7 +345,7 @@ def edit(userid):
         
         if form.new_password.data != "" and form.new_password.data == form.con_password.data:
             patch['password'] = form.new_password.data
-
+        
         # Fix the tags
         if tags[0]:
             patch['tags'] = tags
@@ -375,7 +375,7 @@ def edit(userid):
                 'Content-Type': content_type,
             }
         )
-
+        
         if current_app.config['REMOTE_EVE_VERSION'] == '0.0.6':
             status = rc.json()['key1']['status']
         else:
@@ -394,7 +394,7 @@ def edit(userid):
                 for message in rc.json()['key1']['issues']:
                     flash(message)
             else:
-                for message in rc.json()['_issues']:
+                for message in rc.json()['_error']:
                     flash(message)
 
             return redirect(url_for('.edit', userid=userid))
