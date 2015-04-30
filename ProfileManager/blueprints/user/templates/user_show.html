@@ -56,7 +56,12 @@
                            </a>
                        {% endif %}
 
-                        <h1 class="name">{{ user.firstname|e }} {{ user.lastname|e }}</h1>
+                        <h1 class="name">
+                            {{ user.firstname|e }} {{ user.lastname|e }}
+                            {% if user._id == logged_user.id %}
+                                &nbsp;({{ user.nickname|e }})
+                            {% endif %}
+                        </h1>
                    </div>
 
                 {% if user.location or user.tags or user.website %}
