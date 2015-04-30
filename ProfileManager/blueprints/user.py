@@ -22,7 +22,7 @@ import requests as requestclient
 from time import time
 
 from flask import (
-    Blueprint, current_app, render_template, redirect, request, url_for
+    Blueprint, current_app, jsonify, render_template, redirect, request, url_for
 )
 
 from flask.ext.babelex import lazy_gettext as _
@@ -48,7 +48,7 @@ images = UploadSet("images", IMAGES)
 
 # Property list that can be edited currently
 prop_list = (
-    'firstname', 'lastname', 'email', 'sex', 'location',
+    'firstname', 'lastname', 'nickname', 'email', 'sex', 'location',
     'tags', 'website', 'biography',
 )
 
@@ -462,3 +462,23 @@ def photo(userid, width):
     dp = dirname(file_path)
 
     return send_from_directory(dp, fp, cache_timeout=10)
+
+@user.route('/checknickname', methods=['GET', 'POST'])
+def checknickname():
+    nickname =  request.args.get('nickname');
+    userid = request.args.get('userid');
+    auth = (current_app.config['IM_USER'], current_app.config['IM_PASSWORD'])
+    endpoint = '%s%s/?where={"nickname": "%s"}&projection={"nickname":1}' % (
+        current_app.config['IM_URL'],
+        '/users',
+        nickname
+        )
+    rc = requestclient.get(endpoint, auth=auth)
+    user = rc.json()
+    dict = {'available':'N'}
+    if len(user['_items']) == 1:
+        if userid == user['_items'][0]['_id']:
+            dict['available'] = 'Y'
+    else:
+        dict['available'] = 'Y'
+    return jsonify(dict)

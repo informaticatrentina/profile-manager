@@ -17,7 +17,9 @@
 	   src="{{ url_for('bootstrap.static', filename='js/bootstrap-fileupload.js') }}">
 
    </script>
-
+   <script type="text/javascript">
+     var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+   </script>
     <script type="text/javascript">// <![CDATA[
         $(function($) {
             // hook up placeholder text on any input with a title
@@ -47,9 +49,15 @@
 
                     <div class="form-box form-box-1">
                         {{ render_field(form.firstname) }}
-                        {{ render_field(form.lastname) }}
+                        {% if user.type == 'user' %}
+                            {{ render_field(form.lastname) }}
+                            {{ render_field(form.nickname) }}
+                            <div id="nickname-availability" class="hide"></div>
+                        {% endif %}
                         {{ render_field(form.email) }}
-                        {{ render_field(form.sex) }}
+                        {% if user.type == 'user' %}
+                            {{ render_field(form.sex) }}
+                        {% endif %}
                     </div>
 
                     <div class="form-box form-box-2">
@@ -130,7 +138,8 @@
             <div class="row-fluid save">
 
                 <div class="span12">
-                    <button class="btn btn-default btn-block btn-primary" type="submit">{{ _("Save All") }}</button>
+                    <input type="hidden" id="user-id" value="{{user._id}}"> 
+                    <button class="btn btn-default btn-block btn-primary" id="update-profile" type="submit">{{ _("Save All") }}</button>
                 </div>
             </div>
         </form>

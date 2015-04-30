@@ -19,4 +19,38 @@ $(function($) {
 	'useInput' : true
     });
 
+    $('#nickname').focusout(function() {
+      var nickname = $.trim($('#nickname').val());
+      if (nickname != '') {
+        checkNickNameAvailability(nickname);
+      }
+    });
 });
+
+function  checkNickNameAvailability(nickname) {
+  $.ajax({
+    url: '/checknickname',
+    data: {
+      nickname: nickname,
+      userid: $('#user-id').val()
+    },
+    type: 'GET',
+    success: function(response) {
+      if (response.available === 'Y') {
+        $('#nickname-availability').html('Nickname available').css('color', 'green');
+        $('#nickname-availability').show();
+        $('#update-profile').removeAttr('disabled');
+      } else {
+         $('#update-profile').attr('disabled', 'disabled');
+        $('#nickname-availability').show();
+        $('#nickname-availability').html('Nickname is already in use. Please choose another.').css('color', 'red');
+        ;
+      }
+    },
+    error: function() {
+      $('#update-profile').attr('disabled', 'disabled');
+      $('#nickname-availability').hide();
+      $('#nickname-availability').html('');
+    }
+  });
+}
