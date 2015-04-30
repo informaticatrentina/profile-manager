@@ -75,6 +75,11 @@ class UserProfileForm(Form):
         [validators.Length(min=1, max=132)],
         description=_(u"Last Name"))
 
+    nickname = TextField(
+        _(u"Nick Name"),
+        [validators.Length(min=1, max=132)],
+        description=_(u"Nick Name"))
+
     email = TextField(
         _(u"Email Address"),
         [validators.Email()],
