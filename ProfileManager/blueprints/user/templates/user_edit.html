@@ -49,7 +49,7 @@
 
                     <div class="form-box form-box-1">
                         {{ render_field(form.firstname) }}
-                        {% if user.type == 'user' %}
+                        {% if user.type == 'user' or user.type == '' %}
                             {{ render_field(form.lastname) }}
                             {{ render_field(form.nickname) }}
                             <div id="nickname-availability" class="hide"></div>

@@ -65,6 +65,11 @@ def eve2wtf(data):
     if 'tags' in data and isinstance(data['tags'], list):
         data['tags'] = ', '.join(data['tags'])
 
+    if 'type' in data:
+        data['type'] = data['type']
+    else:
+        data['type'] = ''
+
     x = type('new_dict', (object,), data)
 
     return x
