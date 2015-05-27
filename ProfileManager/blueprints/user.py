@@ -363,6 +363,18 @@ def edit(userid):
         if 'tags' in patch:
             del patch['tags']
 
+        #TODO: Temporary fix to get the save function for organization
+        datapost = request.form
+        if datapost ['type'] == 'org':
+            if 'sex' in patch:
+                del patch['sex']
+
+            if 'lastname' in patch:
+                del patch['lastname']
+
+            if 'nickname' in patch:
+                del patch['nickname']
+
         if current_app.config['REMOTE_EVE_VERSION'] == '0.0.6':
             patchdict = {'key1': dumps(patch)}
         else:

@@ -52,7 +52,13 @@
                         {% if user.type == 'user' or user.type == '' %}
                             {{ render_field(form.lastname) }}
                             {{ render_field(form.nickname) }}
+                            <input type="hidden" name="type" value="user">
                             <div id="nickname-availability" class="hide"></div>
+                        {% else %}
+                            <input type="hidden" name="sex" value="M">
+                            <input type="hidden" name="lastname" value="dummy">
+                            <input type="hidden" name="nickname" value="dummy">
+                            <input type="hidden" name="type" value="org">
                         {% endif %}
                         {{ render_field(form.email) }}
                         {% if user.type == 'user' %}
