@@ -150,7 +150,7 @@ msgstr "Non ancora registrato?"
 
 #: ProfileManager/blueprints/auth/templates/login.html:94
 msgid "Go to one of IoPartecipo sites to register a new account"
-msgstr ""
+msgstr "Vai a uno dei siti IoPartecipo per registrare un nuovo account"
 
 #: ProfileManager/blueprints/user/templates/_formhelpers.html:18
 msgid "Characters left"
