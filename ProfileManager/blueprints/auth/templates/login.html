@@ -66,9 +66,7 @@
 
 {%- block body_content %}
 
-    {% include "google_analytics.html" %}
-
-    {% include "_flash.html" %}
+    {% include "google_analytics.html" %}  
 
 
 <div class="profiles-login-page">
@@ -80,6 +78,7 @@
             <div class="header">
                 <h2>{{ _("Login with your IoPartecipo account") }}</h2>
              </div>
+             {% include "_flash.html" %}
              <div class="content">
 		 {{ render_field(form.email, class_="input email hint") }}
                  <div class="user-icon"></div>

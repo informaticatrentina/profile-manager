@@ -110,6 +110,8 @@ def _check_login(useremail, password):
         appuser.email = user['_items'][0]['email']
         return appuser
     else:
+        from flask import flash
+        flash('Either email or password is wrong', 'error')
         return None
 
 
