@@ -87,7 +87,7 @@ class UserProfileForm(Form):
 
     sex = SelectField(
         _(u'Sex'),
-        [validators.AnyOf(("M", "F"), message=_(u"Please select your Sex"))],
+        [validators.optional(), validators.AnyOf(("M", "F"), message=_(u"Please select your Sex"))],
         choices=[
             ("U", _(u"Select Sex")),
             ("M", _(u"Male")),
