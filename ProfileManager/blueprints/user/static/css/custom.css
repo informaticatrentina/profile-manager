@@ -354,6 +354,9 @@ input[type="color"]:focus,
     width: 100%;
 }
 
+#photo {
+  border: none;
+}
 
 footer {
     padding: 5px;

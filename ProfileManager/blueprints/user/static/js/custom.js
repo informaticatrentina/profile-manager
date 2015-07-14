@@ -33,6 +33,14 @@ $(function($) {
         $('#email').prev('.errors').remove();
       }
     });
+
+    $('#photo').change(function() {
+      var oFReader = new FileReader();
+      oFReader.readAsDataURL(document.getElementById("photo").files[0]);
+      oFReader.onload = function(oFREvent) {
+        $(".fileupload-new").children('img').attr('src', oFREvent.target.result);
+      };
+    });
 });
 
 function  checkNickNameAvailability(nickname) {

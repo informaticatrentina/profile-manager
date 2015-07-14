@@ -101,31 +101,14 @@
 
                 <div class="span4">
                     <h3>{{ _("Your Photo") }}</h3>
-
                     <div class="form-box form-box-1">
-
-                        <div class="fileupload fileupload-new" data-provides="fileupload">
-                            <div class="fileupload-new thumbnail" style="width:
-                                                                         150px;
-                                                                         height:
-                                                                         150px;">
-                                <img
-                                     src="{{ url_for('.photo', userid=user._id, width=150) }}"
-                                      alt="{{ _("Your Photo") }}"/>
-                            </div>
-                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 150px; max-height: 150px; line-height: 20px;">
-                            </div>
-                            <div class="choose">
-                                <span class="btn btn-file"><span class="fileupload-new">Scegli foto</span></span>
-                            </div>
+                        <div class="fileupload-new thumbnail avatar-preview" style="width:150px;height:150px;">
+                            <img src="{{ url_for('.photo', userid=user._id, width=150) }}" alt="{{ _("Your Photo") }}"/>
                         </div>
-
+                        {{ render_file(form.photo) }}
                         <div class="span12 desc">
                             <label>La tua foto può pesare al massimo 1MB ed il formato dell’immagine deve essere jpg o png</label>
                         </div>
-
-                        {# { render_file(form.photo) } #}
-
                     </div>
                 </div>
 

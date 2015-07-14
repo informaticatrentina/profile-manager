@@ -119,10 +119,8 @@ class UserProfileForm(Form):
 
     photo = FileFieldHelp(
         _(u"Your Photo"),
-        [FileAllowed(images, _(u"Images only!"))],
-        description=_(u"Your Photo"),
-        extra_description=_(u"Maximum size allowed 1MB."
-                            " Allowed formats: jpg and png"))
+        [FileAllowed(['jpg', 'png'], _(u"Images only!"))],
+        description=_(u"Your Photo"))
 
     old_password = PasswordField(
         _(u"Old Password"),
